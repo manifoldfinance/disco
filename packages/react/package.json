@@ -1,0 +1,23 @@
+{
+  "name": "@web3-react/react",
+  "version": "7.0.0-alpha.0",
+  "source": "pkg/dist-src/index.js",
+  "types": "pkg/dist-types/index.d.ts",
+  "module": "pkg/dist-web/index.js",
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-ts-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-web"
+      ]
+    ]
+  },
+  "scripts": {
+    "build": "pika build"
+  },
+  "dependencies": {
+    "@web3-react/core": "^7.0.0-alpha.0"
+  }
+}
