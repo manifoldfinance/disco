@@ -1,13 +1,12 @@
 {
   "name": "@web3-react/react",
   "version": "7.0.0-alpha.0",
-  "source": "pkg/dist-src/index.js",
   "types": "pkg/dist-types/index.d.ts",
-  "module": "pkg/dist-web/index.js",
+  "main": "pkg/dist-src/index.js",
   "@pika/pack": {
     "pipeline": [
       [
-        "@pika/plugin-ts-standard-pkg", {"exclude": ["*.test.ts"]}
+        "@pika/plugin-ts-standard-pkg"
       ],
       [
         "@pika/plugin-build-web"

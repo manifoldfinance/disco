@@ -1,3 +1,5 @@
+import { store } from '..'
+
 it('true', () => {
-  expect(true).toBe(true)
+  expect(store).toBeTruthy()
 })
