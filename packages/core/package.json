@@ -7,7 +7,7 @@
   "@pika/pack": {
     "pipeline": [
       [
-        "@pika/plugin-ts-standard-pkg"
+        "@pika/plugin-ts-standard-pkg", {"exclude": ["*.test.ts"]}
       ],
       [
         "@pika/plugin-build-web"
