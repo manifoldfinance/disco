@@ -1,5 +1,5 @@
 {
-  "name": "@web3-react/core",
+  "name": "@web3-react/store",
   "version": "8.0.0-alpha.0",
   "type": "module",
   "main": "dist/index.js",
@@ -9,15 +9,13 @@
     "build": "tsc",
     "start": "tsc --watch"
   },
-  "dependencies": {
-    "@web3-react/store": "^8.0.0-alpha.0",
-    "@web3-react/types": "^8.0.0-alpha.0",
-    "zustand": "3.5.7"
-  },
   "peerDependencies": {
-    "react": ">=16.8"
+    "zustand": "^3.5.7"
   },
   "devDependencies": {
-    "react": "17.0.2"
+    "zustand": "3.5.7"
+  },
+  "dependencies": {
+    "@web3-react/types": "^8.0.0-alpha.0"
   }
 }
