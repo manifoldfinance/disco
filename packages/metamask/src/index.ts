@@ -1,79 +1,79 @@
-import { EventEmitter } from 'events'
-import { Actions, Connector } from '@web3-react/types'
-import detectEthereumProvider from '@metamask/detect-provider'
-
-interface Ethereum extends EventEmitter {
-  request(args: { method: string; params?: unknown[] | object }): Promise<unknown>
-}
+import { Connector, Actions, Provider } from '@web3-react/types'
 
 export class NoMetaMaskError extends Error {
   public constructor() {
-    super('MetaMask not installed.')
+    super('MetaMask not installed')
     Object.setPrototypeOf(this, NoMetaMaskError.prototype)
   }
 }
 
+function parseChainId(chainId: string) {
+  return Number.parseInt(chainId, 16)
+}
+
 export class MetaMask extends Connector {
-  protected provider: Promise<Ethereum | null>
-  public ethereum: undefined | Ethereum | null
+  protected providerPromise: Promise<void>
+  public provider: undefined | Provider | null
 
   constructor(actions: Actions) {
     super(actions)
 
-    this.provider = this.startListening()
+    this.providerPromise = this.startListening()
   }
 
-  private startListening(): Promise<Ethereum | null> {
-    return (detectEthereumProvider() as Promise<Ethereum | null>).then((provider) => {
-      this.ethereum = provider
+  private async startListening(): Promise<void> {
+    const detectEthereumProvider = (await import('@metamask/detect-provider')).default
 
-      if (provider) {
+    return (detectEthereumProvider() as Promise<Provider | null>).then((provider) => {
+      this.provider = provider
+
+      if (this.provider) {
         // handle connect
-        provider.on('connect', ({ chainId }: { chainId: string }): void => {
-          this.actions.update({ chainId: Number.parseInt(chainId, 16) })
+        this.provider.on('connect', ({ chainId }: { chainId: string }): void => {
+          this.actions.update({ chainId: parseChainId(chainId) })
         })
 
         // handle disconnect
-        provider.on('disconnect', (error: Error): void => {
+        this.provider.on('disconnect', (error: Error): void => {
           this.actions.reportError(error)
         })
 
         // handle chainChanged
-        provider.on('chainChanged', (chainId: string): void => {
-          this.actions.update({ chainId: Number.parseInt(chainId, 16) })
+        this.provider.on('chainChanged', (chainId: string): void => {
+          this.actions.update({ chainId: parseChainId(chainId) })
         })
 
         // handle accountsChanged
-        provider.on('accountsChanged', (accounts: string[]): void => {
+        this.provider.on('accountsChanged', (accounts: string[]): void => {
           this.actions.update({ accounts })
         })
 
         // silently attempt to eagerly connect
         Promise.all([
-          provider.request({ method: 'eth_chainId' }) as Promise<string>,
-          provider.request({ method: 'eth_accounts' }) as Promise<string[]>,
+          this.provider.request({ method: 'eth_chainId' }) as Promise<string>,
+          this.provider.request({ method: 'eth_accounts' }) as Promise<string[]>,
         ])
           .then(([chainId, accounts]) => {
             if (accounts.length > 0) {
-              this.actions.update({ chainId: Number.parseInt(chainId, 16), accounts })
+              this.actions.update({ chainId: parseChainId(chainId), accounts })
             }
           })
-          .catch()
+          .catch(() => {
+            console.debug('Could not connect eagerly')
+          })
       }
-
-      return provider
     })
   }
 
   public async activate(): Promise<void> {
     this.actions.startActivation()
 
-    const provider = await this.provider
+    await this.providerPromise
 
-    if (provider) {
+    if (this.provider) {
       const [chainId, accounts] = await Promise.all([
-        provider.request({ method: 'eth_chainId' }) as Promise<string>,
-        provider.request({ method: 'eth_requestAccounts' }) as Promise<string[]>,
+        this.provider.request({ method: 'eth_chainId' }) as Promise<string>,
+        this.provider.request({ method: 'eth_requestAccounts' }) as Promise<string[]>,
       ])
 
       this.actions.update({ chainId: Number.parseInt(chainId, 16), accounts })

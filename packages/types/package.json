@@ -9,10 +9,7 @@
     "build": "tsc",
     "start": "tsc --watch"
   },
-  "peerDependencies": { 
-    "zustand": "^3.5.7"
-  },
-  "devDependencies": {
-    "zustand": "3.5.7"
+  "peerDependencies": {
+    "zustand": "^3.5.10"
   }
 }

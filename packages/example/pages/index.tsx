@@ -6,26 +6,70 @@ const [store, actions] = createWeb3ReactStoreAndActions()
 const metaMask = new MetaMask(actions)
 const useMetamask = create(store)
 
+function Status() {
+  const chainId = useMetamask((state) => state.chainId)
+  const accounts = useMetamask((state) => state.accounts)
+  const error = useMetamask((state) => state.error)
+
+  const connected = Boolean(chainId && accounts)
+
+  return (
+    <div>
+      {error ? (
+        <>
+          {error.name}: {error.message}
+        </>
+      ) : connected ? (
+        <>
+          Connected via <b>{metaMask.constructor.name}</b>
+        </>
+      ) : (
+        'Disconnected'
+      )}
+    </div>
+  )
+}
+
+function ChainId() {
+  const chainId = useMetamask((state) => state.chainId)
+
+  return <div>Chain Id: {chainId ? <b>{chainId}</b> : '-'}</div>
+}
+
+function Accounts() {
+  const accounts = useMetamask((state) => state.accounts)
+
+  return (
+    <div>
+      Accounts:
+      {accounts === undefined ? (
+        <ul style={{ margin: 0 }}>-</ul>
+      ) : accounts.length === 0 ? (
+        <ul style={{ margin: 0 }}>None</ul>
+      ) : (
+        accounts?.map((account) => (
+          <ul key={account} style={{ margin: 0 }}>
+            <b>{account}</b>
+          </ul>
+        ))
+      )}
+    </div>
+  )
+}
+
 function HomePage() {
   const chainId = useMetamask((state) => state.chainId)
   const accounts = useMetamask((state) => state.accounts)
   const activating = useMetamask((state) => state.activating)
   const error = useMetamask((state) => state.error)
 
-  const connected = typeof chainId === 'number' && accounts?.length > 0
+  const connected = Boolean(chainId && accounts)
 
   return (
     <>
-      <div>
-        Chain Id:
-        <li>{chainId}</li>
-      </div>
-      <div>
-        Accounts:
-        {accounts?.map((account) => (
-          <li key={account}>{account}</li>
-        ))}
-      </div>
+      <Status />
+      <ChainId />
+      <Accounts />
 
       <button
         onClick={() => {
@@ -33,10 +77,8 @@ function HomePage() {
         }}
         disabled={connected}
       >
-        {error ? 'Error - Try Again?' : connected ? 'Connected' : activating ? '...' : 'Activate MetaMask'}
+        {error ? 'Try Again?' : connected ? 'Connected' : activating ? 'Connecting...' : 'Activate MetaMask'}
       </button>
-
-      <div>{error?.message}</div>
     </>
   )
 }

@@ -12,8 +12,5 @@
   "dependencies": {
     "@metamask/detect-provider": "^1.2.0",
     "@web3-react/types": "^8.0.0-alpha.0"
-  },
-  "devDependencies": {
-    "@types/node": "^16.4.13"
   }
 }

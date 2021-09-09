@@ -1,22 +1,40 @@
 import { State, StoreApi } from 'zustand/vanilla'
+import { EventEmitter } from 'events'
 
 export interface Web3ReactState extends State {
-  chainId?: number
-  accounts?: string[]
+  chainId: number | undefined
+  accounts: string[] | undefined
   activating: boolean
-  error: Error | null
+  error: Error | undefined
 }
 
 export type Web3ReactStore = StoreApi<Web3ReactState>
 
 export interface Actions {
   startActivation: () => void
-  update: (state: Pick<Web3ReactState, 'chainId' | 'accounts'>) => void
+  update: (state: Partial<Pick<Web3ReactState, 'chainId' | 'accounts'>>) => void
   reportError: (error: Error) => void
 }
 
-export abstract class Connector {
-  protected actions: Actions
+// per EIP-1193
+export interface RequestArguments {
+  readonly method: string
+  readonly params?: readonly unknown[] | object
+}
+
+// per EIP-1193
+export interface Provider extends EventEmitter {
+  request(args: RequestArguments): Promise<unknown>
+}
+
+export interface ConnectorMethods {
+  readonly activate: () => Promise<void>
+  readonly deactivate?: () => Promise<void>
+}
+
+export abstract class Connector implements ConnectorMethods {
+  protected readonly actions: Actions
+  public provider: undefined | Provider | null
 
   constructor(actions: Actions) {
     this.actions = actions
