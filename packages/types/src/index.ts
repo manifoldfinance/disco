@@ -27,14 +27,10 @@ export interface Provider extends EventEmitter {
   request(args: RequestArguments): Promise<unknown>
 }
 
-export interface ConnectorMethods {
-  readonly activate: () => Promise<void>
-  readonly deactivate?: () => Promise<void>
-}
-
-export abstract class Connector implements ConnectorMethods {
+export abstract class Connector {
   protected readonly actions: Actions
   public provider: undefined | Provider | null
+  public deactivate?(): Promise<void>
 
   constructor(actions: Actions) {
     this.actions = actions

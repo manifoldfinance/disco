@@ -27,7 +27,7 @@ function validateAccount(account: string): string {
 
 const DEFAULT_STATE = {
   chainId: undefined,
-  accounts: [],
+  accounts: undefined,
   activating: false,
   error: undefined,
 }
