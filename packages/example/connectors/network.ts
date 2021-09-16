@@ -1,7 +1,9 @@
-import { createWeb3ReactStoreAndActions } from '@web3-react/store'
+import { initializeConnector } from '@web3-react/core'
 import { Network } from '@web3-react/network'
-import create from 'zustand'
 
-const [store, actions] = createWeb3ReactStoreAndActions()
-export const network = new Network(actions, 'https://mainnet.infura.io/v3/3c0b4dbc03d04d339600795d11f0e6bc')
-export const useNetwork = create(store)
+const urls = [
+  process.env.infuraKey ? `https://mainnet.infura.io/v3/${process.env.infuraKey}` : undefined,
+  process.env.alchemyKey ? `https://eth-mainnet.alchemyapi.io/v2/${process.env.alchemyKey}` : undefined,
+].filter((url) => url)
+
+export const [network, useNetwork] = initializeConnector<Network>(Network, [urls])

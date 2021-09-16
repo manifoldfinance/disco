@@ -9,11 +9,11 @@
     "build": "tsc",
     "start": "tsc --watch"
   },
-  "peerDependencies": {
-    "zustand": "^3.5.10"
-  },
   "dependencies": {
     "@ethersproject/address": "^5.4.0",
     "@web3-react/types": "^8.0.0-alpha.0"
+  },
+  "peerDependencies": {
+    "zustand": "^3.5.10"
   }
 }

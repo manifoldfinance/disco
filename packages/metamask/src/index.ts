@@ -12,7 +12,7 @@ function parseChainId(chainId: string) {
 }
 
 export class MetaMask extends Connector {
-  protected providerPromise: Promise<void>
+  private providerPromise: Promise<void>
   public provider: undefined | Provider | null
 
   constructor(actions: Actions) {
@@ -22,7 +22,7 @@ export class MetaMask extends Connector {
   }
 
   private async startListening(): Promise<void> {
-    const detectEthereumProvider = (await import('@metamask/detect-provider')).default
+    const detectEthereumProvider = await import('@metamask/detect-provider').then((m) => m?.default ?? m)
 
     return (detectEthereumProvider() as Promise<Provider | null>).then((provider) => {
       this.provider = provider
