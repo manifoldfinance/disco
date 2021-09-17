@@ -1,40 +1,9 @@
 import { Connector, Actions, Provider } from '@web3-react/types'
+import type { Networkish } from '@ethersproject/networks'
+import type { FallbackProviderConfig } from '@ethersproject/providers/lib.esm/fallback-provider'
+import type { ConnectionInfo } from '@ethersproject/web'
 
-type url =
-  | string
-  | {
-      url: string
-      headers?: { [key: string]: string | number }
-
-      user?: string
-      password?: string
-
-      allowInsecureAuthentication?: boolean
-      allowGzip?: boolean
-
-      throttleLimit?: number
-      throttleSlotInterval?: number
-      throttleCallback?: (attempt: number, url: string) => Promise<boolean>
-
-      timeout?: number
-    }
-
-type Networkish =
-  | number
-  | string
-  | {
-      name: string
-      chainId: number
-      ensAddress?: string
-      _defaultProvider?: (providers: any, options?: any) => any
-    }
-
-interface FallbackProviderConfig {
-  provider: Provider
-  priority?: number
-  stallTimeout?: number
-  weight?: number
-}
+type url = string | ConnectionInfo
 
 export class Network extends Connector {
   public provider: Provider | undefined

@@ -26,7 +26,7 @@ function Status({
       <br />
       {error ? (
         <>
-          🛑 {error.name}: {error.message}
+          🛑 {error.name ?? 'Error'}: {error.message}
         </>
       ) : connected ? (
         <>✅ Connected</>

@@ -4,7 +4,6 @@ Warning: pre-alpha code!
 
 Tasks:
 - Other Connectors
-  - Frame
   - WalletLink
   - WalletConnect V2
   - Gnosis Safe

@@ -1,19 +1,19 @@
-import type WalletConnectProvider from '@walletconnect/ethereum-provider'
-import { IWCEthRpcConnectionOptions } from '@walletconnect/types'
 import { Actions, Connector, Provider } from '@web3-react/types'
-import EventEmitter from 'events'
+import type { EventEmitter } from 'events'
+import type WalletConnectProvider from '@walletconnect/ethereum-provider'
+import type { IWCEthRpcConnectionOptions } from '@walletconnect/types'
 
 interface MockWalletConnectProvider
   extends Omit<WalletConnectProvider, 'on' | 'off' | 'once' | 'removeListener'>,
     EventEmitter {}
 
 export class WalletConnect extends Connector {
-  private readonly options: IWCEthRpcConnectionOptions
+  private readonly options?: IWCEthRpcConnectionOptions
   private providerPromise?: Promise<void>
 
   public provider: MockWalletConnectProvider | undefined
 
-  constructor(actions: Actions, options: IWCEthRpcConnectionOptions, connectEagerly = true) {
+  constructor(actions: Actions, options?: IWCEthRpcConnectionOptions, connectEagerly = true) {
     super(actions)
     this.options = options
 

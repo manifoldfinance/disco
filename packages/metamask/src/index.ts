@@ -1,4 +1,5 @@
 import { Connector, Actions, Provider } from '@web3-react/types'
+import type detectEthereumProvider from '@metamask/detect-provider'
 
 export class NoMetaMaskError extends Error {
   public constructor() {
@@ -12,19 +13,26 @@ function parseChainId(chainId: string) {
 }
 
 export class MetaMask extends Connector {
+  private readonly options?: NonNullable<Parameters<typeof detectEthereumProvider>[0]>
   private providerPromise?: Promise<void>
 
-  constructor(actions: Actions, connectEagerly = true) {
+  constructor(
+    actions: Actions,
+    options?: NonNullable<Parameters<typeof detectEthereumProvider>[0]>,
+    connectEagerly = true
+  ) {
     super(actions)
+    this.options = options
+
     if (connectEagerly) {
       this.providerPromise = this.startListening(connectEagerly)
     }
   }
 
   private async startListening(connectEagerly: boolean): Promise<void> {
-    return import('@metamask/detect-provider')
+    await import('@metamask/detect-provider')
       .then((m) => m?.default ?? m)
-      .then((detectEthereumProvider) => detectEthereumProvider())
+      .then((detectEthereumProvider) => detectEthereumProvider(this.options))
       .then((provider) => {
         this.provider = (provider as Provider) ?? undefined
 
@@ -43,7 +51,7 @@ export class MetaMask extends Connector {
           })
 
           if (connectEagerly) {
-            Promise.all([
+            return Promise.all([
               this.provider.request({ method: 'eth_chainId' }) as Promise<string>,
               this.provider.request({ method: 'eth_accounts' }) as Promise<string[]>,
             ])
