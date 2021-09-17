@@ -2,6 +2,21 @@
 
 Warning: pre-alpha code!
 
+Tasks:
+- Other Connectors
+  - Frame
+  - WalletLink
+  - WalletConnect V2
+  - Gnosis Safe
+  - Other injected connectors?
+- Address remaining TODOs in the code
+- Work on DevEx
+- Tests
+- Ensure dist/ files can be consumed in e.g. CRA
+- Host example/ on CodeSandbox
+- Docs
+- Upgrade to Node 16 once LTS?
+
 ## Getting Started
 
 - `yarn`
