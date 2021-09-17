@@ -104,7 +104,7 @@ function Connect({ connector, useConnector }: { connector: Connector; useConnect
 
 function App() {
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', flexFlow: 'wrap' }}>
       {connectors.map(([connector, useConnector]) => (
         <div style={{ minWidth: '25rem', padding: '1rem', margin: '1rem', border: '1px solid' }}>
           <Status connector={connector} useConnector={useConnector} />

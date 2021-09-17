@@ -13,7 +13,6 @@ function parseChainId(chainId: string) {
 
 export class MetaMask extends Connector {
   private providerPromise: Promise<void>
-  public provider: undefined | Provider | null
 
   constructor(actions: Actions) {
     super(actions)
@@ -71,12 +70,16 @@ export class MetaMask extends Connector {
     await this.providerPromise
 
     if (this.provider) {
-      const [chainId, accounts] = await Promise.all([
+      await Promise.all([
         this.provider.request({ method: 'eth_chainId' }) as Promise<string>,
         this.provider.request({ method: 'eth_requestAccounts' }) as Promise<string[]>,
       ])
-
-      this.actions.update({ chainId: Number.parseInt(chainId, 16), accounts })
+        .then(([chainId, accounts]) => {
+          this.actions.update({ chainId: Number.parseInt(chainId, 16), accounts })
+        })
+        .catch((error) => {
+          this.actions.reportError(error)
+        })
     } else {
       this.actions.reportError(new NoMetaMaskError())
     }

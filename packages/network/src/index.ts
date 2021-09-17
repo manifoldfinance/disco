@@ -91,7 +91,8 @@ export class Network extends Connector {
     this.actions.startActivation()
 
     await this.instantiateProvider()
-    // this.provider guaranteed to be defined once we're here
+    // this.provider guaranteed to be defined now
+
     const chainId = await ((this.provider as Provider).request({ method: 'eth_chainId' }) as Promise<number>)
 
     this.actions.update({ chainId, accounts: [] })
