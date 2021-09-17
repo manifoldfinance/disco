@@ -83,7 +83,7 @@ export function createWeb3ReactStoreAndActions(allowedChainIds?: number[]): [Web
         error = existingState.error
         if (error) {
           // if we're here, the heuristic used to clear the error is the same as for clearing the activation flag
-          // note that this is fairly arbitrary, and we could do more here
+          // TODO: this is fairly arbitrary, could we do more here?
           if (chainId && accounts) {
             error = undefined
           }

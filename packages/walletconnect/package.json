@@ -10,7 +10,12 @@
     "start": "tsc --watch"
   },
   "dependencies": {
-    "@walletconnect/ethereum-provider": "^1.6.5",
     "@web3-react/types": "^8.0.0-alpha.0"
+  },
+  "peerDependencies": {
+    "@walletconnect/ethereum-provider": "^1.6.5"
+  },
+  "devDependencies": {
+    "@walletconnect/ethereum-provider": "^1.6.5"
   }
 }

@@ -22,19 +22,32 @@ export function initializeConnector<T extends Connector>(
 }
 
 const CHAIN_ID = (state: Web3ReactState) => state.chainId
-export function useChainId(useConnector: UseStore<Web3ReactState>): number | undefined {
+export function useChainId(useConnector: UseStore<Web3ReactState>): Web3ReactState['chainId'] {
   return useConnector(CHAIN_ID)
 }
 
 const ACCOUNTS = (state: Web3ReactState) => state.accounts
-export function useAccounts(useConnector: UseStore<Web3ReactState>): string[] | undefined {
+export function useAccounts(useConnector: UseStore<Web3ReactState>): Web3ReactState['accounts'] {
   return useConnector(ACCOUNTS)
 }
 export function useAccount(useConnector: UseStore<Web3ReactState>): string | undefined {
   return useConnector(ACCOUNTS)?.[0]
 }
 
-function useProvider(connector: InstanceType<typeof Connector>, useConnector: UseStore<Web3ReactState>) {
+const ACTIVATING = (state: Web3ReactState) => state.activating
+export function useActivating(useConnector: UseStore<Web3ReactState>): Web3ReactState['activating'] {
+  return useConnector(ACTIVATING)
+}
+
+const ERROR = (state: Web3ReactState) => state.error
+export function useError(useConnector: UseStore<Web3ReactState>): Web3ReactState['error'] {
+  return useConnector(ERROR)
+}
+
+export function useProvider(
+  connector: InstanceType<typeof Connector>,
+  useConnector: UseStore<Web3ReactState>
+): Web3Provider | undefined {
   const chainId = useChainId(useConnector)
   const accounts = useAccounts(useConnector)
 

@@ -8,54 +8,58 @@ interface MockWalletConnectProvider
     EventEmitter {}
 
 export class WalletConnect extends Connector {
-  private providerPromise: Promise<void>
+  private readonly options: IWCEthRpcConnectionOptions
+  private providerPromise?: Promise<void>
 
-  public provider: undefined | MockWalletConnectProvider
+  public provider: MockWalletConnectProvider | undefined
 
-  constructor(actions: Actions, options: IWCEthRpcConnectionOptions) {
+  constructor(actions: Actions, options: IWCEthRpcConnectionOptions, connectEagerly = true) {
     super(actions)
+    this.options = options
 
-    this.providerPromise = this.startListening(options)
+    if (connectEagerly) {
+      this.providerPromise = this.startListening(connectEagerly)
+    }
   }
 
-  private async startListening(options: IWCEthRpcConnectionOptions): Promise<void> {
+  private async startListening(connectEagerly: boolean): Promise<void> {
     const WalletConnectProvider = await import('@walletconnect/ethereum-provider').then((m) => m?.default ?? m)
 
-    this.provider = new WalletConnectProvider(options) as unknown as MockWalletConnectProvider
+    this.provider = new WalletConnectProvider(this.options) as unknown as MockWalletConnectProvider
 
-    // handle disconnect
     this.provider.on('disconnect', (error: Error): void => {
       this.actions.reportError(error)
     })
-
-    // handle chainChanged
     this.provider.on('chainChanged', (chainId: number): void => {
       this.actions.update({ chainId })
     })
-
-    // handle accountsChanged
     this.provider.on('accountsChanged', (accounts: string[]): void => {
       this.actions.update({ accounts })
     })
 
     // silently attempt to eagerly connect
-    Promise.all([
-      this.provider.request({ method: 'eth_chainId' }) as Promise<number>,
-      this.provider.request({ method: 'eth_accounts' }) as Promise<string[]>,
-    ])
-      .then(([chainId, accounts]) => {
-        if (accounts.length > 0) {
-          this.actions.update({ chainId, accounts })
-        }
-      })
-      .catch((error) => {
-        console.debug('Could not connect eagerly', error)
-      })
+    if (connectEagerly && this.provider.connected) {
+      Promise.all([
+        this.provider.request({ method: 'eth_chainId' }) as Promise<number>,
+        this.provider.request({ method: 'eth_accounts' }) as Promise<string[]>,
+      ])
+        .then(([chainId, accounts]) => {
+          if (accounts.length > 0) {
+            this.actions.update({ chainId, accounts })
+          }
+        })
+        .catch((error) => {
+          console.debug('Could not connect eagerly', error)
+        })
+    }
   }
 
   public async activate(): Promise<void> {
     this.actions.startActivation()
 
+    if (!this.providerPromise) {
+      this.providerPromise = this.startListening(false)
+    }
     await this.providerPromise
     // this.provider guaranteed to be defined now
 

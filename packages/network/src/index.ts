@@ -65,10 +65,10 @@ export class Network extends Connector {
     }
 
     this.instantiateProvider = async () => {
-      const { JsonRpcProvider, FallbackProvider } = await import('@ethersproject/providers').then(
-        (m) => m?.default ?? m
-      )
-      const { Eip1193Bridge } = await import('@ethersproject/experimental').then((m) => m?.default ?? m)
+      const [{ JsonRpcProvider, FallbackProvider }, { Eip1193Bridge }] = await Promise.all([
+        import('@ethersproject/providers').then((m) => m?.default ?? m),
+        import('@ethersproject/experimental').then((m) => m?.default ?? m),
+      ])
 
       const providers = (urls as url[]).map((url) => new JsonRpcProvider(url, network))
 

@@ -29,7 +29,7 @@ export interface Provider extends EventEmitter {
 
 export abstract class Connector {
   protected readonly actions: Actions
-  public provider: undefined | Provider | null
+  public provider: Provider | undefined
   public deactivate?(): Promise<void>
 
   constructor(actions: Actions) {

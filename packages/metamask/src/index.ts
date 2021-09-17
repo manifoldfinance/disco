@@ -12,61 +12,60 @@ function parseChainId(chainId: string) {
 }
 
 export class MetaMask extends Connector {
-  private providerPromise: Promise<void>
+  private providerPromise?: Promise<void>
 
-  constructor(actions: Actions) {
+  constructor(actions: Actions, connectEagerly = true) {
     super(actions)
-
-    this.providerPromise = this.startListening()
+    if (connectEagerly) {
+      this.providerPromise = this.startListening(connectEagerly)
+    }
   }
 
-  private async startListening(): Promise<void> {
-    const detectEthereumProvider = await import('@metamask/detect-provider').then((m) => m?.default ?? m)
+  private async startListening(connectEagerly: boolean): Promise<void> {
+    return import('@metamask/detect-provider')
+      .then((m) => m?.default ?? m)
+      .then((detectEthereumProvider) => detectEthereumProvider())
+      .then((provider) => {
+        this.provider = (provider as Provider) ?? undefined
 
-    return (detectEthereumProvider() as Promise<Provider | null>).then((provider) => {
-      this.provider = provider
-
-      if (this.provider) {
-        // handle connect
-        this.provider.on('connect', ({ chainId }: { chainId: string }): void => {
-          this.actions.update({ chainId: parseChainId(chainId) })
-        })
-
-        // handle disconnect
-        this.provider.on('disconnect', (error: Error): void => {
-          this.actions.reportError(error)
-        })
-
-        // handle chainChanged
-        this.provider.on('chainChanged', (chainId: string): void => {
-          this.actions.update({ chainId: parseChainId(chainId) })
-        })
-
-        // handle accountsChanged
-        this.provider.on('accountsChanged', (accounts: string[]): void => {
-          this.actions.update({ accounts })
-        })
-
-        // silently attempt to eagerly connect
-        Promise.all([
-          this.provider.request({ method: 'eth_chainId' }) as Promise<string>,
-          this.provider.request({ method: 'eth_accounts' }) as Promise<string[]>,
-        ])
-          .then(([chainId, accounts]) => {
-            if (accounts.length > 0) {
-              this.actions.update({ chainId: parseChainId(chainId), accounts })
-            }
+        if (this.provider) {
+          this.provider.on('connect', ({ chainId }: { chainId: string }): void => {
+            this.actions.update({ chainId: parseChainId(chainId) })
           })
-          .catch((error) => {
-            console.debug('Could not connect eagerly', error)
+          this.provider.on('disconnect', (error: Error): void => {
+            this.actions.reportError(error)
           })
-      }
-    })
+          this.provider.on('chainChanged', (chainId: string): void => {
+            this.actions.update({ chainId: parseChainId(chainId) })
+          })
+          this.provider.on('accountsChanged', (accounts: string[]): void => {
+            this.actions.update({ accounts })
+          })
+
+          if (connectEagerly) {
+            Promise.all([
+              this.provider.request({ method: 'eth_chainId' }) as Promise<string>,
+              this.provider.request({ method: 'eth_accounts' }) as Promise<string[]>,
+            ])
+              .then(([chainId, accounts]) => {
+                if (accounts.length > 0) {
+                  this.actions.update({ chainId: parseChainId(chainId), accounts })
+                }
+              })
+              .catch((error) => {
+                console.debug('Could not connect eagerly', error)
+              })
+          }
+        }
+      })
   }
 
   public async activate(): Promise<void> {
     this.actions.startActivation()
 
+    if (!this.providerPromise) {
+      this.providerPromise = this.startListening(false)
+    }
     await this.providerPromise
 
     if (this.provider) {
