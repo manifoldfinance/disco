@@ -71,6 +71,7 @@ export class Network extends Connector {
       const { Eip1193Bridge } = await import('@ethersproject/experimental').then((m) => m?.default ?? m)
 
       const providers = (urls as url[]).map((url) => new JsonRpcProvider(url, network))
+
       this.provider = new Eip1193Bridge(
         // TODO: use VoidSigner here?
         providers[0].getSigner(),

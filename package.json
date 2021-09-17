@@ -14,6 +14,7 @@
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
     "@types/node": "^16.9.0",
+    "@types/react": "^17.0.21",
     "lerna": "^4.0.0",
     "prettier": "2.3.2",
     "react": "^17.0.2",

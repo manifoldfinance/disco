@@ -14,6 +14,11 @@
     "@web3-react/types": "^8.0.0-alpha.0"
   },
   "peerDependencies": {
-    "zustand": "^3.5.10"
+    "zustand": "^3.5.10",
+    "react": ">=16.8",
+    "@ethersproject/providers": "^5.4.5"
+  },
+  "devDependencies": {
+    "@ethersproject/providers": "^5.4.5"
   }
 }

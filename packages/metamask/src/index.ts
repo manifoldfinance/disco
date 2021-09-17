@@ -58,8 +58,8 @@ export class MetaMask extends Connector {
               this.actions.update({ chainId: parseChainId(chainId), accounts })
             }
           })
-          .catch(() => {
-            console.debug('Could not connect eagerly')
+          .catch((error) => {
+            console.debug('Could not connect eagerly', error)
           })
       }
     })

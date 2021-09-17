@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic'
 import { UseStore } from 'zustand'
 import { Connector, Web3ReactState } from '@web3-react/types'
 import { connectors } from '../connectors'
+import { useChainId, useAccounts, useENSNames } from '@web3-react/core'
 
 function Status({
   connector,
@@ -10,8 +11,8 @@ function Status({
   connector: InstanceType<typeof Connector>
   useConnector: UseStore<Web3ReactState>
 }) {
-  const chainId = useConnector((state) => state.chainId)
-  const accounts = useConnector((state) => state.accounts)
+  const chainId = useChainId(useConnector)
+  const accounts = useAccounts(useConnector)
   const error = useConnector((state) => state.error)
 
   const connected = Boolean(chainId && accounts)
@@ -34,13 +35,20 @@ function Status({
 }
 
 function ChainId({ useConnector }: { useConnector: UseStore<Web3ReactState> }) {
-  const chainId = useConnector((state) => state.chainId)
+  const chainId = useChainId(useConnector)
 
   return <div>Chain Id: {chainId ? <b>{chainId}</b> : '-'}</div>
 }
 
-function Accounts({ useConnector }: { useConnector: UseStore<Web3ReactState> }) {
-  const accounts = useConnector((state) => state.accounts)
+function Accounts({
+  connector,
+  useConnector,
+}: {
+  connector: InstanceType<typeof Connector>
+  useConnector: UseStore<Web3ReactState>
+}) {
+  const accounts = useAccounts(useConnector)
+  const ENSNames = useENSNames(connector, useConnector)
 
   return (
     <div>
@@ -50,9 +58,9 @@ function Accounts({ useConnector }: { useConnector: UseStore<Web3ReactState> }) 
       ) : accounts.length === 0 ? (
         <ul style={{ margin: 0 }}>None</ul>
       ) : (
-        accounts?.map((account) => (
+        accounts?.map((account, i) => (
           <ul key={account} style={{ margin: 0 }}>
-            <b>{account}</b>
+            <b>{ENSNames?.[i] ?? account}</b>
           </ul>
         ))
       )}
@@ -64,8 +72,8 @@ function Connect({ connector, useConnector }: { connector: Connector; useConnect
   const activating = useConnector((state) => state.activating)
   const error = useConnector((state) => state.error)
 
-  const chainId = useConnector((state) => state.chainId)
-  const accounts = useConnector((state) => state.accounts)
+  const chainId = useChainId(useConnector)
+  const accounts = useAccounts(useConnector)
   const connected = Boolean(chainId && accounts)
 
   return (
@@ -102,7 +110,7 @@ function App() {
           <Status connector={connector} useConnector={useConnector} />
           <br />
           <ChainId useConnector={useConnector} />
-          <Accounts useConnector={useConnector} />
+          <Accounts connector={connector} useConnector={useConnector} />
           <br />
           <Connect connector={connector} useConnector={useConnector} />
         </div>
