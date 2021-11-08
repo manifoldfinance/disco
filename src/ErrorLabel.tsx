@@ -1,6 +1,6 @@
-import classNames from "classnames";
-import * as React from "react";
-import { Icon } from "./index";
+import classNames from 'classnames';
+import * as React from 'react';
+import { Icon } from './index';
 
 export type ErrorLabelProps = React.HTMLAttributes<HTMLDivElement> & {
   hasError?: boolean;
@@ -13,7 +13,7 @@ export const ErrorLabel = ({
   ...props
 }: ErrorLabelProps & React.HTMLAttributes<HTMLDivElement>) => (
   <div
-    className={classNames(hasError ? "flex" : "hidden", className)}
+    className={classNames(hasError ? 'flex' : 'hidden', className)}
     {...props}
   >
     <Icon
@@ -24,4 +24,4 @@ export const ErrorLabel = ({
   </div>
 );
 
-ErrorLabel.displayName = "ErrorLabel";
+ErrorLabel.displayName = 'ErrorLabel';

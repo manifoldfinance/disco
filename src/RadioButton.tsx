@@ -1,7 +1,7 @@
-import * as React from "react";
-import { Indicator } from "./Indicator";
-import { Icon } from "./Icon";
-import classNames from "classnames";
+import * as React from 'react';
+import { Indicator } from './Indicator';
+import { Icon } from './Icon';
+import classNames from 'classnames';
 
 export type RadioButtonProps = {
   selected?: boolean;
@@ -25,12 +25,12 @@ export const RadioButton = ({
       selected={selected}
       disabled={disabled}
       hasError={hasError}
-      className={classNames("rounded-full", className)}
+      className={classNames('rounded-full', className)}
       {...props}
     >
-      <Icon icon={selected ? "Bullet" : "Blank"} />
+      <Icon icon={selected ? 'Bullet' : 'Blank'} />
     </Indicator>
   );
 };
 
-RadioButton.displayName = "RadioButton";
+RadioButton.displayName = 'RadioButton';

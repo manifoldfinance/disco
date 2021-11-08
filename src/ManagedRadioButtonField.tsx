@@ -1,6 +1,6 @@
-import * as React from "react";
-import { useField } from "formik";
-import { ErrorLabel, RadioButton } from "./index";
+import * as React from 'react';
+import { useField } from 'formik';
+import { ErrorLabel, RadioButton } from './index';
 
 type ManagedRadioButtonFieldProps = React.HTMLAttributes<HTMLDivElement> & {
   caption?: string;
@@ -23,7 +23,7 @@ export const ManagedRadioButtonField = ({
     name,
     id,
     value: id,
-    type: "radio",
+    type: 'radio',
   });
 
   // Chrome and Safari do not send blur events properly
@@ -32,7 +32,7 @@ export const ManagedRadioButtonField = ({
       setTouched(true);
       field.onChange(e);
     },
-    [field.onChange, setTouched]
+    [field.onChange, setTouched],
   );
 
   return (

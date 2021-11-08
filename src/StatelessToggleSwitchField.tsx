@@ -1,6 +1,6 @@
-import * as React from "react";
-import { ToggleSwitch } from "./ToggleSwitch";
-import classnames from "classnames";
+import * as React from 'react';
+import { ToggleSwitch } from './ToggleSwitch';
+import classnames from 'classnames';
 
 export type StatelessToggleSwitchFieldProps = {
   selected?: boolean;
@@ -19,7 +19,7 @@ export const StatelessToggleSwitchField = ({
 }: StatelessToggleSwitchFieldProps) => {
   return (
     <div
-      className={classnames("flex cursor-pointer", className)}
+      className={classnames('flex cursor-pointer', className)}
       onClick={onChange}
       {...props}
     >
@@ -34,4 +34,4 @@ export const StatelessToggleSwitchField = ({
   );
 };
 
-StatelessToggleSwitchField.displayName = "StatelessToggleSwitchField";
+StatelessToggleSwitchField.displayName = 'StatelessToggleSwitchField';

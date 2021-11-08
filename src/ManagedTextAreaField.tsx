@@ -1,7 +1,7 @@
-import * as React from "react";
-import { useField } from "formik";
-import { StatelessTextArea, ErrorLabel } from "./index";
-import classNames from "classnames";
+import * as React from 'react';
+import { useField } from 'formik';
+import { StatelessTextArea, ErrorLabel } from './index';
+import classNames from 'classnames';
 
 export type ManagedTextAreaFieldProps = {
   hasError?: boolean;
@@ -31,7 +31,7 @@ export const ManagedTextAreaField = ({
   const [field, meta] = useField(id);
 
   return (
-    <div className={classNames("flex flex-col", className)} {...props}>
+    <div className={classNames('flex flex-col', className)} {...props}>
       <label htmlFor={id} className="label">
         {label}
       </label>
@@ -40,7 +40,7 @@ export const ManagedTextAreaField = ({
       ) : null}
       <StatelessTextArea
         id={id}
-        className={classNames((caption || label) && "mt-2", textareaClass)}
+        className={classNames((caption || label) && 'mt-2', textareaClass)}
         disabled={disabled}
         hasError={meta.touched && meta.error !== undefined}
         placeholder={placeholder}
@@ -54,4 +54,4 @@ export const ManagedTextAreaField = ({
   );
 };
 
-ManagedTextAreaField.displayName = "ManagedTextAreaField";
+ManagedTextAreaField.displayName = 'ManagedTextAreaField';

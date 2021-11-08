@@ -1,6 +1,6 @@
-import classNames from "classnames";
-import * as React from "react";
-import { Checkbox } from "./index";
+import classNames from 'classnames';
+import * as React from 'react';
+import { Checkbox } from './index';
 
 export type StatelessCheckboxFieldProps = {
   selected?: boolean;
@@ -19,7 +19,7 @@ export const StatelessCheckboxField = ({
 }: StatelessCheckboxFieldProps) => {
   return (
     <div
-      className={classNames("flex cursor-pointer", className)}
+      className={classNames('flex cursor-pointer', className)}
       onClick={onChange}
       {...props}
     >
@@ -34,4 +34,4 @@ export const StatelessCheckboxField = ({
   );
 };
 
-StatelessCheckboxField.displayName = "StatelessCheckboxField";
+StatelessCheckboxField.displayName = 'StatelessCheckboxField';

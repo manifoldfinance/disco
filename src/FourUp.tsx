@@ -1,5 +1,5 @@
-import classnames from "classnames";
-import React, { FunctionComponent, HTMLAttributes } from "react";
+import classnames from 'classnames';
+import React, { FunctionComponent, HTMLAttributes } from 'react';
 
 export type FourUpProps = HTMLAttributes<HTMLDivElement>;
 
@@ -9,7 +9,7 @@ export const FourUp: FunctionComponent<FourUpProps> = ({
   ...props
 }) => (
   <div
-    className={classnames("grid grid-flow-col grid-cols-4", className)}
+    className={classnames('grid grid-flow-col grid-cols-4', className)}
     {...props}
   >
     {children &&
@@ -18,4 +18,4 @@ export const FourUp: FunctionComponent<FourUpProps> = ({
   </div>
 );
 
-FourUp.displayName = "FourUp";
+FourUp.displayName = 'FourUp';

@@ -1,7 +1,7 @@
-import * as React from "react";
-import { Indicator } from "./Indicator";
-import { Icon } from "./Icon";
-import classNames from "classnames";
+import * as React from 'react';
+import { Indicator } from './Indicator';
+import { Icon } from './Icon';
+import classNames from 'classnames';
 
 export type CheckboxProps = {
   selected?: boolean;
@@ -21,12 +21,12 @@ export const Checkbox = ({
       selected={selected}
       disabled={disabled}
       hasError={hasError}
-      className={classNames("rounded", className)}
+      className={classNames('rounded', className)}
       {...props}
     >
-      <Icon icon={selected ? "CheckmarkBold" : "Blank"} />
+      <Icon icon={selected ? 'CheckmarkBold' : 'Blank'} />
     </Indicator>
   );
 };
 
-Checkbox.displayName = "Checkbox";
+Checkbox.displayName = 'Checkbox';

@@ -1,6 +1,6 @@
-import * as React from "react";
-import { iconIndex } from "./iconIndex";
-import classNames from "classnames";
+import * as React from 'react';
+import { iconIndex } from './iconIndex';
+import classNames from 'classnames';
 
 export type IconIndex = typeof iconIndex;
 
@@ -13,13 +13,13 @@ export const Icon = ({ icon, className, ...props }: IconProps) => {
 
   return (
     <svg
-      className={classNames("icon-svg flex-none w-4 h-4", className)}
+      className={classNames('icon-svg flex-none w-4 h-4', className)}
       {...props}
-      viewBox={"0 0 16 16"}
+      viewBox={'0 0 16 16'}
     >
       <InnerIcon />
     </svg>
   );
 };
 
-Icon.displayName = "Icon";
+Icon.displayName = 'Icon';

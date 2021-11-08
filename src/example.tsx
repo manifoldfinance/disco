@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import * as ReactDOM from "react-dom";
-import * as Yup from "yup";
-import { Formik } from "formik";
+import React, { useEffect, useState } from 'react';
+import * as ReactDOM from 'react-dom';
+import * as Yup from 'yup';
+import { Formik } from 'formik';
 import {
   Button,
   Action,
@@ -35,38 +35,38 @@ import {
   FourUp,
   _iconIndex,
   IconIndex,
-} from "./index";
-import colors from "./themes/light";
+} from './index';
+import colors from './themes/light';
 
 interface ManagedFormValues {
   firstName: string;
   lastName: string;
   iagree: boolean;
   myStory: string;
-  color: "blue" | "green";
+  color: 'blue' | 'green';
   toggleSwitch: boolean;
 }
 
 const ManagedFormSchema = Yup.object().shape({
   firstName: Yup.string()
-    .min(2, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
   lastName: Yup.string()
-    .min(2, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
   iagree: Yup.boolean().test(
-    "isTrue",
-    "You must agree to the TOS before proceeding",
-    (v) => !!v
+    'isTrue',
+    'You must agree to the TOS before proceeding',
+    (v) => !!v,
   ),
   // about: Yup.string(),
   // middleName: Yup.string()
   //   .min(2, 'Too Short!')
   //   .max(50, 'Too Long!')
   //   .required('Required'),
-  color: Yup.string().oneOf(["blue", "green"]),
+  color: Yup.string().oneOf(['blue', 'green']),
   // urbitid: Yup.string()
   //   .test(
   //     'is-patp',
@@ -95,7 +95,7 @@ const Swatch = ({ name }: { name: string }) => (
     className={`flex items-center h-8 px-2 border border-solid border-gray-100 rounded bg-${name}`}
     key={name}
   >
-    <span className={name === "black" ? "text-white" : "text-black"}>
+    <span className={name === 'black' ? 'text-white' : 'text-black'}>
       {name}
     </span>
   </div>
@@ -104,7 +104,7 @@ const Swatch = ({ name }: { name: string }) => (
 const ThemeColors = () => (
   <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 w-full">
     {Object.entries(colors).map(([k, v]) => {
-      if (typeof v === "string") return <Swatch name={k} />;
+      if (typeof v === 'string') return <Swatch name={k} />;
 
       return Object.entries(v as Record<string, string>).map(([n, c]) => (
         <Swatch name={`${k}-${n}`} />
@@ -116,77 +116,60 @@ const ThemeColors = () => (
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
   // Checkboxes
-  const [defaultCheckboxIsSelected, defaultCheckboxIsSelectedToggle] = useState(
-    true
-  );
-  const [errorCheckboxIsSelected, errorCheckboxIsSelectedToggle] = useState(
-    false
-  );
+  const [defaultCheckboxIsSelected, defaultCheckboxIsSelectedToggle] =
+    useState(true);
+  const [errorCheckboxIsSelected, errorCheckboxIsSelectedToggle] =
+    useState(false);
   const [statelessCheckboxSelected, statelessCheckboxToggle] = useState(false);
-  const [
-    checkboxErrorTriggerSelected,
-    checkboxErrorTriggerSelectedToggle,
-  ] = useState(false);
+  const [checkboxErrorTriggerSelected, checkboxErrorTriggerSelectedToggle] =
+    useState(false);
 
   // RadioButton
-  const [
-    defaultRadioButtonIsSelected,
-    defaultRadioButtonIsSelectedToggle,
-  ] = useState(true);
-  const [
-    errorRadioButtonIsSelected,
-    errorRadioButtonIsSelectedToggle,
-  ] = useState(false);
+  const [defaultRadioButtonIsSelected, defaultRadioButtonIsSelectedToggle] =
+    useState(true);
+  const [errorRadioButtonIsSelected, errorRadioButtonIsSelectedToggle] =
+    useState(false);
   const [statelessRadioButtonIndex, statelessRadioButtonSelect] = useState(0);
 
   // ToggleSwitch
-  const [
-    defaultToggleSwitchIsSelected,
-    defaultToggleSwitchIsSelectedToggle,
-  ] = useState(true);
-  const [
-    errorToggleSwitchIsSelected,
-    errorToggleSwitchIsSelectedToggle,
-  ] = useState(false);
-  const [statelessToggleSwitchSelected, statelessToggleSwitchToggle] = useState(
-    false
-  );
+  const [defaultToggleSwitchIsSelected, defaultToggleSwitchIsSelectedToggle] =
+    useState(true);
+  const [errorToggleSwitchIsSelected, errorToggleSwitchIsSelectedToggle] =
+    useState(false);
+  const [statelessToggleSwitchSelected, statelessToggleSwitchToggle] =
+    useState(false);
 
   // TextInput
-  const [
-    statelessTextInputFieldValue,
-    statelessTextInputFieldOnChange,
-  ] = useState("");
+  const [statelessTextInputFieldValue, statelessTextInputFieldOnChange] =
+    useState('');
 
   // TextArea
-  const [
-    statelessTextAreaFieldValue,
-    statelessTextAreaFieldOnChange,
-  ] = useState("");
+  const [statelessTextAreaFieldValue, statelessTextAreaFieldOnChange] =
+    useState('');
 
   const [disclosureBoxOpen, disclosureBoxToggle] = useState(false);
 
   useEffect(() => {
     if (darkMode) {
-      document.body.classList.add("dark");
+      document.body.classList.add('dark');
     } else {
-      document.body.classList.remove("dark");
+      document.body.classList.remove('dark');
     }
   }, [darkMode]);
 
   const initialValues: ManagedFormValues = {
-    firstName: "",
-    lastName: "",
+    firstName: '',
+    lastName: '',
     iagree: false,
-    color: "blue",
+    color: 'blue',
     toggleSwitch: false,
-    myStory: "",
+    myStory: '',
   };
 
   return (
     <div className="flex flex-col p-6 font-sans text-sm">
       <div className="flex justify-between p-6">
-        <span>{"Indigo Examples"}</span>
+        <span>{'Indigo Examples'}</span>
         <StatelessToggleSwitchField
           selected={darkMode}
           onChange={() => setDarkMode(!darkMode)}
@@ -243,7 +226,7 @@ const App = () => {
       <TwoUp>
         <div className="flex flex-col p-6">
           <Rule />
-          <span className="py-2">{"<Text />"}</span>
+          <span className="py-2">{'<Text />'}</span>
 
           <div className="flex flex-col space-y-2">
             <span>Default</span>
@@ -285,7 +268,7 @@ const App = () => {
 
         <div className="flex flex-col p-6">
           <Rule />
-          <span className="py-2">{"<Action />"}</span>
+          <span className="py-2">{'<Action />'}</span>
           <div>
             <span className="badge">Badge</span>
             <Action>Action</Action>
@@ -300,7 +283,7 @@ const App = () => {
       <div className="flex">
         <div className="flex flex-col w-1/2 p-6">
           <Rule />
-          <span className="py-2">{"<Ol />"}</span>
+          <span className="py-2">{'<Ol />'}</span>
           <ol className="list-decimal">
             <li>
               <span>First</span>
@@ -315,7 +298,7 @@ const App = () => {
         </div>
         <div className="flex flex-col w-1/2 p-6">
           <Rule />
-          <span className="py-2">{"<Ul />"}</span>
+          <span className="py-2">{'<Ul />'}</span>
           <ul className="list-disc">
             <li>
               <span>Foo</span>
@@ -332,26 +315,26 @@ const App = () => {
       <div className="flex">
         <div className="flex flex-col w-1/2 p-6">
           <Rule />
-          <span className="py-2">{"<Button />"}</span>
+          <span className="py-2">{'<Button />'}</span>
           <Button
             variant="primary"
             className="mb-2"
             children="Primary Button"
-            onClick={() => console.log("Primary Button")}
+            onClick={() => console.log('Primary Button')}
           />
           <Button
             variant="primary"
             className="mb-2"
-            onClick={() => console.log("Primary Button")}
+            onClick={() => console.log('Primary Button')}
           >
-            {" "}
+            {' '}
             Button With Icon
             <Icon icon="Smiley" className="ml-2" />
           </Button>
           <Button
             variant="destructive"
             className="mb-2"
-            onClick={() => console.log("Destructive")}
+            onClick={() => console.log('Destructive')}
           >
             Destructive Button With Icon
             <Icon icon="X" className="ml-2" />
@@ -360,54 +343,54 @@ const App = () => {
             variant="destructive-primary"
             className="mb-2"
             children="Destructive Primary Button"
-            onClick={() => console.log("Primary Button (Destructive)")}
+            onClick={() => console.log('Primary Button (Destructive)')}
           />
           <Button
             variant="primary"
             disabled
             className="mb-2"
             children="Primary Button (Disabled)"
-            onClick={() => console.log("Primary Button (Disabled)")}
+            onClick={() => console.log('Primary Button (Disabled)')}
           />
           <Button
             disabled
             className="mb-2"
             children="Primary Button"
-            onClick={() => console.log("Disabled Button")}
+            onClick={() => console.log('Disabled Button')}
           />
 
           <div className="space-y-2">
             <Button
               variant="primary"
               children="Primary Button"
-              onClick={() => console.log("Primary Button")}
+              onClick={() => console.log('Primary Button')}
             />
             <Button
               variant="destructive"
               children="Destructive"
-              onClick={() => console.log("Destructive")}
+              onClick={() => console.log('Destructive')}
             />
             <Button
               variant="destructive-primary"
               children="Primary Button (Destructive)"
-              onClick={() => console.log("Primary Button (Destructive)")}
+              onClick={() => console.log('Primary Button (Destructive)')}
             />
             <Button
               variant="primary"
               disabled
               children="Primary Button (Disabled)"
-              onClick={() => console.log("Primary Button (Disabled)")}
+              onClick={() => console.log('Primary Button (Disabled)')}
             />
             <Button
               disabled
               children="Primary Button"
-              onClick={() => console.log("Disabled Button")}
+              onClick={() => console.log('Disabled Button')}
             />
           </div>
         </div>
         <div className="flex flex-col w-1/2 p-6">
           <Rule />
-          <span className="py-2">{"<Checkbox />"}</span>
+          <span className="py-2">{'<Checkbox />'}</span>
           <div className="flex items-end mt-2">
             <Checkbox
               className="mb-2"
@@ -471,7 +454,7 @@ const App = () => {
       <div className="flex">
         <div className="flex flex-col w-1/2 p-6">
           <Rule />
-          <span className="py-2">{"<RadioButton />"}</span>
+          <span className="py-2">{'<RadioButton />'}</span>
 
           <RadioButton
             className="mb-2"
@@ -545,14 +528,14 @@ const App = () => {
         </div>
         <div className="flex flex-col w-1/2 p-6">
           <Rule />
-          <span className="py-2">{"<ToggleSwitch />"}</span>
+          <span className="py-2">{'<ToggleSwitch />'}</span>
 
           <ToggleSwitch
             className="mb-2"
             selected={defaultToggleSwitchIsSelected}
             onClick={() =>
               defaultToggleSwitchIsSelectedToggle(
-                !defaultToggleSwitchIsSelected
+                !defaultToggleSwitchIsSelected,
               )
             }
           />
@@ -591,7 +574,7 @@ const App = () => {
       <div className="flex">
         <div className="flex flex-col w-1/2 p-6">
           <Rule />
-          <span className="py-2">{"<TextInput />"}</span>
+          <span className="py-2">{'<TextInput />'}</span>
 
           <div className="flex flex-col p-2">
             <label htmlFor="textinput" className="label">
@@ -619,7 +602,7 @@ const App = () => {
         </div>
         <div className="flex flex-col w-1/2 p-6">
           <Rule />
-          <span className="py-2">{"<TextArea />"}</span>
+          <span className="py-2">{'<TextArea />'}</span>
 
           <div className="flex flex-col p-2">
             <label htmlFor="textarea" className="label">
@@ -651,7 +634,7 @@ const App = () => {
       <div className="flex">
         <div className="flex flex-col w-1/2 p-6">
           <Rule />
-          <span className="py-2">{"<ManagedForm />"}</span>
+          <span className="py-2">{'<ManagedForm />'}</span>
 
           <Formik
             initialValues={initialValues}
@@ -740,7 +723,7 @@ const App = () => {
             // TODO: Enumerate icons
           }
           <Rule />
-          <span className="py-2">{"<Icon />"}</span>
+          <span className="py-2">{'<Icon />'}</span>
           <Icon color="red" icon="ArrowEast" />
           <Icon icon="ArrowWest" />
           <Icon icon="ArrowNorth" />
@@ -770,7 +753,7 @@ const App = () => {
         <div className="flex flex-col w-1/2 p-6">
           <Rule />
           <span className="py-2">
-            {"<DisclosureBox />, <DisclosureButton />"}
+            {'<DisclosureBox />, <DisclosureButton />'}
           </span>
 
           <DisclosureButton
@@ -785,7 +768,7 @@ const App = () => {
         </div>
         <div className="flex flex-col w-1/2 p-6">
           <Rule />
-          <span className="py-2">{"<Menu />, <MenuButton />"}</span>
+          <span className="py-2">{'<Menu />, <MenuButton />'}</span>
           <div>
             <Menu>
               <MenuButton>
@@ -793,13 +776,13 @@ const App = () => {
                 <Icon icon="ChevronSouth" className="ml-2" />
               </MenuButton>
               <MenuList>
-                <MenuItem onSelect={() => console.log("Command 1")}>
+                <MenuItem onSelect={() => console.log('Command 1')}>
                   Command 1
                 </MenuItem>
-                <MenuItem onSelect={() => console.log("Command 2")}>
+                <MenuItem onSelect={() => console.log('Command 2')}>
                   Command 2
                 </MenuItem>
-                <MenuItem onSelect={() => console.log("Command 3")}>
+                <MenuItem onSelect={() => console.log('Command 3')}>
                   Command 3
                 </MenuItem>
               </MenuList>
@@ -812,7 +795,7 @@ const App = () => {
         <div className="flex flex-col w-1/2 p-6">
           <Rule />
           <span className="py-2">
-            {"<ContinuousProgressBar />, <SegmentedProgressBar />"}
+            {'<ContinuousProgressBar />, <SegmentedProgressBar />'}
           </span>
 
           <ContinuousProgressBar className="mb-2" percentage={10} />
@@ -827,7 +810,7 @@ const App = () => {
         </div>
         <div className="flex flex-col w-1/2 p-6">
           <Rule />
-          <span className="py-2">{"<LoadingSpinner />, <MenuButton />"}</span>
+          <span className="py-2">{'<LoadingSpinner />, <MenuButton />'}</span>
           <div>
             <div className="p-2">
               <LoadingSpinner />
@@ -850,7 +833,7 @@ const App = () => {
       <div className="flex">
         <div className="flex flex-col w-full p-6">
           <Rule />
-          <span className="py-2">{"<Table />, <Tr />, <Td />"}</span>
+          <span className="py-2">{'<Table />, <Tr />, <Td />'}</span>
           <table>
             <tbody>
               <tr>
@@ -883,4 +866,4 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));

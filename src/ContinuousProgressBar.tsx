@@ -1,11 +1,10 @@
-import * as React from "react";
-import classNames from "classnames";
+import * as React from 'react';
+import classNames from 'classnames';
 
-export type ContinuousProgressBarProps = React.HTMLAttributes<
-  HTMLDivElement
-> & {
-  percentage: number;
-};
+export type ContinuousProgressBarProps =
+  React.HTMLAttributes<HTMLDivElement> & {
+    percentage: number;
+  };
 
 export const ContinuousProgressBar = ({
   className,
@@ -16,14 +15,14 @@ export const ContinuousProgressBar = ({
   return (
     <div
       className={classNames(
-        "relative flex w-full h-1 bg-gray-200 rounded-lg overflow-hidden",
-        className
+        'relative flex w-full h-1 bg-gray-200 rounded-lg overflow-hidden',
+        className,
       )}
     >
       <div
         className={classNames(
-          "absolute top-0 left-0 h-full border-r border-solid bg-blue-400 transition-all duration-200",
-          percentage < 1 ? "border-transparent" : "border-white"
+          'absolute top-0 left-0 h-full border-r border-solid bg-blue-400 transition-all duration-200',
+          percentage < 1 ? 'border-transparent' : 'border-white',
         )}
         style={{ width: `${normalizedProgress}%` }}
       />
@@ -42,4 +41,4 @@ export const ContinuousProgressBar = ({
   );
 };
 
-ContinuousProgressBar.displayName = "ContinuousProgressBar";
+ContinuousProgressBar.displayName = 'ContinuousProgressBar';

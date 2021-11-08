@@ -1,6 +1,6 @@
-import * as React from "react";
-import { useField } from "formik";
-import { ToggleSwitch, ErrorLabel } from "./index";
+import * as React from 'react';
+import { useField } from 'formik';
+import { ToggleSwitch, ErrorLabel } from './index';
 
 type ManagedToggleSwitchFieldProps = React.HTMLAttributes<HTMLDivElement> & {
   caption?: string;
@@ -16,7 +16,7 @@ export const ManagedToggleSwitchField = ({
   disabled,
   ...props
 }: ManagedToggleSwitchFieldProps) => {
-  const [field, meta] = useField({ name: id, type: "checkbox" });
+  const [field, meta] = useField({ name: id, type: 'checkbox' });
   return (
     <div {...props}>
       <label htmlFor={id} className="flex cursor-pointer">

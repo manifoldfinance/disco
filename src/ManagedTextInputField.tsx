@@ -1,9 +1,9 @@
-import * as React from "react";
-import { useField } from "formik";
+import * as React from 'react';
+import { useField } from 'formik';
 
-import { StatelessTextInput } from "./StatelessTextInput";
-import { ErrorLabel } from "./ErrorLabel";
-import classNames from "classnames";
+import { StatelessTextInput } from './StatelessTextInput';
+import { ErrorLabel } from './ErrorLabel';
+import classNames from 'classnames';
 
 export type ManagedTextInputFieldProps = {
   hasError?: boolean;
@@ -35,7 +35,7 @@ export const ManagedTextInputField = ({
   const [field, meta] = useField(id);
 
   return (
-    <div className={classNames("flex flex-col", className)} {...props}>
+    <div className={classNames('flex flex-col', className)} {...props}>
       <label htmlFor={id} className="label">
         {label}
       </label>
@@ -44,8 +44,8 @@ export const ManagedTextInputField = ({
       ) : null}
       <StatelessTextInput
         id={id}
-        className={classNames((caption || label) && "mt-2", inputClass)}
-        type={type || "text"}
+        className={classNames((caption || label) && 'mt-2', inputClass)}
+        type={type || 'text'}
         disabled={disabled}
         hasError={meta.touched && meta.error !== undefined}
         placeholder={placeholder}
@@ -59,4 +59,4 @@ export const ManagedTextInputField = ({
   );
 };
 
-ManagedTextInputField.displayName = "ManagedTextInputField";
+ManagedTextInputField.displayName = 'ManagedTextInputField';

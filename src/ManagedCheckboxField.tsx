@@ -1,6 +1,6 @@
-import * as React from "react";
-import { useField } from "formik";
-import { ErrorLabel, Checkbox } from "./index";
+import * as React from 'react';
+import { useField } from 'formik';
+import { ErrorLabel, Checkbox } from './index';
 
 type ManagedCheckboxFieldProps = React.HTMLAttributes<HTMLDivElement> & {
   caption?: string;
@@ -18,7 +18,7 @@ export const ManagedCheckboxField = ({
 }: ManagedCheckboxFieldProps) => {
   const [field, meta, { setTouched }] = useField({
     name: id,
-    type: "checkbox",
+    type: 'checkbox',
   });
 
   // Chrome and Safari do not send blur events properly
@@ -27,7 +27,7 @@ export const ManagedCheckboxField = ({
       setTouched(true);
       field.onChange(e);
     },
-    [field.onChange, setTouched]
+    [field.onChange, setTouched],
   );
 
   return (

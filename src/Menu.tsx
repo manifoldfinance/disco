@@ -1,7 +1,7 @@
 import {
   Menu as ReachMenu,
   MenuProps as ReachMenuProps,
-} from "@reach/menu-button";
+} from '@reach/menu-button';
 
 export type MenuProps = ReachMenuProps;
 

@@ -1,6 +1,6 @@
-import classnames from "classnames";
-import * as React from "react";
-import { RadioButton } from "./RadioButton";
+import classnames from 'classnames';
+import * as React from 'react';
+import { RadioButton } from './RadioButton';
 
 export type StatelessRadioButtonFieldProps = {
   selected?: boolean;
@@ -21,7 +21,7 @@ export const StatelessRadioButtonField = ({
 }: StatelessRadioButtonFieldProps) => {
   return (
     <div
-      className={classnames("flex cursor-pointer", className)}
+      className={classnames('flex cursor-pointer', className)}
       onClick={onChange}
       {...props}
     >
@@ -37,4 +37,4 @@ export const StatelessRadioButtonField = ({
   );
 };
 
-StatelessRadioButtonField.displayName = "StatelessRadioButtonField";
+StatelessRadioButtonField.displayName = 'StatelessRadioButtonField';
