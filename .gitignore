@@ -1,3 +1,12 @@
 node_modules
 packages/*/node_modules
 packages/*/dist
+.DS_Store
+*.log
+*.zip
+*.tar.gz
+*.tgz
+.cache/
+coverage/
+*.next
+build/

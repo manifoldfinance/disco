@@ -1,5 +1,5 @@
-import { State, StoreApi } from 'zustand/vanilla'
-import type { EventEmitter } from 'events'
+import type { State, StoreApi } from 'zustand/vanilla'
+import type { EventEmitter } from 'node:events'
 
 export interface Web3ReactState extends State {
   chainId: number | undefined
@@ -10,10 +10,16 @@ export interface Web3ReactState extends State {
 
 export type Web3ReactStore = StoreApi<Web3ReactState>
 
+export interface Web3ReactStateUpdate {
+  chainId?: number
+  accounts?: string[]
+}
+
 export interface Actions {
   startActivation: () => void
-  update: (state: Partial<Pick<Web3ReactState, 'chainId' | 'accounts'>>) => void
+  update: (stateUpdate: Web3ReactStateUpdate) => void
   reportError: (error: Error) => void
+  reset: () => void
 }
 
 // per EIP-1193
@@ -28,13 +34,14 @@ export interface Provider extends EventEmitter {
 }
 
 export abstract class Connector {
-  protected readonly actions: Actions
   public provider: Provider | undefined
-  public deactivate?(): Promise<void>
+
+  protected readonly actions: Actions
 
   constructor(actions: Actions) {
     this.actions = actions
   }
 
-  public abstract activate(): Promise<void>
+  public abstract activate(...args: any[]): Promise<void> | void
+  public deactivate?(...args: any[]): Promise<void> | void
 }

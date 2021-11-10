@@ -1,9 +1,18 @@
 {
   "name": "@web3-react/types",
-  "version": "8.0.0-alpha.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "8.0.7-alpha.0",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "files": [
+    "./dist"
+  ],
+  "exports": {
+    "import": "./dist/index.js"
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "tsc",
@@ -11,5 +20,6 @@
   },
   "peerDependencies": {
     "zustand": "^3.5.10"
-  }
+  },
+  "gitHead": "9461726911d45849d76642bc60fec57e84234cd7"
 }

@@ -1,5 +1,5 @@
+import type { Web3ReactState, Web3ReactStore, Web3ReactStateUpdate, Actions } from '@web3-react/types'
 import create from 'zustand/vanilla'
-import { Web3ReactState, Web3ReactStore, Actions } from '@web3-react/types'
 import { getAddress } from '@ethersproject/address'
 
 function validateChainId(chainId: number): void {
@@ -11,6 +11,7 @@ function validateChainId(chainId: number): void {
 export class ChainIdNotAllowedError extends Error {
   public constructor(chainId: number, allowedChainIds: number[]) {
     super(`chainId ${chainId} not included in ${allowedChainIds}`)
+    this.name = ChainIdNotAllowedError.name
     Object.setPrototypeOf(this, ChainIdNotAllowedError.prototype)
   }
 }
@@ -43,16 +44,16 @@ export function createWeb3ReactStoreAndActions(allowedChainIds?: number[]): [Web
     store.setState({ ...DEFAULT_STATE, activating: true })
   }
 
-  function update(state: Partial<Pick<Web3ReactState, 'chainId' | 'accounts'>>) {
+  function update(stateUpdate: Web3ReactStateUpdate) {
     // validate chainId statically, independent of existing state
-    if (typeof state.chainId === 'number') {
-      validateChainId(state.chainId)
+    if (stateUpdate.chainId !== undefined) {
+      validateChainId(stateUpdate.chainId)
     }
 
     // validate accounts statically, independent of existing state
-    if (state.accounts !== undefined) {
-      for (let i = 0; i < state.accounts.length; i++) {
-        state.accounts[i] = validateAccount(state.accounts[i])
+    if (stateUpdate.accounts !== undefined) {
+      for (let i = 0; i < stateUpdate.accounts.length; i++) {
+        stateUpdate.accounts[i] = validateAccount(stateUpdate.accounts[i])
       }
     }
 
@@ -60,8 +61,8 @@ export function createWeb3ReactStoreAndActions(allowedChainIds?: number[]): [Web
       let error: Error | undefined
 
       // calculate the next chainId and accounts
-      const chainId = state.chainId ?? existingState.chainId
-      const accounts = state.accounts ?? existingState.accounts
+      const chainId = stateUpdate.chainId ?? existingState.chainId
+      const accounts = stateUpdate.accounts ?? existingState.accounts
 
       // if we have a chainId allowlist and a chainId, we need to ensure it's allowed
       if (chainId && allowedChainIds) {
@@ -83,7 +84,7 @@ export function createWeb3ReactStoreAndActions(allowedChainIds?: number[]): [Web
         error = existingState.error
         if (error) {
           // if we're here, the heuristic used to clear the error is the same as for clearing the activation flag
-          // TODO: this is fairly arbitrary, could we do more here?
+          // TODO: this is somewhat arbitrary, could we do more here?
           if (chainId && accounts) {
             error = undefined
           }
@@ -98,5 +99,9 @@ export function createWeb3ReactStoreAndActions(allowedChainIds?: number[]): [Web
     store.setState(() => ({ ...DEFAULT_STATE, error }))
   }
 
-  return [store, { startActivation, update, reportError }]
+  function reset() {
+    store.setState(DEFAULT_STATE)
+  }
+
+  return [store, { startActivation, update, reportError, reset }]
 }

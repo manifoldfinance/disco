@@ -1,14 +1,28 @@
-import { Actions, Connector, Provider } from '@web3-react/types'
+import { Connector, Actions, Provider } from '@web3-react/types'
+
+export class NoFrameError extends Error {
+  public constructor() {
+    super('Frame not installed')
+    this.name = NoFrameError.name
+    Object.setPrototypeOf(this, NoFrameError.prototype)
+  }
+}
 
 function parseChainId(chainId: string) {
   return Number.parseInt(chainId, 16)
 }
 
+interface FrameConnectorArguments {
+  infuraId?: string
+  alchemyId?: string
+  origin?: string
+}
+
 export class Frame extends Connector {
-  private readonly options?: any
+  private readonly options?: FrameConnectorArguments
   private providerPromise?: Promise<void>
 
-  constructor(actions: Actions, options?: any, connectEagerly = true) {
+  constructor(actions: Actions, options?: FrameConnectorArguments, connectEagerly = true) {
     super(actions)
     this.options = options
 
@@ -18,28 +32,34 @@ export class Frame extends Connector {
   }
 
   private async startListening(connectEagerly: boolean): Promise<void> {
-    const provider = await import('eth-provider').then((m) => m?.default ?? m)
+    const ethProvider = await import('eth-provider').then((m) => m.default)
 
-    this.provider = provider(['frame'], this.options)
+    let provider: Provider | undefined
+
+    try {
+      provider = ethProvider('frame', this.options) as Provider
+    } catch (error) {
+      this.actions.reportError(error as Error)
+    }
+
+    this.provider = provider
 
     if (this.provider) {
-      // TODO fix
-      // this.provider.on('connect', ({ chainId }: { chainId: string }): void => {
-      //   this.actions.update({ chainId: parseChainId(chainId) })
-      // })
-      // this.provider.on('disconnect', (error: Error): void => {
-      //   console.log('here', error)
-      //   this.actions.reportError(error)
-      // })
-      // this.provider.on('chainChanged', (chainId: string): void => {
-      //   this.actions.update({ chainId: parseChainId(chainId) })
-      // })
+      this.provider.on('connect', ({ chainId }: { chainId: string }): void => {
+        this.actions.update({ chainId: parseChainId(chainId) })
+      })
+      this.provider.on('disconnect', (error: Error): void => {
+        this.actions.reportError(error)
+      })
+      this.provider.on('chainChanged', (chainId: string): void => {
+        this.actions.update({ chainId: parseChainId(chainId) })
+      })
       this.provider.on('accountsChanged', (accounts: string[]): void => {
         this.actions.update({ accounts })
       })
 
       if (connectEagerly) {
-        await Promise.all([
+        return Promise.all([
           this.provider.request({ method: 'eth_chainId' }) as Promise<string>,
           this.provider.request({ method: 'eth_accounts' }) as Promise<string[]>,
         ])
@@ -62,24 +82,20 @@ export class Frame extends Connector {
       this.providerPromise = this.startListening(false)
     }
     await this.providerPromise
-    // this.provider guaranteed to be defined now
 
-    await Promise.all([
-      (this.provider as Provider).request({ method: 'eth_chainId' }) as Promise<string>,
-      (this.provider as Provider).request({ method: 'eth_requestAccounts' }) as Promise<string[]>,
-    ])
-      .then(([chainId, accounts]) => {
-        this.actions.update({ chainId: parseChainId(chainId), accounts })
-      })
-      .catch((error) => {
-        this.actions.reportError(error)
-      })
+    if (this.provider) {
+      await Promise.all([
+        this.provider.request({ method: 'eth_chainId' }) as Promise<string>,
+        this.provider.request({ method: 'eth_requestAccounts' }) as Promise<string[]>,
+      ])
+        .then(([chainId, accounts]) => {
+          this.actions.update({ chainId: Number.parseInt(chainId, 16), accounts })
+        })
+        .catch((error) => {
+          this.actions.reportError(error)
+        })
+    } else {
+      this.actions.reportError(new NoFrameError())
+    }
   }
-
-  // TODO fix
-  // public async deactivate(): Promise<void> {
-  //   if (this.provider) {
-  //     await (this.provider as any).close()
-  //   }
-  // }
 }
