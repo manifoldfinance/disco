@@ -21,6 +21,7 @@
     "lerna": "^4.0.0",
     "lerna-cli": "^5.0.1",
     "lerna-command-toc": "^2.0.0",
+    "oao": "^2.0.2",
     "prettier": "2.3.2",
     "react": "^17.0.2",
     "react-test-renderer": "^17.0.2",
@@ -28,5 +29,6 @@
     "tslib": "^2.3.1",
     "typescript": "^4.4.3",
     "zustand": "^3.5.10"
-  }
+  },
+  "version": "8.1.1"
 }

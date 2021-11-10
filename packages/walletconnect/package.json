@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "8.0.7",
+  "version": "8.1.1",
   "type": "module",
   "files": [
     "./dist"
@@ -19,7 +19,7 @@
     "start": "tsc --watch"
   },
   "dependencies": {
-    "@wwwr/types": "^8.0.7"
+    "@wwwr/types": "^8.1.1"
   },
   "peerDependencies": {
     "@walletconnect/ethereum-provider": "^1.6.5"
@@ -27,5 +27,5 @@
   "devDependencies": {
     "@walletconnect/ethereum-provider": "^1.6.5"
   },
-  "gitHead": "9461726911d45849d76642bc60fec57e84234cd7"
+  "gitHead": "6e298f83d2487fe3bf9e8763d35c83fc4f4e776a"
 }

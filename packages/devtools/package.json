@@ -1,6 +1,7 @@
 {
   "name": "@wwwr/devtools",
-  "version": "0.0.2",
+  "private": true,
+  "version": "8.1.1",
   "description": "devtools for web3 react",
   "keywords": [
     "devtools",
@@ -26,5 +27,6 @@
   "scripts": {},
   "bugs": {
     "url": "https://github.com/sambacha/w3r/issues"
-  }
+  },
+  "gitHead": "6e298f83d2487fe3bf9e8763d35c83fc4f4e776a"
 }
