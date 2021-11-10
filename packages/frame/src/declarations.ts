@@ -1,1 +1,1 @@
-declare module 'eth-provider'
+declare module 'eth-provider';

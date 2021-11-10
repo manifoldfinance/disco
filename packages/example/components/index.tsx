@@ -1,31 +1,31 @@
-import { Connector } from '@web3-react/types'
-import { connectors } from '../connectors'
-import { Web3ReactHooks } from '@web3-react/core'
-import { useEffect, useState } from 'react'
-import { BigNumber } from '@ethersproject/bignumber'
-import { formatEther } from '@ethersproject/units'
-import { Magic } from '@web3-react/magic'
-import { Network } from '@web3-react/network'
-import { WalletConnect } from '@web3-react/walletconnect'
-import { Frame } from '@web3-react/frame'
-import { MetaMask } from '@web3-react/metamask'
-import { WalletLink } from '@web3-react/walletlink'
+import { Connector } from '@web3-react/types';
+import { connectors } from '../connectors';
+import { Web3ReactHooks } from '@web3-react/core';
+import { useEffect, useState } from 'react';
+import { BigNumber } from '@ethersproject/bignumber';
+import { formatEther } from '@ethersproject/units';
+import { Magic } from '@web3-react/magic';
+import { Network } from '@web3-react/network';
+import { WalletConnect } from '@web3-react/walletconnect';
+import { Frame } from '@web3-react/frame';
+import { MetaMask } from '@web3-react/metamask';
+import { WalletLink } from '@web3-react/walletlink';
 
 function getName(connector: Connector) {
   if (connector instanceof Frame) {
-    return 'Frame (Experimental)'
+    return 'Frame (Experimental)';
   } else if (connector instanceof Magic) {
-    return 'Magic (Experimental)'
+    return 'Magic (Experimental)';
   } else if (connector instanceof MetaMask) {
-    return 'MetaMask'
+    return 'MetaMask';
   } else if (connector instanceof Network) {
-    return 'Network'
+    return 'Network';
   } else if (connector instanceof WalletConnect) {
-    return 'WalletConnect'
+    return 'WalletConnect';
   } else if (connector instanceof WalletLink) {
-    return 'WalletLink'
+    return 'WalletLink';
   } else {
-    return 'Unknown'
+    return 'Unknown';
   }
 }
 
@@ -33,14 +33,14 @@ function Status({
   connector,
   hooks: { useChainId, useAccounts, useError },
 }: {
-  connector: Connector
-  hooks: Web3ReactHooks
+  connector: Connector;
+  hooks: Web3ReactHooks;
 }) {
-  const chainId = useChainId()
-  const accounts = useAccounts()
-  const error = useError()
+  const chainId = useChainId();
+  const accounts = useAccounts();
+  const error = useError();
 
-  const connected = Boolean(chainId && accounts)
+  const connected = Boolean(chainId && accounts);
 
   return (
     <div>
@@ -56,53 +56,55 @@ function Status({
         <>⚠️ Disconnected</>
       )}
     </div>
-  )
+  );
 }
 
 function ChainId({ hooks: { useChainId } }: { hooks: Web3ReactHooks }) {
-  const chainId = useChainId()
+  const chainId = useChainId();
 
-  return <div>Chain Id: {chainId ? <b>{chainId}</b> : '-'}</div>
+  return <div>Chain Id: {chainId ? <b>{chainId}</b> : '-'}</div>;
 }
 
 function useBalances(
   provider?: ReturnType<Web3ReactHooks['useProvider']>,
-  accounts?: string[]
+  accounts?: string[],
 ): BigNumber[] | undefined {
-  const [balances, setBalances] = useState<BigNumber[] | undefined>()
+  const [balances, setBalances] = useState<BigNumber[] | undefined>();
 
   useEffect(() => {
     if (provider && accounts?.length) {
-      let stale = false
+      let stale = false;
 
-      Promise.all(accounts.map((account) => provider.getBalance(account))).then((balances) => {
-        if (!stale) {
-          setBalances(balances)
-        }
-      })
+      Promise.all(accounts.map((account) => provider.getBalance(account))).then(
+        (balances) => {
+          if (!stale) {
+            setBalances(balances);
+          }
+        },
+      );
 
       return () => {
-        stale = true
-        setBalances(undefined)
-      }
+        stale = true;
+        setBalances(undefined);
+      };
     }
-  }, [provider, accounts])
+  }, [provider, accounts]);
 
-  return balances
+  return balances;
 }
 
 function Accounts({
   useAnyNetwork,
   hooks: { useAccounts, useProvider, useENSNames },
 }: {
-  useAnyNetwork: boolean
-  hooks: Web3ReactHooks
+  useAnyNetwork: boolean;
+  hooks: Web3ReactHooks;
 }) {
-  const provider = useProvider(useAnyNetwork ? 'any' : undefined)
-  const accounts = useAccounts()
-  const ENSNames = useENSNames(provider)
+  const provider = useProvider(useAnyNetwork ? 'any' : undefined);
+  const accounts = useAccounts();
+  const ENSNames = useENSNames(provider);
 
-  const balances = useBalances(provider, accounts)
+  const balances = useBalances(provider, accounts);
 
   return (
     <div>
@@ -112,47 +114,59 @@ function Accounts({
         : accounts.length === 0
         ? ' None'
         : accounts?.map((account, i) => (
-            <ul key={account} style={{ margin: 0, overflow: 'hidden', textOverflow: 'ellipsis' }}>
+            <ul
+              key={account}
+              style={{
+                margin: 0,
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+              }}
+            >
               <b>{ENSNames?.[i] ?? account}</b>
               {balances?.[i] ? ` (Ξ${formatEther(balances[i])})` : null}
             </ul>
           ))}
     </div>
-  )
+  );
 }
 
 function Connect({
   connector,
   hooks: { useChainId, useIsActivating, useError, useIsActive },
 }: {
-  connector: Connector
-  hooks: Web3ReactHooks
+  connector: Connector;
+  hooks: Web3ReactHooks;
 }) {
-  const chainId = useChainId()
-  const isActivating = useIsActivating()
-  const error = useError()
+  const chainId = useChainId();
+  const isActivating = useIsActivating();
+  const error = useError();
 
-  const active = useIsActive()
+  const active = useIsActive();
 
-  const [activateArgs, setActivateArgs] = useState<any[]>([])
+  const [activateArgs, setActivateArgs] = useState<any[]>([]);
 
   if (error) {
     return (
       <button
         onClick={() => {
-          connector.activate()
+          connector.activate();
         }}
       >
         Try Again?
       </button>
-    )
+    );
   } else if (active) {
     return (
       <>
         {connector instanceof Network ? (
           <label>
             Network:
-            <select value={`${chainId}`} onChange={(event) => connector.activate(Number(event.target.value))}>
+            <select
+              value={`${chainId}`}
+              onChange={(event) =>
+                connector.activate(Number(event.target.value))
+              }
+            >
               <option value="1">Mainnet</option>
               <option value="3">Ropsten</option>
               <option value="4">Rinkeby</option>
@@ -166,7 +180,7 @@ function Connect({
         <button
           onClick={() => {
             if (connector.deactivate) {
-              connector.deactivate()
+              connector.deactivate();
             }
           }}
           disabled={connector.deactivate ? false : true}
@@ -174,20 +188,26 @@ function Connect({
           {connector.deactivate ? 'Disconnect' : 'Connected'}
         </button>
       </>
-    )
+    );
   } else {
     return (
       <>
         {connector instanceof Magic ? (
           <label>
             Email:{' '}
-            <input type="email" name="email" onChange={(event) => setActivateArgs([{ email: event.target.value }])} />
+            <input
+              type="email"
+              name="email"
+              onChange={(event) =>
+                setActivateArgs([{ email: event.target.value }])
+              }
+            />
           </label>
         ) : null}
         <button
           onClick={() => {
             if (!isActivating) {
-              connector.activate(...activateArgs)
+              connector.activate(...activateArgs);
             }
           }}
           disabled={isActivating ? true : false}
@@ -195,13 +215,15 @@ function Connect({
           {isActivating ? 'Connecting...' : 'Activate'}
         </button>
       </>
-    )
+    );
   }
 }
 
 export function Connectors() {
   return (
-    <div style={{ display: 'flex', flexFlow: 'wrap', fontFamily: 'sans-serif' }}>
+    <div
+      style={{ display: 'flex', flexFlow: 'wrap', fontFamily: 'sans-serif' }}
+    >
       {connectors.map(([connector, hooks], i) => (
         <div
           key={i}
@@ -221,12 +243,15 @@ export function Connectors() {
             <Status connector={connector} hooks={hooks} />
             <br />
             <ChainId hooks={hooks} />
-            <Accounts useAnyNetwork={connector instanceof WalletConnect} hooks={hooks} />
+            <Accounts
+              useAnyNetwork={connector instanceof WalletConnect}
+              hooks={hooks}
+            />
             <br />
           </div>
           <Connect connector={connector} hooks={hooks} />
         </div>
       ))}
     </div>
-  )
+  );
 }
