@@ -1,5 +1,5 @@
-import { initializeConnector } from '@web3-react/core';
-import { Frame } from '@web3-react/frame';
+import { initializeConnector } from '@wwwr/core';
+import { Frame } from '@wwwr/frame';
 
 export const [frame, hooks] = initializeConnector<Frame>(
   (actions) => new Frame(actions, undefined, false),

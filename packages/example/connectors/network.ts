@@ -1,5 +1,5 @@
-import { initializeConnector } from '@web3-react/core';
-import { Network } from '@web3-react/network';
+import { initializeConnector } from '@wwwr/core';
+import { Network } from '@wwwr/network';
 
 export const URLS = {
   1: [

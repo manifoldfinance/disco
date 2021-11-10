@@ -1,4 +1,4 @@
-import { Connector, Actions, Provider } from '@web3-react/types';
+import { Connector, Actions, Provider } from '@wwwr/types';
 
 export class NoFrameError extends Error {
   public constructor() {

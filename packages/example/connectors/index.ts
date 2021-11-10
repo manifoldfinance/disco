@@ -1,5 +1,5 @@
-import type { Web3ReactHooks } from '@web3-react/core';
-import { Connector } from '@web3-react/types';
+import type { Web3ReactHooks } from '@wwwr/core';
+import { Connector } from '@wwwr/types';
 import { network, hooks as networkHooks } from './network';
 import { metaMask, hooks as metaMaskHooks } from './metaMask';
 import { walletConnect, hooks as walletConnectHooks } from './walletConnect';

@@ -1,4 +1,4 @@
-import { Connector, Actions } from '@web3-react/types';
+import { Connector, Actions } from '@wwwr/types';
 import type {
   Magic as MagicInstance,
   MagicSDKAdditionalConfiguration,

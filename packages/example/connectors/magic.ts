@@ -1,5 +1,5 @@
-import { initializeConnector } from '@web3-react/core';
-import { Magic } from '@web3-react/magic';
+import { initializeConnector } from '@wwwr/core';
+import { Magic } from '@wwwr/magic';
 
 export const [magic, hooks] = initializeConnector<Magic>(
   (actions) =>

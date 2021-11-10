@@ -3,7 +3,7 @@ import type {
   Web3ReactStore,
   Web3ReactStateUpdate,
   Actions,
-} from '@web3-react/types';
+} from '@wwwr/types';
 import create from 'zustand/vanilla';
 import { getAddress } from '@ethersproject/address';
 

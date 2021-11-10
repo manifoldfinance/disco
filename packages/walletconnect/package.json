@@ -1,5 +1,5 @@
 {
-  "name": "@web3-react/walletconnect",
+  "name": "@wwwr/walletconnect",
   "publishConfig": {
     "access": "public"
   },
@@ -19,7 +19,7 @@
     "start": "tsc --watch"
   },
   "dependencies": {
-    "@web3-react/types": "^8.0.7-alpha.0"
+    "@wwwr/types": "^8.0.7-alpha.0"
   },
   "peerDependencies": {
     "@walletconnect/ethereum-provider": "^1.6.5"

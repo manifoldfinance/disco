@@ -1,5 +1,5 @@
 {
-  "name": "@web3-react/store",
+  "name": "@wwwr/store",
   "publishConfig": {
     "access": "public"
   },
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@ethersproject/address": "^5.4.0",
-    "@web3-react/types": "^8.0.7-alpha.0"
+    "@wwwr/types": "^8.0.7-alpha.0"
   },
   "peerDependencies": {
     "zustand": "^3.5.10"

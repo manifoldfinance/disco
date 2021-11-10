@@ -1,5 +1,5 @@
-import { createWeb3ReactStoreAndActions } from '@web3-react/store';
-import { Connector, Web3ReactState, Actions } from '@web3-react/types';
+import { createWeb3ReactStoreAndActions } from '@wwwr/store';
+import { Connector, Web3ReactState, Actions } from '@wwwr/types';
 import create, { UseStore } from 'zustand';
 import { useEffect, useMemo, useState } from 'react';
 import { Web3Provider } from '@ethersproject/providers';

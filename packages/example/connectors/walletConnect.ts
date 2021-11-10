@@ -1,5 +1,5 @@
-import { initializeConnector } from '@web3-react/core';
-import { WalletConnect } from '@web3-react/walletconnect';
+import { initializeConnector } from '@wwwr/core';
+import { WalletConnect } from '@wwwr/walletconnect';
 import { URLS } from './network';
 
 export const [walletConnect, hooks] = initializeConnector<WalletConnect>(

@@ -1,5 +1,5 @@
 {
-  "name": "@web3-react/types",
+  "name": "@wwwr/types",
   "publishConfig": {
     "access": "public"
   },

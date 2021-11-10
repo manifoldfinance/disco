@@ -1,15 +1,15 @@
-import { Connector } from '@web3-react/types';
+import { Connector } from '@wwwr/types';
 import { connectors } from '../connectors';
-import { Web3ReactHooks } from '@web3-react/core';
+import { Web3ReactHooks } from '@wwwr/core';
 import { useEffect, useState } from 'react';
 import { BigNumber } from '@ethersproject/bignumber';
 import { formatEther } from '@ethersproject/units';
-import { Magic } from '@web3-react/magic';
-import { Network } from '@web3-react/network';
-import { WalletConnect } from '@web3-react/walletconnect';
-import { Frame } from '@web3-react/frame';
-import { MetaMask } from '@web3-react/metamask';
-import { WalletLink } from '@web3-react/walletlink';
+import { Magic } from '@wwwr/magic';
+import { Network } from '@wwwr/network';
+import { WalletConnect } from '@wwwr/walletconnect';
+import { Frame } from '@wwwr/frame';
+import { MetaMask } from '@wwwr/metamask';
+import { WalletLink } from '@wwwr/walletlink';
 
 function getName(connector: Connector) {
   if (connector instanceof Frame) {
