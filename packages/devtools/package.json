@@ -1,6 +1,6 @@
 {
   "name": "@wwwr/devtools",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "devtools for web3 react",
   "keywords": [
     "devtools",
@@ -23,8 +23,7 @@
     "type": "git",
     "url": "git+https://github.com/sambacha/w3r.git"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "bugs": {
     "url": "https://github.com/sambacha/w3r/issues"
   }

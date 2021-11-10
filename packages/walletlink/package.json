@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "8.0.7-alpha.0",
+  "version": "8.0.7",
   "type": "module",
   "files": [
     "./dist"
@@ -19,7 +19,7 @@
     "start": "tsc --watch"
   },
   "dependencies": {
-    "@wwwr/types": "^8.0.7-alpha.0"
+    "@wwwr/types": "^8.0.7"
   },
   "devDependencies": {
     "walletlink": "^2.1.11"
