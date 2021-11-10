@@ -21,5 +21,14 @@
   "peerDependencies": {
     "zustand": "^3.5.10"
   },
-  "gitHead": "6e298f83d2487fe3bf9e8763d35c83fc4f4e776a"
+  "gitHead": "6e298f83d2487fe3bf9e8763d35c83fc4f4e776a",
+  "dependencies": {
+    "zustand": "^3.5.10"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "typedoc": "^0.22.8",
+    "typedoc-plugin-markdown": "^3.11.3",
+    "typescript": "^4.4.4"
+  }
 }
