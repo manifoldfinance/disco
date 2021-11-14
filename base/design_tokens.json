@@ -1,0 +1,520 @@
+{
+    "style": {
+        "color": {
+            "Tomato": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#1d1412"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#e54d2e"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#fffcfc"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#e54d2e"
+                }
+            },
+            "Red": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#1f1315"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#e5484d"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#fffcfc"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#e5484d"
+                }
+            },
+            "Crimson": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#1d1418"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#e93d82"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#fffcfd"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#e93d82"
+                }
+            },
+            "Pink": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#1f121b"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#d6409f"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#fffcfe"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#d6409f"
+                }
+            },
+            "Plum": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#1d131d"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#ab4aba"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#fefcff"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#ab4aba"
+                }
+            },
+            "Purple": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#1b141d"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#8e4ec6"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#fefcfe"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#8e4ec6"
+                }
+            },
+            "Violet": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#17151f"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#6e56cf"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#fdfcfe"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#6e56cf"
+                }
+            },
+            "Indigo": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#131620"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#3e63dd"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#fdfdfe"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#3e63dd"
+                }
+            },
+            "Blue": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#0f1720"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#0091ff"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#fbfdff"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#0091ff"
+                }
+            },
+            "Cyan": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#07191d"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#05a2c2"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#fafdfe"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#05a2c2"
+                }
+            },
+            "Teal": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#091915"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#12a594"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#fafefd"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#12a594"
+                }
+            },
+            "Green": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#0d1912"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#30a46c"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#fbfefc"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#30a46c"
+                }
+            },
+            "Grass": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#0d1912"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#46a758"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#fbfefb"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#46a758"
+                }
+            },
+            "Orange": {
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#fefcfb"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#f76808"
+                },
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#1f1206"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#f76808"
+                }
+            },
+            "Brown": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#191513"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#ad7f58"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#fefdfc"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#ad7f58"
+                }
+            },
+            "Sky": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#eaf8ff"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#68ddfd"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#003242"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#68ddfd"
+                }
+            },
+            "Mint": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#e7fcf7"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#70e1c8"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#09342e"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#70e1c8"
+                }
+            },
+            "Lime": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#effbdd"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#99d52a"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#263209"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#99d52a"
+                }
+            },
+            "Yellow": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#fffad1"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#f5d90a"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#35290f"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#f5d90a"
+                }
+            },
+            "Amber": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#fef3dd"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#ffb224"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#4e2009"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#ffb224"
+                }
+            },
+            "Gray": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#ededed"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#707070"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#171717"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#8f8f8f"
+                }
+            },
+            "Mauve": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#ededef"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#706f78"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#1a1523"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#908e96"
+                }
+            },
+            "Slate": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#ecedee"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#697177"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#11181c"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#889096"
+                }
+            },
+            "Sage": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#eceeed"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#66736d"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#111c18"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#8a918e"
+                }
+            },
+            "Olive": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#eceeec"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#687366"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#141e12"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#8b918a"
+                }
+            },
+            "Sand": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#ededec"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#717069"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#1b1b18"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#90908c"
+                }
+            },
+            "Gold": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#f7f4e7"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#978365"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#3b352b"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#978365"
+                }
+            },
+            "Bronze": {
+                " Dark ": {
+                    "type": "SOLID",
+                    "value": "#f9ede7"
+                },
+                "Dark": {
+                    "type": "SOLID",
+                    "value": "#a18072"
+                },
+                " Light ": {
+                    "type": "SOLID",
+                    "value": "#43302b"
+                },
+                "Light": {
+                    "type": "SOLID",
+                    "value": "#a18072"
+                }
+            },
+            "Overlays": {
+                "BlackA": {
+                    "type": "SOLID",
+                    "value": "#000000"
+                },
+                "WhiteA": {
+                    "type": "SOLID",
+                    "value": "#ffffff"
+                }
+            }
+        }
+    }
+}

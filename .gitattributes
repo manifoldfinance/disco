@@ -1,0 +1,12 @@
+/.yarn/releases/** binary
+/.yarn/plugins/** binary
+
+git-hash export-subst
+
+*.sh text eol=lf
+git_ssh text eol=lf
+repo text eol=lf
+hooks/* text eol=lf
+
+
+ockfile.tar lockable

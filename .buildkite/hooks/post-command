@@ -1,0 +1,6 @@
+#!/bin/bash -ue
+
+if [[ -n $MAKE_CLEANUP_TARGET ]]; then
+	echo "~~~ Running cleanup command"
+	pushd $BUILDPIPE_PROJECT_PATH && make clean && popd
+fi
