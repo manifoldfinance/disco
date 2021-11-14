@@ -1,0 +1,14 @@
+{
+  "version": "independent",
+  "packages": [
+    "packages/*"
+  ],
+  "ignoreChanges": ["**/*.md", "**/*.spec.ts"],
+  "npmClient": "npm",
+  "version": "independent",
+  "command": {
+    "bootstrap": {
+      "hoist": true
+    }
+  }
+}

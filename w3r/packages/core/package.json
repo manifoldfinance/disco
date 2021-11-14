@@ -1,0 +1,34 @@
+{
+  "name": "@wwwr/core",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "8.1.1",
+  "type": "module",
+  "files": [
+    "./dist"
+  ],
+  "exports": {
+    "import": "./dist/index.js"
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "tsc",
+    "start": "tsc --watch"
+  },
+  "dependencies": {
+    "@wwwr/store": "^8.1.1",
+    "@wwwr/types": "^8.1.1"
+  },
+  "peerDependencies": {
+    "@ethersproject/providers": "^5.4.5",
+    "react": ">=16.8",
+    "zustand": "^3.5.10"
+  },
+  "devDependencies": {
+    "@ethersproject/providers": "^5.4.5"
+  },
+  "gitHead": "6e298f83d2487fe3bf9e8763d35c83fc4f4e776a"
+}
