@@ -1,0 +1,9 @@
+dist/
+*.d.ts
+*.js
+*.min.js
+*.cjs
+*.html
+build/
+*.esm
+
