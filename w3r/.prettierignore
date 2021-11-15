@@ -1,3 +1,4 @@
+*.json
 dist/
 *.js
 *.min.js
@@ -8,3 +9,7 @@ dist/
 *.spec
 *.test
 *.d.ts
+*.lock
+*
+!*.ts
+!*.tsx

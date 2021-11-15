@@ -1,3 +1,4 @@
+*.json
 dist/
 *.d.ts
 *.js
@@ -6,4 +7,5 @@ dist/
 *.html
 build/
 *.esm
+*.lock
 
