@@ -12,6 +12,11 @@
     "clean": "lerna clean --yes",
     "prepack": "yarn build"
   },
+ "repository": {
+    "type": "git",
+    "url": "https://github.com/manifoldfinance/web3disco",
+    "directory": "w3r"
+ },
   "devDependencies": {
     "@testing-library/react-hooks": "^7.0.2",
     "@types/jest": "^27.0.2",
