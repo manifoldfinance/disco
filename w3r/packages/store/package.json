@@ -9,7 +9,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/manifoldfinance/web3disco",
-    "directory": "w3r/packages/walletconnect"
+    "directory": "w3r/packages/store"
   },
   "bugs": {
     "url": "https://github.com/manifoldfinance/web3disco/issues"
