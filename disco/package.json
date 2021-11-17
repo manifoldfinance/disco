@@ -1,6 +1,6 @@
 {
   "name": "disco-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -12,6 +12,11 @@
     "reset": "rm -rf node_modules package-lock.json && npm install",
     "format": "prettier --write ./src/*",
     "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manifoldfinance/web3disco",
+    "directory": "disco"
   },
   "license": "MIT",
   "dependencies": {
@@ -40,7 +45,6 @@
     "copyfiles": "^2.4.1",
     "esbuild": "^0.12.17",
     "formik": "^2.1.5",
-    "husky": "^4.2.5",
     "nightwind": "^1.1.12",
     "postcss": "^8.3.6",
     "postcss-import": "^14.0.2",
@@ -50,10 +54,5 @@
     "tailwindcss-theming": "^3.0.0-beta.3",
     "typescript": "^4.3.2",
     "vite": "^2.4.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
   }
 }

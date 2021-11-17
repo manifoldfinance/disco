@@ -5,9 +5,24 @@
   },
   "version": "8.1.1",
   "type": "module",
-  "files": [
-    "./dist"
-  ],
+  "files": ["./dist"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manifoldfinance/web3disco",
+    "directory": "w3r/packages/store"
+  },
+  "bugs": {
+    "url": "https://github.com/manifoldfinance/web3disco/issues"
+  },
+  "directories": {
+    "src": "src",
+    "test": "__tests__",
+    "dist": "dist"
+  },
+  "homepage": "https://github.com/manifoldfinance/web3disco#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     "import": "./dist/index.js"
   },

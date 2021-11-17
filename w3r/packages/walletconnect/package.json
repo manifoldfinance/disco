@@ -5,9 +5,25 @@
   },
   "version": "8.1.1",
   "type": "module",
-  "files": [
-    "./dist"
-  ],
+  "files": ["./dist"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manifoldfinance/web3disco",
+    "directory": "w3r/packages/walletconnect"
+  },
+  "bugs": {
+    "url": "https://github.com/manifoldfinance/web3disco/issues"
+  },
+  "directories": {
+    "src": "src",
+    "test": "__tests__",
+    "dist": "dist"
+  },
+  "homepage": "https://github.com/manifoldfinance/web3disco#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": ["./dist"],
   "exports": {
     "import": "./dist/index.js"
   },

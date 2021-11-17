@@ -3,18 +3,19 @@
   "version": "1.0.0",
   "description": "Injected Web3 Provider",
   "author": "sam bacha <sam@manifoldfinance.com>",
-  "homepage": "https://github.com/manifoldfinance/discoweb3#readme",
+  "homepage": "https://github.com/manifoldfinance/web3disco#readme",
   "directories": {
     "src": "src",
     "test": "__tests__",
     "dist": "dist"
   },
-  "repository": {
+ "repository": {
     "type": "git",
-    "url": "git+https://github.com/manifoldfinance/discoweb3.git"
+    "url": "https://github.com/manifoldfinance/web3disco",
+    "directory": "w3r/packages/injected-provider"
   },
   "bugs": {
-    "url": "https://github.com/manifoldfinance/discoweb3/issues"
+    "url": "https://github.com/manifoldfinance/web3disco/issues"
   },
   "main": "dist/index.js",
   "module": "dist/injected-connector.esm.js",
