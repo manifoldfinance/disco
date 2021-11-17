@@ -1,0 +1,17 @@
+{
+  "name": "web3disco",
+  "version": "0.0.0",
+  "description": "web3 disco",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manifoldfinance/web3disco.git"
+  },
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/manifoldfinance/web3disco/issues"
+  },
+  "homepage": "https://github.com/manifoldfinance/web3disco#readme"
+}
