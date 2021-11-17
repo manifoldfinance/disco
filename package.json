@@ -1,10 +1,10 @@
 {
-  "name": "web3disco",
+  "name": "@disco3/monorepo",
+  "private": true,
   "version": "0.0.0",
   "description": "web3 disco",
-  "main": "index.js",
-  "scripts": {
-  },
+  "files": ["**/dist/**/*"],
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/manifoldfinance/web3disco.git"
@@ -13,5 +13,8 @@
   "bugs": {
     "url": "https://github.com/manifoldfinance/web3disco/issues"
   },
+  "keywords": [],
+  "author": "SEE CONTRIBUTORS",
+  "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/manifoldfinance/web3disco#readme"
 }
