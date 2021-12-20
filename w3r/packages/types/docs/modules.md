@@ -24,7 +24,8 @@
 
 ### Web3ReactStore
 
-Ƭ **Web3ReactStore**: `StoreApi`<[`Web3ReactState`](interfaces/Web3ReactState.md)\>
+Ƭ **Web3ReactStore**:
+`StoreApi`<[`Web3ReactState`](interfaces/Web3ReactState.md)\>
 
 #### Defined in
 

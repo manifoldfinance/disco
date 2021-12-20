@@ -19,7 +19,7 @@
 
 #### Parameters
 
-| Name | Type |
+| Name    | Type    |
 | :------ | :------ |
 | `error` | `Error` |
 
@@ -31,7 +31,7 @@
 
 [src/index.ts:21](https://github.com/sambacha/w3r/blob/ec0b730/packages/types/src/index.ts#L21)
 
-___
+---
 
 ### reset
 
@@ -45,7 +45,7 @@ ___
 
 [src/index.ts:22](https://github.com/sambacha/w3r/blob/ec0b730/packages/types/src/index.ts#L22)
 
-___
+---
 
 ### startActivation
 
@@ -59,7 +59,7 @@ ___
 
 [src/index.ts:19](https://github.com/sambacha/w3r/blob/ec0b730/packages/types/src/index.ts#L19)
 
-___
+---
 
 ### update
 
@@ -67,8 +67,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name          | Type                                              |
+| :------------ | :------------------------------------------------ |
 | `stateUpdate` | [`Web3ReactStateUpdate`](Web3ReactStateUpdate.md) |
 
 #### Returns

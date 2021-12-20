@@ -3,6 +3,7 @@
 Warning: pre-alpha code!
 
 Tasks:
+
 - Other Connectors
   - WalletLink
   - WalletConnect V2
@@ -22,7 +23,8 @@ Tasks:
 - `yarn bootstrap`
 - `yarn start`
 
-In addition to compiling each package in watch mode, this will also spin up an example app on [http://localhost:3000/](http://localhost:3000/).
+In addition to compiling each package in watch mode, this will also spin up an
+example app on [http://localhost:3000/](http://localhost:3000/).
 
 ## Useful Commands
 
@@ -34,7 +36,8 @@ In addition to compiling each package in watch mode, this will also spin up an e
 
 - Delete the relevant `package.json` entry
 
-Because of a [lerna bug](https://github.com/lerna/lerna/issues/1883), it's not possible to prune `yarn.lock` programmatically, so regenerate it manually:
+Because of a [lerna bug](https://github.com/lerna/lerna/issues/1883), it's not
+possible to prune `yarn.lock` programmatically, so regenerate it manually:
 
 - `rm -f packages/<SUBPACKAGE>/yarn.lock`
 - `yarn clean --scope SUBPACKAGE`

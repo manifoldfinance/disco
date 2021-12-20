@@ -27,7 +27,7 @@
 
 [src/index.ts:6](https://github.com/sambacha/w3r/blob/ec0b730/packages/types/src/index.ts#L6)
 
-___
+---
 
 ### activating
 
@@ -37,7 +37,7 @@ ___
 
 [src/index.ts:7](https://github.com/sambacha/w3r/blob/ec0b730/packages/types/src/index.ts#L7)
 
-___
+---
 
 ### chainId
 
@@ -47,7 +47,7 @@ ___
 
 [src/index.ts:5](https://github.com/sambacha/w3r/blob/ec0b730/packages/types/src/index.ts#L5)
 
-___
+---
 
 ### error
 

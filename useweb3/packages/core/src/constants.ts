@@ -8,7 +8,7 @@ const _visited = '&:visited';
 const _even = '&:nth-of-type(even)';
 const _odd = '&:nth-of-type(odd)';
 const _disabled =
-    '&:disabled, &:disabled:focus, &:disabled:hover, &[aria-disabled=true], &[aria-disabled=true]:focus, &[aria-disabled=true]:hover';
+  '&:disabled, &:disabled:focus, &:disabled:hover, &[aria-disabled=true], &[aria-disabled=true]:focus, &[aria-disabled=true]:hover';
 const _checked = '&[aria-checked=true]';
 const _mixed = '&[aria-checked=mixed]';
 const _selected = '&[aria-selected=true]';

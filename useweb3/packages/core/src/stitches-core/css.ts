@@ -3492,9 +3492,8 @@ export interface StandardShorthandProperties {
 }
 
 export interface StandardProperties
-    extends StandardLonghandProperties,
-        StandardShorthandProperties {
-}
+  extends StandardLonghandProperties,
+    StandardShorthandProperties {}
 
 export interface SvgProperties {
   alignmentBaseline?: Property.AlignmentBaseline;
@@ -3559,8 +3558,7 @@ export interface SvgProperties {
   writingMode?: Property.WritingMode;
 }
 
-export interface Properties extends StandardProperties, SvgProperties {
-}
+export interface Properties extends StandardProperties, SvgProperties {}
 
 export interface StandardLonghandPropertiesHyphen {
   /**
@@ -7031,9 +7029,8 @@ export interface StandardShorthandPropertiesHyphen {
 }
 
 export interface StandardPropertiesHyphen
-    extends StandardLonghandPropertiesHyphen,
-        StandardShorthandPropertiesHyphen {
-}
+  extends StandardLonghandPropertiesHyphen,
+    StandardShorthandPropertiesHyphen {}
 
 export interface SvgPropertiesHyphen {
   'alignment-baseline'?: Property.AlignmentBaseline;
@@ -7098,8 +7095,9 @@ export interface SvgPropertiesHyphen {
   'writing-mode'?: Property.WritingMode;
 }
 
-export interface PropertiesHyphen extends StandardPropertiesHyphen, SvgPropertiesHyphen {
-}
+export interface PropertiesHyphen
+  extends StandardPropertiesHyphen,
+    SvgPropertiesHyphen {}
 
 export type StandardLonghandPropertiesFallback = {
   [P in keyof StandardLonghandProperties]:
@@ -7114,16 +7112,16 @@ export type StandardShorthandPropertiesFallback = {
 };
 
 export interface StandardPropertiesFallback
-    extends StandardLonghandPropertiesFallback,
-        StandardShorthandPropertiesFallback {
-}
+  extends StandardLonghandPropertiesFallback,
+    StandardShorthandPropertiesFallback {}
 
 export type SvgPropertiesFallback = {
   [P in keyof SvgProperties]: SvgProperties[P] | SvgProperties[P][];
 };
 
-export interface PropertiesFallback extends StandardPropertiesFallback, SvgPropertiesFallback {
-}
+export interface PropertiesFallback
+  extends StandardPropertiesFallback,
+    SvgPropertiesFallback {}
 
 export type StandardLonghandPropertiesHyphenFallback = {
   [P in keyof StandardLonghandPropertiesHyphen]:
@@ -7138,593 +7136,593 @@ export type StandardShorthandPropertiesHyphenFallback = {
 };
 
 export interface StandardPropertiesHyphenFallback
-    extends StandardLonghandPropertiesHyphenFallback,
-        StandardShorthandPropertiesHyphenFallback {
-}
+  extends StandardLonghandPropertiesHyphenFallback,
+    StandardShorthandPropertiesHyphenFallback {}
 
 export type SvgPropertiesHyphenFallback = {
-  [P in keyof SvgPropertiesHyphen]: SvgPropertiesHyphen[P] | SvgPropertiesHyphen[P][];
+  [P in keyof SvgPropertiesHyphen]:
+    | SvgPropertiesHyphen[P]
+    | SvgPropertiesHyphen[P][];
 };
 
 export interface PropertiesHyphenFallback
-    extends StandardPropertiesHyphenFallback,
-        SvgPropertiesHyphenFallback {
-}
+  extends StandardPropertiesHyphenFallback,
+    SvgPropertiesHyphenFallback {}
 
 export type AtRules =
-    | '@charset'
-    | '@counter-style'
-    | '@document'
-    | '@font-face'
-    | '@font-feature-values'
-    | '@import'
-    | '@keyframes'
-    | '@media'
-    | '@namespace'
-    | '@page'
-    | '@property'
-    | '@supports'
-    | '@viewport';
+  | '@charset'
+  | '@counter-style'
+  | '@document'
+  | '@font-face'
+  | '@font-feature-values'
+  | '@import'
+  | '@keyframes'
+  | '@media'
+  | '@namespace'
+  | '@page'
+  | '@property'
+  | '@supports'
+  | '@viewport';
 
 export type AdvancedPseudos =
-    | '&::cue('
-    | '&::cue-region('
-    | '&::part('
-    | '&::slotted('
-    | '&:dir('
-    | '&:has('
-    | '&:host('
-    | '&:host-context('
-    | '&:is('
-    | '&:lang('
-    | '&:not('
-    | '&:nth-child('
-    | '&:nth-last-child('
-    | '&:nth-last-of-type('
-    | '&:nth-of-type('
-    | '&:where(';
+  | '&::cue('
+  | '&::cue-region('
+  | '&::part('
+  | '&::slotted('
+  | '&:dir('
+  | '&:has('
+  | '&:host('
+  | '&:host-context('
+  | '&:is('
+  | '&:lang('
+  | '&:not('
+  | '&:nth-child('
+  | '&:nth-last-child('
+  | '&:nth-last-of-type('
+  | '&:nth-of-type('
+  | '&:where(';
 
 export type SimplePseudos =
-    | '&::after'
-    | '&::backdrop'
-    | '&::before'
-    | '&::cue'
-    | '&::cue-region'
-    | '&::first-letter'
-    | '&::first-line'
-    | '&::grammar-error'
-    | '&::marker'
-    | '&::placeholder'
-    | '&::selection'
-    | '&::spelling-error'
-    | '&::target-text'
-    | '&:active'
-    | '&:after'
-    | '&:any-link'
-    | '&:before'
-    | '&:blank'
-    | '&:checked'
-    | '&:current'
-    | '&:default'
-    | '&:defined'
-    | '&:disabled'
-    | '&:empty'
-    | '&:enabled'
-    | '&:first'
-    | '&:first-child'
-    | '&:first-letter'
-    | '&:first-line'
-    | '&:first-of-type'
-    | '&:focus'
-    | '&:focus-visible'
-    | '&:focus-within'
-    | '&:fullscreen'
-    | '&:future'
-    | '&:hover'
-    | '&:in-range'
-    | '&:indeterminate'
-    | '&:invalid'
-    | '&:last-child'
-    | '&:last-of-type'
-    | '&:left'
-    | '&:link'
-    | '&:local-link'
-    | '&:nth-col'
-    | '&:nth-last-col'
-    | '&:only-child'
-    | '&:only-of-type'
-    | '&:optional'
-    | '&:out-of-range'
-    | '&:past'
-    | '&:paused'
-    | '&:picture-in-picture'
-    | '&:placeholder-shown'
-    | '&:read-only'
-    | '&:read-write'
-    | '&:required'
-    | '&:right'
-    | '&:root'
-    | '&:scope'
-    | '&:target'
-    | '&:target-within'
-    | '&:user-invalid'
-    | '&:user-valid'
-    | '&:valid'
-    | '&:visited';
+  | '&::after'
+  | '&::backdrop'
+  | '&::before'
+  | '&::cue'
+  | '&::cue-region'
+  | '&::first-letter'
+  | '&::first-line'
+  | '&::grammar-error'
+  | '&::marker'
+  | '&::placeholder'
+  | '&::selection'
+  | '&::spelling-error'
+  | '&::target-text'
+  | '&:active'
+  | '&:after'
+  | '&:any-link'
+  | '&:before'
+  | '&:blank'
+  | '&:checked'
+  | '&:current'
+  | '&:default'
+  | '&:defined'
+  | '&:disabled'
+  | '&:empty'
+  | '&:enabled'
+  | '&:first'
+  | '&:first-child'
+  | '&:first-letter'
+  | '&:first-line'
+  | '&:first-of-type'
+  | '&:focus'
+  | '&:focus-visible'
+  | '&:focus-within'
+  | '&:fullscreen'
+  | '&:future'
+  | '&:hover'
+  | '&:in-range'
+  | '&:indeterminate'
+  | '&:invalid'
+  | '&:last-child'
+  | '&:last-of-type'
+  | '&:left'
+  | '&:link'
+  | '&:local-link'
+  | '&:nth-col'
+  | '&:nth-last-col'
+  | '&:only-child'
+  | '&:only-of-type'
+  | '&:optional'
+  | '&:out-of-range'
+  | '&:past'
+  | '&:paused'
+  | '&:picture-in-picture'
+  | '&:placeholder-shown'
+  | '&:read-only'
+  | '&:read-write'
+  | '&:required'
+  | '&:right'
+  | '&:root'
+  | '&:scope'
+  | '&:target'
+  | '&:target-within'
+  | '&:user-invalid'
+  | '&:user-valid'
+  | '&:valid'
+  | '&:visited';
 
 export type Pseudos = AdvancedPseudos | SimplePseudos;
 
 export type HtmlAttributes =
-    | '[abbr]'
-    | '[accept-charset]'
-    | '[accept]'
-    | '[accesskey]'
-    | '[action]'
-    | '[align]'
-    | '[alink]'
-    | '[allow]'
-    | '[allowfullscreen]'
-    | '[allowpaymentrequest]'
-    | '[alt]'
-    | '[archive]'
-    | '[async]'
-    | '[autobuffer]'
-    | '[autocapitalize]'
-    | '[autocomplete]'
-    | '[autofocus]'
-    | '[autoplay]'
-    | '[axis]'
-    | '[background]'
-    | '[behavior]'
-    | '[bgcolor]'
-    | '[border]'
-    | '[bottommargin]'
-    | '[buffered]'
-    | '[cellpadding]'
-    | '[cellspacing]'
-    | '[char]'
-    | '[charoff]'
-    | '[charset]'
-    | '[checked]'
-    | '[cite]'
-    | '[class]'
-    | '[classid]'
-    | '[clear]'
-    | '[code]'
-    | '[codebase]'
-    | '[codetype]'
-    | '[color]'
-    | '[cols]'
-    | '[colspan]'
-    | '[command]'
-    | '[compact]'
-    | '[content]'
-    | '[contenteditable]'
-    | '[contextmenu]'
-    | '[controls]'
-    | '[coords]'
-    | '[crossorigin]'
-    | '[data]'
-    | '[datafld]'
-    | '[datasrc]'
-    | '[datetime]'
-    | '[declare]'
-    | '[decoding]'
-    | '[default]'
-    | '[defer]'
-    | '[dir]'
-    | '[direction]'
-    | '[dirname]'
-    | '[disabled]'
-    | '[download]'
-    | '[draggable]'
-    | '[enctype]'
-    | '[enterkeyhint]'
-    | '[exportparts]'
-    | '[face]'
-    | '[for]'
-    | '[form]'
-    | '[formaction]'
-    | '[formenctype]'
-    | '[formmethod]'
-    | '[formnovalidate]'
-    | '[formtarget]'
-    | '[frame]'
-    | '[frameborder]'
-    | '[headers]'
-    | '[height]'
-    | '[hidden]'
-    | '[high]'
-    | '[href]'
-    | '[hreflang]'
-    | '[hspace]'
-    | '[http-equiv]'
-    | '[icon]'
-    | '[id]'
-    | '[imagesizes]'
-    | '[imagesrcset]'
-    | '[inputmode]'
-    | '[integrity]'
-    | '[intrinsicsize]'
-    | '[is]'
-    | '[ismap]'
-    | '[itemid]'
-    | '[itemprop]'
-    | '[itemref]'
-    | '[itemscope]'
-    | '[itemtype]'
-    | '[kind]'
-    | '[label]'
-    | '[lang]'
-    | '[language]'
-    | '[leftmargin]'
-    | '[link]'
-    | '[loading]'
-    | '[longdesc]'
-    | '[loop]'
-    | '[low]'
-    | '[manifest]'
-    | '[marginheight]'
-    | '[marginwidth]'
-    | '[max]'
-    | '[maxlength]'
-    | '[mayscript]'
-    | '[media]'
-    | '[method]'
-    | '[methods]'
-    | '[min]'
-    | '[minlength]'
-    | '[moz-opaque]'
-    | '[mozallowfullscreen]'
-    | '[mozcurrentsampleoffset]'
-    | '[msallowfullscreen]'
-    | '[multiple]'
-    | '[muted]'
-    | '[name]'
-    | '[nohref]'
-    | '[nomodule]'
-    | '[nonce]'
-    | '[noresize]'
-    | '[noshade]'
-    | '[novalidate]'
-    | '[nowrap]'
-    | '[object]'
-    | '[onafterprint]'
-    | '[onbeforeprint]'
-    | '[onbeforeunload]'
-    | '[onblur]'
-    | '[onerror]'
-    | '[onfocus]'
-    | '[onhashchange]'
-    | '[onlanguagechange]'
-    | '[onload]'
-    | '[onmessage]'
-    | '[onoffline]'
-    | '[ononline]'
-    | '[onpopstate]'
-    | '[onredo]'
-    | '[onresize]'
-    | '[onstorage]'
-    | '[onundo]'
-    | '[onunload]'
-    | '[open]'
-    | '[optimum]'
-    | '[part]'
-    | '[ping]'
-    | '[placeholder]'
-    | '[played]'
-    | '[poster]'
-    | '[prefetch]'
-    | '[preload]'
-    | '[profile]'
-    | '[prompt]'
-    | '[radiogroup]'
-    | '[readonly]'
-    | '[referrerPolicy]'
-    | '[referrerpolicy]'
-    | '[rel]'
-    | '[required]'
-    | '[rev]'
-    | '[reversed]'
-    | '[rightmargin]'
-    | '[rows]'
-    | '[rowspan]'
-    | '[rules]'
-    | '[sandbox-allow-downloads]'
-    | '[sandbox-allow-modals]'
-    | '[sandbox-allow-popups-to-escape-sandbox]'
-    | '[sandbox-allow-popups]'
-    | '[sandbox-allow-presentation]'
-    | '[sandbox-allow-same-origin]'
-    | '[sandbox-allow-storage-access-by-user-activation]'
-    | '[sandbox-allow-top-navigation-by-user-activation]'
-    | '[sandbox]'
-    | '[scope]'
-    | '[scoped]'
-    | '[scrollamount]'
-    | '[scrolldelay]'
-    | '[scrolling]'
-    | '[selected]'
-    | '[shape]'
-    | '[size]'
-    | '[sizes]'
-    | '[slot]'
-    | '[span]'
-    | '[spellcheck]'
-    | '[src]'
-    | '[srcdoc]'
-    | '[srclang]'
-    | '[srcset]'
-    | '[standby]'
-    | '[start]'
-    | '[style]'
-    | '[summary]'
-    | '[tabindex]'
-    | '[target]'
-    | '[text]'
-    | '[title]'
-    | '[topmargin]'
-    | '[translate]'
-    | '[truespeed]'
-    | '[type]'
-    | '[usemap]'
-    | '[valign]'
-    | '[value]'
-    | '[valuetype]'
-    | '[version]'
-    | '[vlink]'
-    | '[volume]'
-    | '[vspace]'
-    | '[webkitallowfullscreen]'
-    | '[width]'
-    | '[wrap]'
-    | '[xmlns]';
+  | '[abbr]'
+  | '[accept-charset]'
+  | '[accept]'
+  | '[accesskey]'
+  | '[action]'
+  | '[align]'
+  | '[alink]'
+  | '[allow]'
+  | '[allowfullscreen]'
+  | '[allowpaymentrequest]'
+  | '[alt]'
+  | '[archive]'
+  | '[async]'
+  | '[autobuffer]'
+  | '[autocapitalize]'
+  | '[autocomplete]'
+  | '[autofocus]'
+  | '[autoplay]'
+  | '[axis]'
+  | '[background]'
+  | '[behavior]'
+  | '[bgcolor]'
+  | '[border]'
+  | '[bottommargin]'
+  | '[buffered]'
+  | '[cellpadding]'
+  | '[cellspacing]'
+  | '[char]'
+  | '[charoff]'
+  | '[charset]'
+  | '[checked]'
+  | '[cite]'
+  | '[class]'
+  | '[classid]'
+  | '[clear]'
+  | '[code]'
+  | '[codebase]'
+  | '[codetype]'
+  | '[color]'
+  | '[cols]'
+  | '[colspan]'
+  | '[command]'
+  | '[compact]'
+  | '[content]'
+  | '[contenteditable]'
+  | '[contextmenu]'
+  | '[controls]'
+  | '[coords]'
+  | '[crossorigin]'
+  | '[data]'
+  | '[datafld]'
+  | '[datasrc]'
+  | '[datetime]'
+  | '[declare]'
+  | '[decoding]'
+  | '[default]'
+  | '[defer]'
+  | '[dir]'
+  | '[direction]'
+  | '[dirname]'
+  | '[disabled]'
+  | '[download]'
+  | '[draggable]'
+  | '[enctype]'
+  | '[enterkeyhint]'
+  | '[exportparts]'
+  | '[face]'
+  | '[for]'
+  | '[form]'
+  | '[formaction]'
+  | '[formenctype]'
+  | '[formmethod]'
+  | '[formnovalidate]'
+  | '[formtarget]'
+  | '[frame]'
+  | '[frameborder]'
+  | '[headers]'
+  | '[height]'
+  | '[hidden]'
+  | '[high]'
+  | '[href]'
+  | '[hreflang]'
+  | '[hspace]'
+  | '[http-equiv]'
+  | '[icon]'
+  | '[id]'
+  | '[imagesizes]'
+  | '[imagesrcset]'
+  | '[inputmode]'
+  | '[integrity]'
+  | '[intrinsicsize]'
+  | '[is]'
+  | '[ismap]'
+  | '[itemid]'
+  | '[itemprop]'
+  | '[itemref]'
+  | '[itemscope]'
+  | '[itemtype]'
+  | '[kind]'
+  | '[label]'
+  | '[lang]'
+  | '[language]'
+  | '[leftmargin]'
+  | '[link]'
+  | '[loading]'
+  | '[longdesc]'
+  | '[loop]'
+  | '[low]'
+  | '[manifest]'
+  | '[marginheight]'
+  | '[marginwidth]'
+  | '[max]'
+  | '[maxlength]'
+  | '[mayscript]'
+  | '[media]'
+  | '[method]'
+  | '[methods]'
+  | '[min]'
+  | '[minlength]'
+  | '[moz-opaque]'
+  | '[mozallowfullscreen]'
+  | '[mozcurrentsampleoffset]'
+  | '[msallowfullscreen]'
+  | '[multiple]'
+  | '[muted]'
+  | '[name]'
+  | '[nohref]'
+  | '[nomodule]'
+  | '[nonce]'
+  | '[noresize]'
+  | '[noshade]'
+  | '[novalidate]'
+  | '[nowrap]'
+  | '[object]'
+  | '[onafterprint]'
+  | '[onbeforeprint]'
+  | '[onbeforeunload]'
+  | '[onblur]'
+  | '[onerror]'
+  | '[onfocus]'
+  | '[onhashchange]'
+  | '[onlanguagechange]'
+  | '[onload]'
+  | '[onmessage]'
+  | '[onoffline]'
+  | '[ononline]'
+  | '[onpopstate]'
+  | '[onredo]'
+  | '[onresize]'
+  | '[onstorage]'
+  | '[onundo]'
+  | '[onunload]'
+  | '[open]'
+  | '[optimum]'
+  | '[part]'
+  | '[ping]'
+  | '[placeholder]'
+  | '[played]'
+  | '[poster]'
+  | '[prefetch]'
+  | '[preload]'
+  | '[profile]'
+  | '[prompt]'
+  | '[radiogroup]'
+  | '[readonly]'
+  | '[referrerPolicy]'
+  | '[referrerpolicy]'
+  | '[rel]'
+  | '[required]'
+  | '[rev]'
+  | '[reversed]'
+  | '[rightmargin]'
+  | '[rows]'
+  | '[rowspan]'
+  | '[rules]'
+  | '[sandbox-allow-downloads]'
+  | '[sandbox-allow-modals]'
+  | '[sandbox-allow-popups-to-escape-sandbox]'
+  | '[sandbox-allow-popups]'
+  | '[sandbox-allow-presentation]'
+  | '[sandbox-allow-same-origin]'
+  | '[sandbox-allow-storage-access-by-user-activation]'
+  | '[sandbox-allow-top-navigation-by-user-activation]'
+  | '[sandbox]'
+  | '[scope]'
+  | '[scoped]'
+  | '[scrollamount]'
+  | '[scrolldelay]'
+  | '[scrolling]'
+  | '[selected]'
+  | '[shape]'
+  | '[size]'
+  | '[sizes]'
+  | '[slot]'
+  | '[span]'
+  | '[spellcheck]'
+  | '[src]'
+  | '[srcdoc]'
+  | '[srclang]'
+  | '[srcset]'
+  | '[standby]'
+  | '[start]'
+  | '[style]'
+  | '[summary]'
+  | '[tabindex]'
+  | '[target]'
+  | '[text]'
+  | '[title]'
+  | '[topmargin]'
+  | '[translate]'
+  | '[truespeed]'
+  | '[type]'
+  | '[usemap]'
+  | '[valign]'
+  | '[value]'
+  | '[valuetype]'
+  | '[version]'
+  | '[vlink]'
+  | '[volume]'
+  | '[vspace]'
+  | '[webkitallowfullscreen]'
+  | '[width]'
+  | '[wrap]'
+  | '[xmlns]';
 
 export type SvgAttributes =
-    | '[accent-height]'
-    | '[alignment-baseline]'
-    | '[allowReorder]'
-    | '[alphabetic]'
-    | '[animation]'
-    | '[arabic-form]'
-    | '[ascent]'
-    | '[attributeName]'
-    | '[attributeType]'
-    | '[azimuth]'
-    | '[baseFrequency]'
-    | '[baseProfile]'
-    | '[baseline-shift]'
-    | '[bbox]'
-    | '[bias]'
-    | '[by]'
-    | '[calcMode]'
-    | '[cap-height]'
-    | '[class]'
-    | '[clip-path]'
-    | '[clip-rule]'
-    | '[clipPathUnits]'
-    | '[clip]'
-    | '[color-interpolation-filters]'
-    | '[color-interpolation]'
-    | '[color-profile]'
-    | '[color-rendering]'
-    | '[color]'
-    | '[contentScriptType]'
-    | '[contentStyleType]'
-    | '[cursor]'
-    | '[cx]'
-    | '[cy]'
-    | '[d]'
-    | '[descent]'
-    | '[diffuseConstant]'
-    | '[direction]'
-    | '[display]'
-    | '[divisor]'
-    | '[document]'
-    | '[dominant-baseline]'
-    | '[download]'
-    | '[dur]'
-    | '[dx]'
-    | '[dy]'
-    | '[edgeMode]'
-    | '[elevation]'
-    | '[enable-background]'
-    | '[externalResourcesRequired]'
-    | '[fill-opacity]'
-    | '[fill-rule]'
-    | '[fill]'
-    | '[filterRes]'
-    | '[filterUnits]'
-    | '[filter]'
-    | '[flood-color]'
-    | '[flood-opacity]'
-    | '[font-family]'
-    | '[font-size-adjust]'
-    | '[font-size]'
-    | '[font-stretch]'
-    | '[font-style]'
-    | '[font-variant]'
-    | '[font-weight]'
-    | '[format]'
-    | '[fr]'
-    | '[from]'
-    | '[fx]'
-    | '[fy]'
-    | '[g1]'
-    | '[g2]'
-    | '[global]'
-    | '[glyph-name]'
-    | '[glyph-orientation-horizontal]'
-    | '[glyph-orientation-vertical]'
-    | '[glyphRef]'
-    | '[gradientTransform]'
-    | '[gradientUnits]'
-    | '[graphical]'
-    | '[hanging]'
-    | '[hatchContentUnits]'
-    | '[hatchUnits]'
-    | '[height]'
-    | '[horiz-adv-x]'
-    | '[horiz-origin-x]'
-    | '[horiz-origin-y]'
-    | '[href]'
-    | '[hreflang]'
-    | '[id]'
-    | '[ideographic]'
-    | '[image-rendering]'
-    | '[in2]'
-    | '[in]'
-    | '[k1]'
-    | '[k2]'
-    | '[k3]'
-    | '[k4]'
-    | '[k]'
-    | '[kernelMatrix]'
-    | '[kernelUnitLength]'
-    | '[kerning]'
-    | '[keyPoints]'
-    | '[lang]'
-    | '[lengthAdjust]'
-    | '[letter-spacing]'
-    | '[lighting-color]'
-    | '[limitingConeAngle]'
-    | '[local]'
-    | '[marker-end]'
-    | '[marker-mid]'
-    | '[marker-start]'
-    | '[markerHeight]'
-    | '[markerUnits]'
-    | '[markerWidth]'
-    | '[maskContentUnits]'
-    | '[maskUnits]'
-    | '[mask]'
-    | '[mathematical]'
-    | '[media]'
-    | '[mode]'
-    | '[name]'
-    | '[numOctaves]'
-    | '[offset]'
-    | '[opacity]'
-    | '[operator]'
-    | '[order]'
-    | '[orient]'
-    | '[orientation]'
-    | '[origin]'
-    | '[overflow]'
-    | '[overline-position]'
-    | '[overline-thickness]'
-    | '[paint-order]'
-    | '[panose-1]'
-    | '[path]'
-    | '[patternContentUnits]'
-    | '[patternTransform]'
-    | '[patternUnits]'
-    | '[ping]'
-    | '[pitch]'
-    | '[pointer-events]'
-    | '[pointsAtX]'
-    | '[pointsAtY]'
-    | '[pointsAtZ]'
-    | '[points]'
-    | '[preserveAlpha]'
-    | '[preserveAspectRatio]'
-    | '[primitiveUnits]'
-    | '[r]'
-    | '[radius]'
-    | '[refX]'
-    | '[refY]'
-    | '[referrerPolicy]'
-    | '[rel]'
-    | '[rendering-intent]'
-    | '[repeatCount]'
-    | '[requiredExtensions]'
-    | '[requiredFeatures]'
-    | '[rotate]'
-    | '[rx]'
-    | '[ry]'
-    | '[scale]'
-    | '[seed]'
-    | '[shape-rendering]'
-    | '[side]'
-    | '[slope]'
-    | '[solid-color]'
-    | '[solid-opacity]'
-    | '[spacing]'
-    | '[specularConstant]'
-    | '[specularExponent]'
-    | '[spreadMethod]'
-    | '[startOffset]'
-    | '[stdDeviation]'
-    | '[stemh]'
-    | '[stemv]'
-    | '[stitchTiles]'
-    | '[stop-color]'
-    | '[stop-opacity]'
-    | '[strikethrough-position]'
-    | '[strikethrough-thickness]'
-    | '[string]'
-    | '[stroke-dasharray]'
-    | '[stroke-dashoffset]'
-    | '[stroke-linecap]'
-    | '[stroke-linejoin]'
-    | '[stroke-miterlimit]'
-    | '[stroke-opacity]'
-    | '[stroke-width]'
-    | '[stroke]'
-    | '[style]'
-    | '[surfaceScale]'
-    | '[systemLanguage]'
-    | '[tabindex]'
-    | '[targetX]'
-    | '[targetY]'
-    | '[target]'
-    | '[text-anchor]'
-    | '[text-decoration]'
-    | '[text-overflow]'
-    | '[text-rendering]'
-    | '[textLength]'
-    | '[title]'
-    | '[to]'
-    | '[transform-origin]'
-    | '[transform]'
-    | '[type]'
-    | '[u1]'
-    | '[u2]'
-    | '[underline-position]'
-    | '[underline-thickness]'
-    | '[unicode-bidi]'
-    | '[unicode-range]'
-    | '[unicode]'
-    | '[units-per-em]'
-    | '[v-alphabetic]'
-    | '[v-hanging]'
-    | '[v-ideographic]'
-    | '[v-mathematical]'
-    | '[values]'
-    | '[vector-effect]'
-    | '[version]'
-    | '[vert-adv-y]'
-    | '[vert-origin-x]'
-    | '[vert-origin-y]'
-    | '[viewBox]'
-    | '[viewTarget]'
-    | '[visibility]'
-    | '[white-space]'
-    | '[width]'
-    | '[widths]'
-    | '[word-spacing]'
-    | '[writing-mode]'
-    | '[x-height]'
-    | '[x1]'
-    | '[x2]'
-    | '[xChannelSelector]'
-    | '[x]'
-    | '[y1]'
-    | '[y2]'
-    | '[yChannelSelector]'
-    | '[y]'
-    | '[z]'
-    | '[zoomAndPan]';
+  | '[accent-height]'
+  | '[alignment-baseline]'
+  | '[allowReorder]'
+  | '[alphabetic]'
+  | '[animation]'
+  | '[arabic-form]'
+  | '[ascent]'
+  | '[attributeName]'
+  | '[attributeType]'
+  | '[azimuth]'
+  | '[baseFrequency]'
+  | '[baseProfile]'
+  | '[baseline-shift]'
+  | '[bbox]'
+  | '[bias]'
+  | '[by]'
+  | '[calcMode]'
+  | '[cap-height]'
+  | '[class]'
+  | '[clip-path]'
+  | '[clip-rule]'
+  | '[clipPathUnits]'
+  | '[clip]'
+  | '[color-interpolation-filters]'
+  | '[color-interpolation]'
+  | '[color-profile]'
+  | '[color-rendering]'
+  | '[color]'
+  | '[contentScriptType]'
+  | '[contentStyleType]'
+  | '[cursor]'
+  | '[cx]'
+  | '[cy]'
+  | '[d]'
+  | '[descent]'
+  | '[diffuseConstant]'
+  | '[direction]'
+  | '[display]'
+  | '[divisor]'
+  | '[document]'
+  | '[dominant-baseline]'
+  | '[download]'
+  | '[dur]'
+  | '[dx]'
+  | '[dy]'
+  | '[edgeMode]'
+  | '[elevation]'
+  | '[enable-background]'
+  | '[externalResourcesRequired]'
+  | '[fill-opacity]'
+  | '[fill-rule]'
+  | '[fill]'
+  | '[filterRes]'
+  | '[filterUnits]'
+  | '[filter]'
+  | '[flood-color]'
+  | '[flood-opacity]'
+  | '[font-family]'
+  | '[font-size-adjust]'
+  | '[font-size]'
+  | '[font-stretch]'
+  | '[font-style]'
+  | '[font-variant]'
+  | '[font-weight]'
+  | '[format]'
+  | '[fr]'
+  | '[from]'
+  | '[fx]'
+  | '[fy]'
+  | '[g1]'
+  | '[g2]'
+  | '[global]'
+  | '[glyph-name]'
+  | '[glyph-orientation-horizontal]'
+  | '[glyph-orientation-vertical]'
+  | '[glyphRef]'
+  | '[gradientTransform]'
+  | '[gradientUnits]'
+  | '[graphical]'
+  | '[hanging]'
+  | '[hatchContentUnits]'
+  | '[hatchUnits]'
+  | '[height]'
+  | '[horiz-adv-x]'
+  | '[horiz-origin-x]'
+  | '[horiz-origin-y]'
+  | '[href]'
+  | '[hreflang]'
+  | '[id]'
+  | '[ideographic]'
+  | '[image-rendering]'
+  | '[in2]'
+  | '[in]'
+  | '[k1]'
+  | '[k2]'
+  | '[k3]'
+  | '[k4]'
+  | '[k]'
+  | '[kernelMatrix]'
+  | '[kernelUnitLength]'
+  | '[kerning]'
+  | '[keyPoints]'
+  | '[lang]'
+  | '[lengthAdjust]'
+  | '[letter-spacing]'
+  | '[lighting-color]'
+  | '[limitingConeAngle]'
+  | '[local]'
+  | '[marker-end]'
+  | '[marker-mid]'
+  | '[marker-start]'
+  | '[markerHeight]'
+  | '[markerUnits]'
+  | '[markerWidth]'
+  | '[maskContentUnits]'
+  | '[maskUnits]'
+  | '[mask]'
+  | '[mathematical]'
+  | '[media]'
+  | '[mode]'
+  | '[name]'
+  | '[numOctaves]'
+  | '[offset]'
+  | '[opacity]'
+  | '[operator]'
+  | '[order]'
+  | '[orient]'
+  | '[orientation]'
+  | '[origin]'
+  | '[overflow]'
+  | '[overline-position]'
+  | '[overline-thickness]'
+  | '[paint-order]'
+  | '[panose-1]'
+  | '[path]'
+  | '[patternContentUnits]'
+  | '[patternTransform]'
+  | '[patternUnits]'
+  | '[ping]'
+  | '[pitch]'
+  | '[pointer-events]'
+  | '[pointsAtX]'
+  | '[pointsAtY]'
+  | '[pointsAtZ]'
+  | '[points]'
+  | '[preserveAlpha]'
+  | '[preserveAspectRatio]'
+  | '[primitiveUnits]'
+  | '[r]'
+  | '[radius]'
+  | '[refX]'
+  | '[refY]'
+  | '[referrerPolicy]'
+  | '[rel]'
+  | '[rendering-intent]'
+  | '[repeatCount]'
+  | '[requiredExtensions]'
+  | '[requiredFeatures]'
+  | '[rotate]'
+  | '[rx]'
+  | '[ry]'
+  | '[scale]'
+  | '[seed]'
+  | '[shape-rendering]'
+  | '[side]'
+  | '[slope]'
+  | '[solid-color]'
+  | '[solid-opacity]'
+  | '[spacing]'
+  | '[specularConstant]'
+  | '[specularExponent]'
+  | '[spreadMethod]'
+  | '[startOffset]'
+  | '[stdDeviation]'
+  | '[stemh]'
+  | '[stemv]'
+  | '[stitchTiles]'
+  | '[stop-color]'
+  | '[stop-opacity]'
+  | '[strikethrough-position]'
+  | '[strikethrough-thickness]'
+  | '[string]'
+  | '[stroke-dasharray]'
+  | '[stroke-dashoffset]'
+  | '[stroke-linecap]'
+  | '[stroke-linejoin]'
+  | '[stroke-miterlimit]'
+  | '[stroke-opacity]'
+  | '[stroke-width]'
+  | '[stroke]'
+  | '[style]'
+  | '[surfaceScale]'
+  | '[systemLanguage]'
+  | '[tabindex]'
+  | '[targetX]'
+  | '[targetY]'
+  | '[target]'
+  | '[text-anchor]'
+  | '[text-decoration]'
+  | '[text-overflow]'
+  | '[text-rendering]'
+  | '[textLength]'
+  | '[title]'
+  | '[to]'
+  | '[transform-origin]'
+  | '[transform]'
+  | '[type]'
+  | '[u1]'
+  | '[u2]'
+  | '[underline-position]'
+  | '[underline-thickness]'
+  | '[unicode-bidi]'
+  | '[unicode-range]'
+  | '[unicode]'
+  | '[units-per-em]'
+  | '[v-alphabetic]'
+  | '[v-hanging]'
+  | '[v-ideographic]'
+  | '[v-mathematical]'
+  | '[values]'
+  | '[vector-effect]'
+  | '[version]'
+  | '[vert-adv-y]'
+  | '[vert-origin-x]'
+  | '[vert-origin-y]'
+  | '[viewBox]'
+  | '[viewTarget]'
+  | '[visibility]'
+  | '[white-space]'
+  | '[width]'
+  | '[widths]'
+  | '[word-spacing]'
+  | '[writing-mode]'
+  | '[x-height]'
+  | '[x1]'
+  | '[x2]'
+  | '[xChannelSelector]'
+  | '[x]'
+  | '[y1]'
+  | '[y2]'
+  | '[yChannelSelector]'
+  | '[y]'
+  | '[z]'
+  | '[zoomAndPan]';
 
 export type Globals = 'inherit' | 'initial' | 'revert' | 'unset';
 
@@ -7738,28 +7736,33 @@ export type OnlyStringNumeric = (number | string) & OnlyObject;
 
 export namespace Property {
   export type AlignContent =
-      | DataType.ContentDistribution
-      | DataType.ContentPosition
-      | 'baseline'
-      | 'normal'
-      | OnlyString;
+    | DataType.ContentDistribution
+    | DataType.ContentPosition
+    | 'baseline'
+    | 'normal'
+    | OnlyString;
 
-  export type AlignItems = DataType.SelfPosition | 'baseline' | 'normal' | 'stretch' | OnlyString;
+  export type AlignItems =
+    | DataType.SelfPosition
+    | 'baseline'
+    | 'normal'
+    | 'stretch'
+    | OnlyString;
 
   export type AlignSelf =
-      | DataType.SelfPosition
-      | 'auto'
-      | 'baseline'
-      | 'normal'
-      | 'stretch'
-      | OnlyString;
+    | DataType.SelfPosition
+    | 'auto'
+    | 'baseline'
+    | 'normal'
+    | 'stretch'
+    | OnlyString;
 
   export type AlignTracks =
-      | DataType.ContentDistribution
-      | DataType.ContentPosition
-      | 'baseline'
-      | 'normal'
-      | OnlyString;
+    | DataType.ContentDistribution
+    | DataType.ContentPosition
+    | 'baseline'
+    | 'normal'
+    | OnlyString;
 
   export type All = never;
 
@@ -7767,7 +7770,9 @@ export namespace Property {
 
   export type AnimationDelay = never | OnlyString;
 
-  export type AnimationDirection = DataType.SingleAnimationDirection | OnlyString;
+  export type AnimationDirection =
+    | DataType.SingleAnimationDirection
+    | OnlyString;
 
   export type AnimationDuration = never | OnlyString;
 
@@ -7781,24 +7786,29 @@ export namespace Property {
 
   export type AnimationTimingFunction = DataType.EasingFunction | OnlyString;
 
-  export type Appearance = DataType.CompatAuto | 'auto' | 'menulist-button' | 'none' | 'textfield';
+  export type Appearance =
+    | DataType.CompatAuto
+    | 'auto'
+    | 'menulist-button'
+    | 'none'
+    | 'textfield';
 
   export type AspectRatio = 'auto' | OnlyString;
 
   export type Azimuth =
-      | 'behind'
-      | 'center'
-      | 'center-left'
-      | 'center-right'
-      | 'far-left'
-      | 'far-right'
-      | 'left'
-      | 'left-side'
-      | 'leftwards'
-      | 'right'
-      | 'right-side'
-      | 'rightwards'
-      | OnlyString;
+    | 'behind'
+    | 'center'
+    | 'center-left'
+    | 'center-right'
+    | 'far-left'
+    | 'far-right'
+    | 'left'
+    | 'left-side'
+    | 'leftwards'
+    | 'right'
+    | 'right-side'
+    | 'rightwards'
+    | OnlyString;
 
   export type BackdropFilter = 'none' | OnlyString;
 
@@ -7821,20 +7831,20 @@ export namespace Property {
   export type BackgroundPosition = DataType.BgPosition | OnlyString;
 
   export type BackgroundPositionX =
-      | 'center'
-      | 'left'
-      | 'right'
-      | 'x-end'
-      | 'x-start'
-      | OnlyStringNumeric;
+    | 'center'
+    | 'left'
+    | 'right'
+    | 'x-end'
+    | 'x-start'
+    | OnlyStringNumeric;
 
   export type BackgroundPositionY =
-      | 'bottom'
-      | 'center'
-      | 'top'
-      | 'y-end'
-      | 'y-start'
-      | OnlyStringNumeric;
+    | 'bottom'
+    | 'center'
+    | 'top'
+    | 'y-end'
+    | 'y-start'
+    | OnlyStringNumeric;
 
   export type BackgroundRepeat = DataType.RepeatStyle | OnlyString;
 
@@ -7843,25 +7853,33 @@ export namespace Property {
   export type BlockOverflow = 'clip' | 'ellipsis' | OnlyString;
 
   export type BlockSize =
-      | number
-      | 'auto'
-      | 'stretch'
-      | 'fit-content'
-      | 'max-content'
-      | 'min-content'
-      | OnlyString;
+    | number
+    | 'auto'
+    | 'stretch'
+    | 'fit-content'
+    | 'max-content'
+    | 'min-content'
+    | OnlyString;
 
-  export type Border = DataType.LineWidth | DataType.LineStyle | DataType.Color | OnlyString;
+  export type Border =
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
-  export type BorderBlock = DataType.LineWidth | DataType.LineStyle | DataType.Color | OnlyString;
+  export type BorderBlock =
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
   export type BorderBlockColor = DataType.Color | OnlyString;
 
   export type BorderBlockEnd =
-      | DataType.LineWidth
-      | DataType.LineStyle
-      | DataType.Color
-      | OnlyString;
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
   export type BorderBlockEndColor = DataType.Color;
 
@@ -7870,10 +7888,10 @@ export namespace Property {
   export type BorderBlockEndWidth = DataType.LineWidth;
 
   export type BorderBlockStart =
-      | DataType.LineWidth
-      | DataType.LineStyle
-      | DataType.Color
-      | OnlyString;
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
   export type BorderBlockStartColor = DataType.Color;
 
@@ -7885,7 +7903,11 @@ export namespace Property {
 
   export type BorderBlockWidth = DataType.LineWidth;
 
-  export type BorderBottom = DataType.LineWidth | DataType.LineStyle | DataType.Color | OnlyString;
+  export type BorderBottom =
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
   export type BorderBottomColor = DataType.Color;
 
@@ -7905,11 +7927,22 @@ export namespace Property {
 
   export type BorderEndStartRadius = OnlyStringNumeric;
 
-  export type BorderImage = 'none' | 'repeat' | 'round' | 'space' | 'stretch' | OnlyStringNumeric;
+  export type BorderImage =
+    | 'none'
+    | 'repeat'
+    | 'round'
+    | 'space'
+    | 'stretch'
+    | OnlyStringNumeric;
 
   export type BorderImageOutset = OnlyStringNumeric;
 
-  export type BorderImageRepeat = 'repeat' | 'round' | 'space' | 'stretch' | OnlyString;
+  export type BorderImageRepeat =
+    | 'repeat'
+    | 'round'
+    | 'space'
+    | 'stretch'
+    | OnlyString;
 
   export type BorderImageSlice = OnlyStringNumeric;
 
@@ -7917,15 +7950,19 @@ export namespace Property {
 
   export type BorderImageWidth = 'auto' | OnlyStringNumeric;
 
-  export type BorderInline = DataType.LineWidth | DataType.LineStyle | DataType.Color | OnlyString;
+  export type BorderInline =
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
   export type BorderInlineColor = DataType.Color | OnlyString;
 
   export type BorderInlineEnd =
-      | DataType.LineWidth
-      | DataType.LineStyle
-      | DataType.Color
-      | OnlyString;
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
   export type BorderInlineEndColor = DataType.Color;
 
@@ -7934,10 +7971,10 @@ export namespace Property {
   export type BorderInlineEndWidth = DataType.LineWidth;
 
   export type BorderInlineStart =
-      | DataType.LineWidth
-      | DataType.LineStyle
-      | DataType.Color
-      | OnlyString;
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
   export type BorderInlineStartColor = DataType.Color;
 
@@ -7949,7 +7986,11 @@ export namespace Property {
 
   export type BorderInlineWidth = DataType.LineWidth;
 
-  export type BorderLeft = DataType.LineWidth | DataType.LineStyle | DataType.Color | OnlyString;
+  export type BorderLeft =
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
   export type BorderLeftColor = DataType.Color;
 
@@ -7959,7 +8000,11 @@ export namespace Property {
 
   export type BorderRadius = OnlyStringNumeric;
 
-  export type BorderRight = DataType.LineWidth | DataType.LineStyle | DataType.Color | OnlyString;
+  export type BorderRight =
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
   export type BorderRightColor = DataType.Color;
 
@@ -7975,7 +8020,11 @@ export namespace Property {
 
   export type BorderStyle = DataType.LineStyle | OnlyString;
 
-  export type BorderTop = DataType.LineWidth | DataType.LineStyle | DataType.Color | OnlyString;
+  export type BorderTop =
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
   export type BorderTopColor = DataType.Color;
 
@@ -8005,7 +8054,12 @@ export namespace Property {
 
   export type BoxOrdinalGroup = OnlyNumber;
 
-  export type BoxOrient = 'block-axis' | 'horizontal' | 'inherit' | 'inline-axis' | 'vertical';
+  export type BoxOrient =
+    | 'block-axis'
+    | 'horizontal'
+    | 'inherit'
+    | 'inline-axis'
+    | 'vertical';
 
   export type BoxPack = 'center' | 'end' | 'justify' | 'start';
 
@@ -8014,50 +8068,61 @@ export namespace Property {
   export type BoxSizing = 'border-box' | 'content-box';
 
   export type BreakAfter =
-      | 'all'
-      | 'always'
-      | 'auto'
-      | 'avoid'
-      | 'avoid-column'
-      | 'avoid-page'
-      | 'avoid-region'
-      | 'column'
-      | 'left'
-      | 'page'
-      | 'recto'
-      | 'region'
-      | 'right'
-      | 'verso';
+    | 'all'
+    | 'always'
+    | 'auto'
+    | 'avoid'
+    | 'avoid-column'
+    | 'avoid-page'
+    | 'avoid-region'
+    | 'column'
+    | 'left'
+    | 'page'
+    | 'recto'
+    | 'region'
+    | 'right'
+    | 'verso';
 
   export type BreakBefore =
-      | 'all'
-      | 'always'
-      | 'auto'
-      | 'avoid'
-      | 'avoid-column'
-      | 'avoid-page'
-      | 'avoid-region'
-      | 'column'
-      | 'left'
-      | 'page'
-      | 'recto'
-      | 'region'
-      | 'right'
-      | 'verso';
+    | 'all'
+    | 'always'
+    | 'auto'
+    | 'avoid'
+    | 'avoid-column'
+    | 'avoid-page'
+    | 'avoid-region'
+    | 'column'
+    | 'left'
+    | 'page'
+    | 'recto'
+    | 'region'
+    | 'right'
+    | 'verso';
 
-  export type BreakInside = 'auto' | 'avoid' | 'avoid-column' | 'avoid-page' | 'avoid-region';
+  export type BreakInside =
+    | 'auto'
+    | 'avoid'
+    | 'avoid-column'
+    | 'avoid-page'
+    | 'avoid-region';
 
   export type CaptionSide =
-      | 'block-end'
-      | 'block-start'
-      | 'bottom'
-      | 'inline-end'
-      | 'inline-start'
-      | 'top';
+    | 'block-end'
+    | 'block-start'
+    | 'bottom'
+    | 'inline-end'
+    | 'inline-start'
+    | 'top';
 
   export type CaretColor = DataType.Color | 'auto';
 
-  export type Clear = 'both' | 'inline-end' | 'inline-start' | 'left' | 'none' | 'right';
+  export type Clear =
+    | 'both'
+    | 'inline-end'
+    | 'inline-start'
+    | 'left'
+    | 'none'
+    | 'right';
 
   export type Clip = 'auto' | OnlyString;
 
@@ -8067,7 +8132,12 @@ export namespace Property {
 
   export type ColorAdjust = 'economy' | 'exact';
 
-  export type ColorScheme = 'dark' | 'light' | 'light dark' | 'normal' | OnlyString;
+  export type ColorScheme =
+    | 'dark'
+    | 'light'
+    | 'light dark'
+    | 'normal'
+    | OnlyString;
 
   export type ColumnCount = 'auto' | OnlyNumber;
 
@@ -8075,7 +8145,11 @@ export namespace Property {
 
   export type ColumnGap = 'normal' | OnlyStringNumeric;
 
-  export type ColumnRule = DataType.LineWidth | DataType.LineStyle | DataType.Color | OnlyString;
+  export type ColumnRule =
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
   export type ColumnRuleColor = DataType.Color;
 
@@ -8090,14 +8164,14 @@ export namespace Property {
   export type Columns = 'auto' | OnlyStringNumeric;
 
   export type Contain =
-      | 'content'
-      | 'layout'
-      | 'none'
-      | 'paint'
-      | 'size'
-      | 'strict'
-      | 'style'
-      | OnlyString;
+    | 'content'
+    | 'layout'
+    | 'none'
+    | 'paint'
+    | 'size'
+    | 'strict'
+    | 'style'
+    | OnlyString;
 
   export type Content = DataType.ContentList | 'none' | 'normal' | OnlyString;
 
@@ -8110,91 +8184,95 @@ export namespace Property {
   export type CounterSet = 'none' | OnlyString;
 
   export type Cursor =
-      | 'alias'
-      | 'all-scroll'
-      | 'auto'
-      | 'cell'
-      | 'col-resize'
-      | 'context-menu'
-      | 'copy'
-      | 'crosshair'
-      | 'default'
-      | 'e-resize'
-      | 'ew-resize'
-      | 'grab'
-      | 'grabbing'
-      | 'help'
-      | 'move'
-      | 'n-resize'
-      | 'ne-resize'
-      | 'nesw-resize'
-      | 'no-drop'
-      | 'none'
-      | 'not-allowed'
-      | 'ns-resize'
-      | 'nw-resize'
-      | 'nwse-resize'
-      | 'pointer'
-      | 'progress'
-      | 'row-resize'
-      | 's-resize'
-      | 'se-resize'
-      | 'sw-resize'
-      | 'text'
-      | 'vertical-text'
-      | 'w-resize'
-      | 'wait'
-      | 'zoom-in'
-      | 'zoom-out'
-      | OnlyString;
+    | 'alias'
+    | 'all-scroll'
+    | 'auto'
+    | 'cell'
+    | 'col-resize'
+    | 'context-menu'
+    | 'copy'
+    | 'crosshair'
+    | 'default'
+    | 'e-resize'
+    | 'ew-resize'
+    | 'grab'
+    | 'grabbing'
+    | 'help'
+    | 'move'
+    | 'n-resize'
+    | 'ne-resize'
+    | 'nesw-resize'
+    | 'no-drop'
+    | 'none'
+    | 'not-allowed'
+    | 'ns-resize'
+    | 'nw-resize'
+    | 'nwse-resize'
+    | 'pointer'
+    | 'progress'
+    | 'row-resize'
+    | 's-resize'
+    | 'se-resize'
+    | 'sw-resize'
+    | 'text'
+    | 'vertical-text'
+    | 'w-resize'
+    | 'wait'
+    | 'zoom-in'
+    | 'zoom-out'
+    | OnlyString;
 
   export type Direction = 'ltr' | 'rtl';
 
   export type Display =
-      | DataType.DisplayOutside
-      | DataType.DisplayInside
-      | DataType.DisplayInternal
-      | DataType.DisplayLegacy
-      | 'contents'
-      | 'list-item'
-      | 'none'
-      | OnlyString;
+    | DataType.DisplayOutside
+    | DataType.DisplayInside
+    | DataType.DisplayInternal
+    | DataType.DisplayLegacy
+    | 'contents'
+    | 'list-item'
+    | 'none'
+    | OnlyString;
 
   export type EmptyCells = 'hide' | 'show';
 
   export type Filter = 'none' | OnlyString;
 
   export type Flex =
-      | 'auto'
-      | 'content'
-      | 'stretch'
-      | 'fit-content'
-      | 'max-content'
-      | 'min-content'
-      | 'none'
-      | OnlyStringNumeric;
+    | 'auto'
+    | 'content'
+    | 'stretch'
+    | 'fit-content'
+    | 'max-content'
+    | 'min-content'
+    | 'none'
+    | OnlyStringNumeric;
 
   export type FlexBasis =
-      | number
-      | 'auto'
-      | 'content'
-      | 'stretch'
-      | 'fit-content'
-      | 'max-content'
-      | 'min-content'
-      | OnlyString;
+    | number
+    | 'auto'
+    | 'content'
+    | 'stretch'
+    | 'fit-content'
+    | 'max-content'
+    | 'min-content'
+    | OnlyString;
 
-  export type FlexDirection = 'column' | 'column-reverse' | 'row' | 'row-reverse';
+  export type FlexDirection =
+    | 'column'
+    | 'column-reverse'
+    | 'row'
+    | 'row-reverse';
 
   export type FlexFlow =
-      | 'column'
-      | 'column-reverse'
-      | 'nowrap'
-      | 'row'
-      | 'row-reverse'
-      | 'wrap'
-      | 'wrap-reverse'
-      | OnlyString;
+    | 'column'
+    | 'column-reverse'
+    | 'nowrap'
+    | 'row'
+    | 'row-reverse'
+    | 'wrap'
+    | 'wrap-reverse'
+    | OnlyString;
 
   export type FlexGrow = OnlyStringNumeric;
 
@@ -8205,13 +8283,13 @@ export namespace Property {
   export type Float = 'inline-end' | 'inline-start' | 'left' | 'none' | 'right';
 
   export type Font =
-      | 'caption'
-      | 'icon'
-      | 'menu'
-      | 'message-box'
-      | 'small-caption'
-      | 'status-bar'
-      | OnlyString;
+    | 'caption'
+    | 'icon'
+    | 'menu'
+    | 'message-box'
+    | 'small-caption'
+    | 'status-bar'
+    | OnlyString;
 
   export type FontFamily = DataType.GenericFamily | OnlyString;
 
@@ -8223,11 +8301,20 @@ export namespace Property {
 
   export type FontOpticalSizing = 'auto' | 'none';
 
-  export type FontSize = DataType.AbsoluteSize | 'larger' | 'smaller' | OnlyStringNumeric;
+  export type FontSize =
+    | DataType.AbsoluteSize
+    | 'larger'
+    | 'smaller'
+    | OnlyStringNumeric;
 
   export type FontSizeAdjust = 'none' | OnlyNumber;
 
-  export type FontSmooth = DataType.AbsoluteSize | number | 'always' | 'auto' | 'never';
+  export type FontSmooth =
+    | DataType.AbsoluteSize
+    | number
+    | 'always'
+    | 'auto'
+    | 'never';
 
   export type FontStretch = DataType.FontStretchAbsolute;
 
@@ -8236,80 +8323,83 @@ export namespace Property {
   export type FontSynthesis = 'none' | 'style' | 'weight' | OnlyString;
 
   export type FontVariant =
-      | DataType.EastAsianVariantValues
-      | 'all-petite-caps'
-      | 'all-small-caps'
-      | 'common-ligatures'
-      | 'contextual'
-      | 'diagonal-fractions'
-      | 'discretionary-ligatures'
-      | 'full-width'
-      | 'historical-forms'
-      | 'historical-ligatures'
-      | 'lining-nums'
-      | 'no-common-ligatures'
-      | 'no-contextual'
-      | 'no-discretionary-ligatures'
-      | 'no-historical-ligatures'
-      | 'none'
-      | 'normal'
-      | 'oldstyle-nums'
-      | 'ordinal'
-      | 'petite-caps'
-      | 'proportional-nums'
-      | 'proportional-width'
-      | 'ruby'
-      | 'slashed-zero'
-      | 'small-caps'
-      | 'stacked-fractions'
-      | 'tabular-nums'
-      | 'titling-caps'
-      | 'unicase'
-      | OnlyString;
+    | DataType.EastAsianVariantValues
+    | 'all-petite-caps'
+    | 'all-small-caps'
+    | 'common-ligatures'
+    | 'contextual'
+    | 'diagonal-fractions'
+    | 'discretionary-ligatures'
+    | 'full-width'
+    | 'historical-forms'
+    | 'historical-ligatures'
+    | 'lining-nums'
+    | 'no-common-ligatures'
+    | 'no-contextual'
+    | 'no-discretionary-ligatures'
+    | 'no-historical-ligatures'
+    | 'none'
+    | 'normal'
+    | 'oldstyle-nums'
+    | 'ordinal'
+    | 'petite-caps'
+    | 'proportional-nums'
+    | 'proportional-width'
+    | 'ruby'
+    | 'slashed-zero'
+    | 'small-caps'
+    | 'stacked-fractions'
+    | 'tabular-nums'
+    | 'titling-caps'
+    | 'unicase'
+    | OnlyString;
 
-  export type FontVariantAlternates = 'historical-forms' | 'normal' | OnlyString;
+  export type FontVariantAlternates =
+    | 'historical-forms'
+    | 'normal'
+    | OnlyString;
 
   export type FontVariantCaps =
-      | 'all-petite-caps'
-      | 'all-small-caps'
-      | 'normal'
-      | 'petite-caps'
-      | 'small-caps'
-      | 'titling-caps'
-      | 'unicase';
+    | 'all-petite-caps'
+    | 'all-small-caps'
+    | 'normal'
+    | 'petite-caps'
+    | 'small-caps'
+    | 'titling-caps'
+    | 'unicase';
 
   export type FontVariantEastAsian =
-      | DataType.EastAsianVariantValues
-      | 'full-width'
-      | 'normal'
-      | 'proportional-width'
-      | 'ruby'
-      | OnlyString;
+    | DataType.EastAsianVariantValues
+    | 'full-width'
+    | 'normal'
+    | 'proportional-width'
+    | 'ruby'
+    | OnlyString;
 
   export type FontVariantLigatures =
-      | 'common-ligatures'
-      | 'contextual'
-      | 'discretionary-ligatures'
-      | 'historical-ligatures'
-      | 'no-common-ligatures'
-      | 'no-contextual'
-      | 'no-discretionary-ligatures'
-      | 'no-historical-ligatures'
-      | 'none'
-      | 'normal'
-      | OnlyString;
+    | 'common-ligatures'
+    | 'contextual'
+    | 'discretionary-ligatures'
+    | 'historical-ligatures'
+    | 'no-common-ligatures'
+    | 'no-contextual'
+    | 'no-discretionary-ligatures'
+    | 'no-historical-ligatures'
+    | 'none'
+    | 'normal'
+    | OnlyString;
 
   export type FontVariantNumeric =
-      | 'diagonal-fractions'
-      | 'lining-nums'
-      | 'normal'
-      | 'oldstyle-nums'
-      | 'ordinal'
-      | 'proportional-nums'
-      | 'slashed-zero'
-      | 'stacked-fractions'
-      | 'tabular-nums'
-      | OnlyString;
+    | 'diagonal-fractions'
+    | 'lining-nums'
+    | 'normal'
+    | 'oldstyle-nums'
+    | 'ordinal'
+    | 'proportional-nums'
+    | 'slashed-zero'
+    | 'stacked-fractions'
+    | 'tabular-nums'
+    | OnlyString;
 
   export type FontVariantPosition = 'normal' | 'sub' | 'super';
 
@@ -8353,26 +8443,34 @@ export namespace Property {
 
   export type GridTemplateAreas = 'none' | OnlyString;
 
-  export type GridTemplateColumns = DataType.TrackBreadth | 'none' | 'subgrid' | OnlyString;
+  export type GridTemplateColumns =
+    | DataType.TrackBreadth
+    | 'none'
+    | 'subgrid'
+    | OnlyString;
 
-  export type GridTemplateRows = DataType.TrackBreadth | 'none' | 'subgrid' | OnlyString;
+  export type GridTemplateRows =
+    | DataType.TrackBreadth
+    | 'none'
+    | 'subgrid'
+    | OnlyString;
 
   export type HangingPunctuation =
-      | 'allow-end'
-      | 'first'
-      | 'force-end'
-      | 'last'
-      | 'none'
-      | OnlyString;
+    | 'allow-end'
+    | 'first'
+    | 'force-end'
+    | 'last'
+    | 'none'
+    | OnlyString;
 
   export type Height =
-      | number
-      | 'auto'
-      | 'stretch'
-      | 'fit-content'
-      | 'max-content'
-      | 'min-content'
-      | OnlyString;
+    | number
+    | 'auto'
+    | 'stretch'
+    | 'fit-content'
+    | 'max-content'
+    | 'min-content'
+    | OnlyString;
 
   export type Hyphens = 'auto' | 'manual' | 'none';
 
@@ -8387,13 +8485,13 @@ export namespace Property {
   export type InitialLetter = 'normal' | OnlyStringNumeric;
 
   export type InlineSize =
-      | number
-      | 'auto'
-      | 'stretch'
-      | 'fit-content'
-      | 'max-content'
-      | 'min-content'
-      | OnlyString;
+    | number
+    | 'auto'
+    | 'stretch'
+    | 'fit-content'
+    | 'max-content'
+    | 'min-content'
+    | OnlyString;
 
   export type Inset = 'auto' | OnlyStringNumeric;
 
@@ -8412,40 +8510,40 @@ export namespace Property {
   export type Isolation = 'auto' | 'isolate';
 
   export type JustifyContent =
-      | DataType.ContentDistribution
-      | DataType.ContentPosition
-      | 'left'
-      | 'normal'
-      | 'right'
-      | OnlyString;
+    | DataType.ContentDistribution
+    | DataType.ContentPosition
+    | 'left'
+    | 'normal'
+    | 'right'
+    | OnlyString;
 
   export type JustifyItems =
-      | DataType.SelfPosition
-      | 'baseline'
-      | 'left'
-      | 'legacy'
-      | 'normal'
-      | 'right'
-      | 'stretch'
-      | OnlyString;
+    | DataType.SelfPosition
+    | 'baseline'
+    | 'left'
+    | 'legacy'
+    | 'normal'
+    | 'right'
+    | 'stretch'
+    | OnlyString;
 
   export type JustifySelf =
-      | DataType.SelfPosition
-      | 'auto'
-      | 'baseline'
-      | 'left'
-      | 'normal'
-      | 'right'
-      | 'stretch'
-      | OnlyString;
+    | DataType.SelfPosition
+    | 'auto'
+    | 'baseline'
+    | 'left'
+    | 'normal'
+    | 'right'
+    | 'stretch'
+    | OnlyString;
 
   export type JustifyTracks =
-      | DataType.ContentDistribution
-      | DataType.ContentPosition
-      | 'left'
-      | 'normal'
-      | 'right'
-      | OnlyString;
+    | DataType.ContentDistribution
+    | DataType.ContentPosition
+    | 'left'
+    | 'normal'
+    | 'right'
+    | OnlyString;
 
   export type Left = 'auto' | OnlyStringNumeric;
 
@@ -8492,20 +8590,25 @@ export namespace Property {
   export type Mask = DataType.MaskLayer | OnlyString;
 
   export type MaskBorder =
-      | 'alpha'
-      | 'luminance'
-      | 'none'
-      | 'repeat'
-      | 'round'
-      | 'space'
-      | 'stretch'
-      | OnlyStringNumeric;
+    | 'alpha'
+    | 'luminance'
+    | 'none'
+    | 'repeat'
+    | 'round'
+    | 'space'
+    | 'stretch'
+    | OnlyStringNumeric;
 
   export type MaskBorderMode = 'alpha' | 'luminance';
 
   export type MaskBorderOutset = OnlyStringNumeric;
 
-  export type MaskBorderRepeat = 'repeat' | 'round' | 'space' | 'stretch' | OnlyString;
+  export type MaskBorderRepeat =
+    | 'repeat'
+    | 'round'
+    | 'space'
+    | 'stretch'
+    | OnlyString;
 
   export type MaskBorderSlice = OnlyStringNumeric;
 
@@ -8534,87 +8637,92 @@ export namespace Property {
   export type MathStyle = 'compact' | 'normal';
 
   export type MaxBlockSize =
-      | number
-      | 'stretch'
-      | 'fit-content'
-      | 'max-content'
-      | 'min-content'
-      | 'none'
-      | OnlyString;
+    | number
+    | 'stretch'
+    | 'fit-content'
+    | 'max-content'
+    | 'min-content'
+    | 'none'
+    | OnlyString;
 
   export type MaxHeight =
-      | number
-      | 'stretch'
-      | 'fit-content'
-      | 'intrinsic'
-      | 'max-content'
-      | 'min-content'
-      | 'none'
-      | OnlyString;
+    | number
+    | 'stretch'
+    | 'fit-content'
+    | 'intrinsic'
+    | 'max-content'
+    | 'min-content'
+    | 'none'
+    | OnlyString;
 
   export type MaxInlineSize =
-      | number
-      | 'stretch'
-      | 'fit-content'
-      | 'max-content'
-      | 'min-content'
-      | 'none'
-      | OnlyString;
+    | number
+    | 'stretch'
+    | 'fit-content'
+    | 'max-content'
+    | 'min-content'
+    | 'none'
+    | OnlyString;
 
   export type MaxLines = 'none' | OnlyNumber;
 
   export type MaxWidth =
-      | number
-      | 'stretch'
-      | 'fit-content'
-      | 'intrinsic'
-      | 'max-content'
-      | 'min-content'
-      | 'none'
-      | OnlyString;
+    | number
+    | 'stretch'
+    | 'fit-content'
+    | 'intrinsic'
+    | 'max-content'
+    | 'min-content'
+    | 'none'
+    | OnlyString;
 
   export type MinBlockSize =
-      | number
-      | 'auto'
-      | 'stretch'
-      | 'fit-content'
-      | 'max-content'
-      | 'min-content'
-      | OnlyString;
+    | number
+    | 'auto'
+    | 'stretch'
+    | 'fit-content'
+    | 'max-content'
+    | 'min-content'
+    | OnlyString;
 
   export type MinHeight =
-      | number
-      | 'auto'
-      | 'stretch'
-      | 'fit-content'
-      | 'intrinsic'
-      | 'max-content'
-      | 'min-content'
-      | OnlyString;
+    | number
+    | 'auto'
+    | 'stretch'
+    | 'fit-content'
+    | 'intrinsic'
+    | 'max-content'
+    | 'min-content'
+    | OnlyString;
 
   export type MinInlineSize =
-      | number
-      | 'auto'
-      | 'stretch'
-      | 'fit-content'
-      | 'max-content'
-      | 'min-content'
-      | OnlyString;
+    | number
+    | 'auto'
+    | 'stretch'
+    | 'fit-content'
+    | 'max-content'
+    | 'min-content'
+    | OnlyString;
 
   export type MinWidth =
-      | number
-      | 'auto'
-      | 'stretch'
-      | 'fit-content'
-      | 'intrinsic'
-      | 'max-content'
-      | 'min-content'
-      | 'min-intrinsic'
-      | OnlyString;
+    | number
+    | 'auto'
+    | 'stretch'
+    | 'fit-content'
+    | 'intrinsic'
+    | 'max-content'
+    | 'min-content'
+    | 'min-intrinsic'
+    | OnlyString;
 
   export type MixBlendMode = DataType.BlendMode;
 
-  export type Offset = DataType.Position | DataType.GeometryBox | 'auto' | 'none' | OnlyString;
+  export type Offset =
+    | DataType.Position
+    | DataType.GeometryBox
+    | 'auto'
+    | 'none'
+    | OnlyString;
 
   export type OffsetDistance = OnlyStringNumeric;
 
@@ -8635,12 +8743,12 @@ export namespace Property {
   export type Orphans = OnlyNumber;
 
   export type Outline =
-      | DataType.Color
-      | DataType.LineStyle
-      | DataType.LineWidth
-      | 'auto'
-      | 'invert'
-      | OnlyString;
+    | DataType.Color
+    | DataType.LineStyle
+    | DataType.LineWidth
+    | 'auto'
+    | 'invert'
+    | OnlyString;
 
   export type OutlineColor = DataType.Color | 'invert';
 
@@ -8650,7 +8758,13 @@ export namespace Property {
 
   export type OutlineWidth = DataType.LineWidth;
 
-  export type Overflow = 'auto' | 'clip' | 'hidden' | 'scroll' | 'visible' | OnlyString;
+  export type Overflow =
+    | 'auto'
+    | 'clip'
+    | 'hidden'
+    | 'scroll'
+    | 'visible'
+    | OnlyString;
 
   export type OverflowAnchor = 'auto' | 'none';
 
@@ -8660,7 +8774,12 @@ export namespace Property {
 
   export type OverflowClipMargin = DataType.VisualBox | OnlyStringNumeric;
 
-  export type OverflowInline = 'auto' | 'clip' | 'hidden' | 'scroll' | 'visible';
+  export type OverflowInline =
+    | 'auto'
+    | 'clip'
+    | 'hidden'
+    | 'scroll'
+    | 'visible';
 
   export type OverflowWrap = 'anywhere' | 'break-word' | 'normal';
 
@@ -8700,53 +8819,88 @@ export namespace Property {
 
   export type PaddingTop = OnlyStringNumeric;
 
-  export type PageBreakAfter = 'always' | 'auto' | 'avoid' | 'left' | 'recto' | 'right' | 'verso';
+  export type PageBreakAfter =
+    | 'always'
+    | 'auto'
+    | 'avoid'
+    | 'left'
+    | 'recto'
+    | 'right'
+    | 'verso';
 
-  export type PageBreakBefore = 'always' | 'auto' | 'avoid' | 'left' | 'recto' | 'right' | 'verso';
+  export type PageBreakBefore =
+    | 'always'
+    | 'auto'
+    | 'avoid'
+    | 'left'
+    | 'recto'
+    | 'right'
+    | 'verso';
 
   export type PageBreakInside = 'auto' | 'avoid';
 
-  export type PaintOrder = 'fill' | 'markers' | 'normal' | 'stroke' | OnlyString;
+  export type PaintOrder =
+    | 'fill'
+    | 'markers'
+    | 'normal'
+    | 'stroke'
+    | OnlyString;
 
   export type Perspective = number | 'none';
 
   export type PerspectiveOrigin = DataType.Position;
 
   export type PlaceContent =
-      | DataType.ContentDistribution
-      | DataType.ContentPosition
-      | 'baseline'
-      | 'normal'
-      | OnlyString;
+    | DataType.ContentDistribution
+    | DataType.ContentPosition
+    | 'baseline'
+    | 'normal'
+    | OnlyString;
 
-  export type PlaceItems = DataType.SelfPosition | 'baseline' | 'normal' | 'stretch' | OnlyString;
+  export type PlaceItems =
+    | DataType.SelfPosition
+    | 'baseline'
+    | 'normal'
+    | 'stretch'
+    | OnlyString;
 
   export type PlaceSelf =
-      | DataType.SelfPosition
-      | 'auto'
-      | 'baseline'
-      | 'normal'
-      | 'stretch'
-      | OnlyString;
+    | DataType.SelfPosition
+    | 'auto'
+    | 'baseline'
+    | 'normal'
+    | 'stretch'
+    | OnlyString;
 
   export type PointerEvents =
-      | 'all'
-      | 'auto'
-      | 'fill'
-      | 'inherit'
-      | 'none'
-      | 'painted'
-      | 'stroke'
-      | 'visible'
-      | 'visibleFill'
-      | 'visiblePainted'
-      | 'visibleStroke';
+    | 'all'
+    | 'auto'
+    | 'fill'
+    | 'inherit'
+    | 'none'
+    | 'painted'
+    | 'stroke'
+    | 'visible'
+    | 'visibleFill'
+    | 'visiblePainted'
+    | 'visibleStroke';
 
-  export type Position = 'absolute' | 'fixed' | 'relative' | 'static' | 'sticky';
+  export type Position =
+    | 'absolute'
+    | 'fixed'
+    | 'relative'
+    | 'static'
+    | 'sticky';
 
   export type Quotes = 'auto' | 'none' | OnlyString;
 
-  export type Resize = 'block' | 'both' | 'horizontal' | 'inline' | 'none' | 'vertical';
+  export type Resize =
+    | 'block'
+    | 'both'
+    | 'horizontal'
+    | 'inline'
+    | 'none'
+    | 'vertical';
 
   export type Right = 'auto' | OnlyStringNumeric;
 
@@ -8808,7 +8962,12 @@ export namespace Property {
 
   export type ScrollPaddingTop = 'auto' | OnlyStringNumeric;
 
-  export type ScrollSnapAlign = 'center' | 'end' | 'none' | 'start' | OnlyString;
+  export type ScrollSnapAlign =
+    | 'center'
+    | 'end'
+    | 'none'
+    | 'start'
+    | OnlyString;
 
   export type ScrollSnapCoordinate = DataType.Position | 'none' | OnlyString;
 
@@ -8820,7 +8979,14 @@ export namespace Property {
 
   export type ScrollSnapStop = 'always' | 'normal';
 
-  export type ScrollSnapType = 'block' | 'both' | 'inline' | 'none' | 'x' | 'y' | OnlyString;
+  export type ScrollSnapType =
+    | 'block'
+    | 'both'
+    | 'inline'
+    | 'none'
+    | 'x'
+    | 'y'
+    | OnlyString;
 
   export type ScrollSnapTypeX = 'mandatory' | 'none' | 'proximity';
 
@@ -8845,91 +9011,106 @@ export namespace Property {
   export type TableLayout = 'auto' | 'fixed';
 
   export type TextAlign =
-      | 'center'
-      | 'end'
-      | 'justify'
-      | 'left'
-      | 'match-parent'
-      | 'right'
-      | 'start';
+    | 'center'
+    | 'end'
+    | 'justify'
+    | 'left'
+    | 'match-parent'
+    | 'right'
+    | 'start';
 
-  export type TextAlignLast = 'auto' | 'center' | 'end' | 'justify' | 'left' | 'right' | 'start';
+  export type TextAlignLast =
+    | 'auto'
+    | 'center'
+    | 'end'
+    | 'justify'
+    | 'left'
+    | 'right'
+    | 'start';
 
   export type TextCombineUpright = 'all' | 'digits' | 'none' | OnlyString;
 
   export type TextDecoration =
-      | DataType.Color
-      | number
-      | 'auto'
-      | 'blink'
-      | 'dashed'
-      | 'dotted'
-      | 'double'
-      | 'from-font'
-      | 'grammar-error'
-      | 'line-through'
-      | 'none'
-      | 'overline'
-      | 'solid'
-      | 'spelling-error'
-      | 'underline'
-      | 'wavy'
-      | OnlyString;
+    | DataType.Color
+    | number
+    | 'auto'
+    | 'blink'
+    | 'dashed'
+    | 'dotted'
+    | 'double'
+    | 'from-font'
+    | 'grammar-error'
+    | 'line-through'
+    | 'none'
+    | 'overline'
+    | 'solid'
+    | 'spelling-error'
+    | 'underline'
+    | 'wavy'
+    | OnlyString;
 
   export type TextDecorationColor = DataType.Color;
 
   export type TextDecorationLine =
-      | 'blink'
-      | 'grammar-error'
-      | 'line-through'
-      | 'none'
-      | 'overline'
-      | 'spelling-error'
-      | 'underline'
-      | OnlyString;
+    | 'blink'
+    | 'grammar-error'
+    | 'line-through'
+    | 'none'
+    | 'overline'
+    | 'spelling-error'
+    | 'underline'
+    | OnlyString;
 
   export type TextDecorationSkip =
-      | 'box-decoration'
-      | 'edges'
-      | 'leading-spaces'
-      | 'none'
-      | 'objects'
-      | 'spaces'
-      | 'trailing-spaces'
-      | OnlyString;
+    | 'box-decoration'
+    | 'edges'
+    | 'leading-spaces'
+    | 'none'
+    | 'objects'
+    | 'spaces'
+    | 'trailing-spaces'
+    | OnlyString;
 
   export type TextDecorationSkipInk = 'all' | 'auto' | 'none';
 
-  export type TextDecorationStyle = 'dashed' | 'dotted' | 'double' | 'solid' | 'wavy';
+  export type TextDecorationStyle =
+    | 'dashed'
+    | 'dotted'
+    | 'double'
+    | 'solid'
+    | 'wavy';
 
-  export type TextDecorationThickness = 'auto' | 'from-font' | OnlyStringNumeric;
+  export type TextDecorationThickness =
+    | 'auto'
+    | 'from-font'
+    | OnlyStringNumeric;
 
   export type TextEmphasis =
-      | DataType.Color
-      | 'circle'
-      | 'dot'
-      | 'double-circle'
-      | 'filled'
-      | 'none'
-      | 'open'
-      | 'sesame'
-      | 'triangle'
-      | OnlyString;
+    | DataType.Color
+    | 'circle'
+    | 'dot'
+    | 'double-circle'
+    | 'filled'
+    | 'none'
+    | 'open'
+    | 'sesame'
+    | 'triangle'
+    | OnlyString;
 
   export type TextEmphasisColor = DataType.Color;
 
   export type TextEmphasisPosition = OnlyString;
 
   export type TextEmphasisStyle =
-      | 'circle'
-      | 'dot'
-      | 'double-circle'
-      | 'filled'
-      | 'none'
-      | 'open'
-      | 'sesame'
-      | 'triangle'
-      | OnlyString;
+    | 'circle'
+    | 'dot'
+    | 'double-circle'
+    | 'filled'
+    | 'none'
+    | 'open'
+    | 'sesame'
+    | 'triangle'
+    | OnlyString;
 
   export type TextIndent = OnlyStringNumeric;
 
@@ -8940,53 +9121,64 @@ export namespace Property {
   export type TextOverflow = 'clip' | 'ellipsis' | OnlyString;
 
   export type TextRendering =
-      | 'auto'
-      | 'geometricPrecision'
-      | 'optimizeLegibility'
-      | 'optimizeSpeed';
+    | 'auto'
+    | 'geometricPrecision'
+    | 'optimizeLegibility'
+    | 'optimizeSpeed';
 
   export type TextShadow = 'none' | OnlyString;
 
   export type TextSizeAdjust = 'auto' | 'none' | OnlyString;
 
   export type TextTransform =
-      | 'capitalize'
-      | 'full-size-kana'
-      | 'full-width'
-      | 'lowercase'
-      | 'none'
-      | 'uppercase';
+    | 'capitalize'
+    | 'full-size-kana'
+    | 'full-width'
+    | 'lowercase'
+    | 'none'
+    | 'uppercase';
 
   export type TextUnderlineOffset = 'auto' | OnlyStringNumeric;
 
   export type TextUnderlinePosition =
-      | 'auto'
-      | 'from-font'
-      | 'left'
-      | 'right'
-      | 'under'
-      | OnlyString;
+    | 'auto'
+    | 'from-font'
+    | 'left'
+    | 'right'
+    | 'under'
+    | OnlyString;
 
   export type Top = 'auto' | OnlyStringNumeric;
 
   export type TouchAction =
-      | 'auto'
-      | 'manipulation'
-      | 'none'
-      | 'pan-down'
-      | 'pan-left'
-      | 'pan-right'
-      | 'pan-up'
-      | 'pan-x'
-      | 'pan-y'
-      | 'pinch-zoom'
-      | OnlyString;
+    | 'auto'
+    | 'manipulation'
+    | 'none'
+    | 'pan-down'
+    | 'pan-left'
+    | 'pan-right'
+    | 'pan-up'
+    | 'pan-x'
+    | 'pan-y'
+    | 'pinch-zoom'
+    | OnlyString;
 
   export type Transform = 'none' | OnlyString;
 
-  export type TransformBox = 'border-box' | 'content-box' | 'fill-box' | 'stroke-box' | 'view-box';
+  export type TransformBox =
+    | 'border-box'
+    | 'content-box'
+    | 'fill-box'
+    | 'stroke-box'
+    | 'view-box';
 
-  export type TransformOrigin = 'bottom' | 'center' | 'left' | 'right' | 'top' | OnlyStringNumeric;
+  export type TransformOrigin =
+    | 'bottom'
+    | 'center'
+    | 'left'
+    | 'right'
+    | 'top'
+    | OnlyStringNumeric;
 
   export type TransformStyle = 'flat' | 'preserve-3d';
 
@@ -9003,43 +9195,55 @@ export namespace Property {
   export type Translate = 'none' | OnlyStringNumeric;
 
   export type UnicodeBidi =
-      | 'bidi-override'
-      | 'embed'
-      | 'isolate'
-      | 'isolate-override'
-      | 'normal'
-      | 'plaintext';
+    | 'bidi-override'
+    | 'embed'
+    | 'isolate'
+    | 'isolate-override'
+    | 'normal'
+    | 'plaintext';
 
-  export type UserSelect = 'all' | 'auto' | 'contain' | 'element' | 'none' | 'text';
+  export type UserSelect =
+    | 'all'
+    | 'auto'
+    | 'contain'
+    | 'element'
+    | 'none'
+    | 'text';
 
   export type VerticalAlign =
-      | number
-      | 'baseline'
-      | 'bottom'
-      | 'middle'
-      | 'sub'
-      | 'super'
-      | 'text-bottom'
-      | 'text-top'
-      | 'top'
-      | OnlyString;
+    | number
+    | 'baseline'
+    | 'bottom'
+    | 'middle'
+    | 'sub'
+    | 'super'
+    | 'text-bottom'
+    | 'text-top'
+    | 'top'
+    | OnlyString;
 
   export type Visibility = 'collapse' | 'hidden' | 'visible';
 
-  export type WhiteSpace = 'break-spaces' | 'normal' | 'nowrap' | 'pre' | 'pre-line' | 'pre-wrap';
+  export type WhiteSpace =
+    | 'break-spaces'
+    | 'normal'
+    | 'nowrap'
+    | 'pre'
+    | 'pre-line'
+    | 'pre-wrap';
 
   export type Widows = OnlyNumber;
 
   export type Width =
-      | number
-      | 'auto'
-      | 'stretch'
-      | 'fit-content'
-      | 'intrinsic'
-      | 'max-content'
-      | 'min-content'
-      | 'min-intrinsic'
-      | OnlyString;
+    | number
+    | 'auto'
+    | 'stretch'
+    | 'fit-content'
+    | 'intrinsic'
+    | 'max-content'
+    | 'min-content'
+    | 'min-intrinsic'
+    | OnlyString;
 
   export type WillChange = DataType.AnimateableFeature | 'auto' | OnlyString;
 
@@ -9050,107 +9254,107 @@ export namespace Property {
   export type WordWrap = 'break-word' | 'normal';
 
   export type WritingMode =
-      | 'horizontal-tb'
-      | 'sideways-lr'
-      | 'sideways-rl'
-      | 'vertical-lr'
-      | 'vertical-rl';
+    | 'horizontal-tb'
+    | 'sideways-lr'
+    | 'sideways-rl'
+    | 'vertical-lr'
+    | 'vertical-rl';
 
   export type ZIndex = 'auto' | OnlyStringNumeric;
 
   export type Zoom = 'normal' | 'reset' | OnlyStringNumeric;
 
   export type MozAppearance =
-      | 'button'
-      | 'button-arrow-down'
-      | 'button-arrow-next'
-      | 'button-arrow-previous'
-      | 'button-arrow-up'
-      | 'button-bevel'
-      | 'button-focus'
-      | 'caret'
-      | 'checkbox'
-      | 'checkbox-container'
-      | 'checkbox-label'
-      | 'checkmenuitem'
-      | 'dualbutton'
-      | 'groupbox'
-      | 'listbox'
-      | 'listitem'
-      | 'menuarrow'
-      | 'menubar'
-      | 'menucheckbox'
-      | 'menuimage'
-      | 'menuitem'
-      | 'menuitemtext'
-      | 'menulist'
-      | 'menulist-button'
-      | 'menulist-text'
-      | 'menulist-textfield'
-      | 'menupopup'
-      | 'menuradio'
-      | 'menuseparator'
-      | 'meterbar'
-      | 'meterchunk'
-      | 'none'
-      | 'progressbar'
-      | 'progressbar-vertical'
-      | 'progresschunk'
-      | 'progresschunk-vertical'
-      | 'radio'
-      | 'radio-container'
-      | 'radio-label'
-      | 'radiomenuitem'
-      | 'range'
-      | 'range-thumb'
-      | 'resizer'
-      | 'resizerpanel'
-      | 'scale-horizontal'
-      | 'scale-vertical'
-      | 'scalethumb-horizontal'
-      | 'scalethumb-vertical'
-      | 'scalethumbend'
-      | 'scalethumbstart'
-      | 'scalethumbtick'
-      | 'scrollbarbutton-down'
-      | 'scrollbarbutton-left'
-      | 'scrollbarbutton-right'
-      | 'scrollbarbutton-up'
-      | 'scrollbarthumb-horizontal'
-      | 'scrollbarthumb-vertical'
-      | 'scrollbartrack-horizontal'
-      | 'scrollbartrack-vertical'
-      | 'searchfield'
-      | 'separator'
-      | 'sheet'
-      | 'spinner'
-      | 'spinner-downbutton'
-      | 'spinner-textfield'
-      | 'spinner-upbutton'
-      | 'splitter'
-      | 'statusbar'
-      | 'statusbarpanel'
-      | 'tab'
-      | 'tab-scroll-arrow-back'
-      | 'tab-scroll-arrow-forward'
-      | 'tabpanel'
-      | 'tabpanels'
-      | 'textfield'
-      | 'textfield-multiline'
-      | 'toolbar'
-      | 'toolbarbutton'
-      | 'toolbarbutton-dropdown'
-      | 'toolbargripper'
-      | 'toolbox'
-      | 'tooltip'
-      | 'treeheader'
-      | 'treeheadercell'
-      | 'treeheadersortarrow'
-      | 'treeitem'
-      | 'treeline'
-      | 'treetwisty'
-      | 'treetwistyopen'
-      | 'treeview';
+    | 'button'
+    | 'button-arrow-down'
+    | 'button-arrow-next'
+    | 'button-arrow-previous'
+    | 'button-arrow-up'
+    | 'button-bevel'
+    | 'button-focus'
+    | 'caret'
+    | 'checkbox'
+    | 'checkbox-container'
+    | 'checkbox-label'
+    | 'checkmenuitem'
+    | 'dualbutton'
+    | 'groupbox'
+    | 'listbox'
+    | 'listitem'
+    | 'menuarrow'
+    | 'menubar'
+    | 'menucheckbox'
+    | 'menuimage'
+    | 'menuitem'
+    | 'menuitemtext'
+    | 'menulist'
+    | 'menulist-button'
+    | 'menulist-text'
+    | 'menulist-textfield'
+    | 'menupopup'
+    | 'menuradio'
+    | 'menuseparator'
+    | 'meterbar'
+    | 'meterchunk'
+    | 'none'
+    | 'progressbar'
+    | 'progressbar-vertical'
+    | 'progresschunk'
+    | 'progresschunk-vertical'
+    | 'radio'
+    | 'radio-container'
+    | 'radio-label'
+    | 'radiomenuitem'
+    | 'range'
+    | 'range-thumb'
+    | 'resizer'
+    | 'resizerpanel'
+    | 'scale-horizontal'
+    | 'scale-vertical'
+    | 'scalethumb-horizontal'
+    | 'scalethumb-vertical'
+    | 'scalethumbend'
+    | 'scalethumbstart'
+    | 'scalethumbtick'
+    | 'scrollbarbutton-down'
+    | 'scrollbarbutton-left'
+    | 'scrollbarbutton-right'
+    | 'scrollbarbutton-up'
+    | 'scrollbarthumb-horizontal'
+    | 'scrollbarthumb-vertical'
+    | 'scrollbartrack-horizontal'
+    | 'scrollbartrack-vertical'
+    | 'searchfield'
+    | 'separator'
+    | 'sheet'
+    | 'spinner'
+    | 'spinner-downbutton'
+    | 'spinner-textfield'
+    | 'spinner-upbutton'
+    | 'splitter'
+    | 'statusbar'
+    | 'statusbarpanel'
+    | 'tab'
+    | 'tab-scroll-arrow-back'
+    | 'tab-scroll-arrow-forward'
+    | 'tabpanel'
+    | 'tabpanels'
+    | 'textfield'
+    | 'textfield-multiline'
+    | 'toolbar'
+    | 'toolbarbutton'
+    | 'toolbarbutton-dropdown'
+    | 'toolbargripper'
+    | 'toolbox'
+    | 'tooltip'
+    | 'treeheader'
+    | 'treeheadercell'
+    | 'treeheadersortarrow'
+    | 'treeitem'
+    | 'treeline'
+    | 'treetwisty'
+    | 'treetwistyopen'
+    | 'treeview';
 
   export type MozBinding = 'none' | OnlyString;
 
@@ -9163,14 +9367,18 @@ export namespace Property {
   export type MozBorderTopColors = DataType.Color | 'none' | OnlyString;
 
   export type MozContextProperties =
-      | 'fill'
-      | 'fill-opacity'
-      | 'none'
-      | 'stroke'
-      | 'stroke-opacity'
-      | OnlyString;
+    | 'fill'
+    | 'fill-opacity'
+    | 'none'
+    | 'stroke'
+    | 'stroke-opacity'
+    | OnlyString;
 
-  export type MozFloatEdge = 'border-box' | 'content-box' | 'margin-box' | 'padding-box';
+  export type MozFloatEdge =
+    | 'border-box'
+    | 'content-box'
+    | 'margin-box'
+    | 'padding-box';
 
   export type MozForceBrokenImageIcon = OnlyNumber;
 
@@ -9193,14 +9401,14 @@ export namespace Property {
   export type MozTextBlink = 'blink' | 'none';
 
   export type MozUserFocus =
-      | 'ignore'
-      | 'none'
-      | 'normal'
-      | 'select-after'
-      | 'select-all'
-      | 'select-before'
-      | 'select-menu'
-      | 'select-same';
+    | 'ignore'
+    | 'none'
+    | 'normal'
+    | 'select-after'
+    | 'select-all'
+    | 'select-before'
+    | 'select-menu'
+    | 'select-same';
 
   export type MozUserInput = 'auto' | 'disabled' | 'enabled' | 'none';
 
@@ -9208,7 +9416,12 @@ export namespace Property {
 
   export type MozWindowDragging = 'drag' | 'no-drag';
 
-  export type MozWindowShadow = 'default' | 'menu' | 'none' | 'sheet' | 'tooltip';
+  export type MozWindowShadow =
+    | 'default'
+    | 'menu'
+    | 'none'
+    | 'sheet'
+    | 'tooltip';
 
   export type MsAccelerator = 'false' | 'true';
 
@@ -9222,7 +9435,11 @@ export namespace Property {
 
   export type MsContentZoomLimitMin = OnlyString;
 
-  export type MsContentZoomSnap = 'mandatory' | 'none' | 'proximity' | OnlyString;
+  export type MsContentZoomSnap =
+    | 'mandatory'
+    | 'none'
+    | 'proximity'
+    | OnlyString;
 
   export type MsContentZoomSnapPoints = OnlyString;
 
@@ -9293,77 +9510,83 @@ export namespace Property {
   export type MsScrollbarShadowColor = DataType.Color;
 
   export type MsTextAutospace =
-      | 'ideograph-alpha'
-      | 'ideograph-numeric'
-      | 'ideograph-parenthesis'
-      | 'ideograph-space'
-      | 'none';
+    | 'ideograph-alpha'
+    | 'ideograph-numeric'
+    | 'ideograph-parenthesis'
+    | 'ideograph-space'
+    | 'none';
 
   export type MsTouchSelect = 'grippers' | 'none';
 
   export type MsUserSelect = 'element' | 'none' | 'text';
 
-  export type MsWrapFlow = 'auto' | 'both' | 'clear' | 'end' | 'maximum' | 'start';
+  export type MsWrapFlow =
+    | 'auto'
+    | 'both'
+    | 'clear'
+    | 'end'
+    | 'maximum'
+    | 'start';
 
   export type MsWrapMargin = number;
 
   export type MsWrapThrough = 'none' | 'wrap';
 
   export type WebkitAppearance =
-      | 'button'
-      | 'button-bevel'
-      | 'caret'
-      | 'checkbox'
-      | 'default-button'
-      | 'inner-spin-button'
-      | 'listbox'
-      | 'listitem'
-      | 'media-controls-background'
-      | 'media-controls-fullscreen-background'
-      | 'media-current-time-display'
-      | 'media-enter-fullscreen-button'
-      | 'media-exit-fullscreen-button'
-      | 'media-fullscreen-button'
-      | 'media-mute-button'
-      | 'media-overlay-play-button'
-      | 'media-play-button'
-      | 'media-seek-back-button'
-      | 'media-seek-forward-button'
-      | 'media-slider'
-      | 'media-sliderthumb'
-      | 'media-time-remaining-display'
-      | 'media-toggle-closed-captions-button'
-      | 'media-volume-slider'
-      | 'media-volume-slider-container'
-      | 'media-volume-sliderthumb'
-      | 'menulist'
-      | 'menulist-button'
-      | 'menulist-text'
-      | 'menulist-textfield'
-      | 'meter'
-      | 'none'
-      | 'progress-bar'
-      | 'progress-bar-value'
-      | 'push-button'
-      | 'radio'
-      | 'searchfield'
-      | 'searchfield-cancel-button'
-      | 'searchfield-decoration'
-      | 'searchfield-results-button'
-      | 'searchfield-results-decoration'
-      | 'slider-horizontal'
-      | 'slider-vertical'
-      | 'sliderthumb-horizontal'
-      | 'sliderthumb-vertical'
-      | 'square-button'
-      | 'textarea'
-      | 'textfield';
+    | 'button'
+    | 'button-bevel'
+    | 'caret'
+    | 'checkbox'
+    | 'default-button'
+    | 'inner-spin-button'
+    | 'listbox'
+    | 'listitem'
+    | 'media-controls-background'
+    | 'media-controls-fullscreen-background'
+    | 'media-current-time-display'
+    | 'media-enter-fullscreen-button'
+    | 'media-exit-fullscreen-button'
+    | 'media-fullscreen-button'
+    | 'media-mute-button'
+    | 'media-overlay-play-button'
+    | 'media-play-button'
+    | 'media-seek-back-button'
+    | 'media-seek-forward-button'
+    | 'media-slider'
+    | 'media-sliderthumb'
+    | 'media-time-remaining-display'
+    | 'media-toggle-closed-captions-button'
+    | 'media-volume-slider'
+    | 'media-volume-slider-container'
+    | 'media-volume-sliderthumb'
+    | 'menulist'
+    | 'menulist-button'
+    | 'menulist-text'
+    | 'menulist-textfield'
+    | 'meter'
+    | 'none'
+    | 'progress-bar'
+    | 'progress-bar-value'
+    | 'push-button'
+    | 'radio'
+    | 'searchfield'
+    | 'searchfield-cancel-button'
+    | 'searchfield-decoration'
+    | 'searchfield-results-button'
+    | 'searchfield-results-decoration'
+    | 'slider-horizontal'
+    | 'slider-vertical'
+    | 'sliderthumb-horizontal'
+    | 'sliderthumb-vertical'
+    | 'square-button'
+    | 'textarea'
+    | 'textfield';
 
   export type WebkitBorderBefore =
-      | DataType.LineWidth
-      | DataType.LineStyle
-      | DataType.Color
-      | OnlyString;
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
   export type WebkitBorderBeforeColor = DataType.Color;
 
@@ -9371,42 +9594,60 @@ export namespace Property {
 
   export type WebkitBorderBeforeWidth = DataType.LineWidth | OnlyString;
 
-  export type WebkitBoxReflect = 'above' | 'below' | 'left' | 'right' | OnlyStringNumeric;
+  export type WebkitBoxReflect =
+    | 'above'
+    | 'below'
+    | 'left'
+    | 'right'
+    | OnlyStringNumeric;
 
   export type WebkitLineClamp = 'none' | OnlyNumber;
 
   export type WebkitMask =
-      | DataType.Position
-      | DataType.RepeatStyle
-      | DataType.Box
-      | 'border'
-      | 'content'
-      | 'none'
-      | 'padding'
-      | 'text'
-      | OnlyString;
+    | DataType.Position
+    | DataType.RepeatStyle
+    | DataType.Box
+    | 'border'
+    | 'content'
+    | 'none'
+    | 'padding'
+    | 'text'
+    | OnlyString;
 
   export type WebkitMaskAttachment = DataType.Attachment | OnlyString;
 
   export type WebkitMaskClip =
-      | DataType.Box
-      | 'border'
-      | 'content'
-      | 'padding'
-      | 'text'
-      | OnlyString;
+    | DataType.Box
+    | 'border'
+    | 'content'
+    | 'padding'
+    | 'text'
+    | OnlyString;
 
   export type WebkitMaskComposite = DataType.CompositeStyle | OnlyString;
 
   export type WebkitMaskImage = 'none' | OnlyString;
 
-  export type WebkitMaskOrigin = DataType.Box | 'border' | 'content' | 'padding' | OnlyString;
+  export type WebkitMaskOrigin =
+    | DataType.Box
+    | 'border'
+    | 'content'
+    | 'padding'
+    | OnlyString;
 
   export type WebkitMaskPosition = DataType.Position | OnlyString;
 
-  export type WebkitMaskPositionX = 'center' | 'left' | 'right' | OnlyStringNumeric;
+  export type WebkitMaskPositionX =
+    | 'center'
+    | 'left'
+    | 'right'
+    | OnlyStringNumeric;
 
-  export type WebkitMaskPositionY = 'bottom' | 'center' | 'top' | OnlyStringNumeric;
+  export type WebkitMaskPositionY =
+    | 'bottom'
+    | 'center'
+    | 'top'
+    | OnlyStringNumeric;
 
   export type WebkitMaskRepeat = DataType.RepeatStyle | OnlyString;
 
@@ -9430,21 +9671,24 @@ export namespace Property {
 
   export type WebkitTouchCallout = 'default' | 'none';
 
-  export type WebkitUserModify = 'read-only' | 'read-write' | 'read-write-plaintext-only';
+  export type WebkitUserModify =
+    | 'read-only'
+    | 'read-write'
+    | 'read-write-plaintext-only';
 
   export type AlignmentBaseline =
-      | 'after-edge'
-      | 'alphabetic'
-      | 'auto'
-      | 'baseline'
-      | 'before-edge'
-      | 'central'
-      | 'hanging'
-      | 'ideographic'
-      | 'mathematical'
-      | 'middle'
-      | 'text-after-edge'
-      | 'text-before-edge';
+    | 'after-edge'
+    | 'alphabetic'
+    | 'auto'
+    | 'baseline'
+    | 'before-edge'
+    | 'central'
+    | 'hanging'
+    | 'ideographic'
+    | 'mathematical'
+    | 'middle'
+    | 'text-after-edge'
+    | 'text-before-edge';
 
   export type BaselineShift = 'baseline' | 'sub' | 'super' | OnlyStringNumeric;
 
@@ -9455,18 +9699,18 @@ export namespace Property {
   export type ColorRendering = 'auto' | 'optimizeQuality' | 'optimizeSpeed';
 
   export type DominantBaseline =
-      | 'alphabetic'
-      | 'auto'
-      | 'central'
-      | 'hanging'
-      | 'ideographic'
-      | 'mathematical'
-      | 'middle'
-      | 'no-change'
-      | 'reset-size'
-      | 'text-after-edge'
-      | 'text-before-edge'
-      | 'use-script';
+    | 'alphabetic'
+    | 'auto'
+    | 'central'
+    | 'hanging'
+    | 'ideographic'
+    | 'mathematical'
+    | 'middle'
+    | 'no-change'
+    | 'reset-size'
+    | 'text-after-edge'
+    | 'text-before-edge'
+    | 'use-script';
 
   export type Fill = DataType.Paint;
 
@@ -9474,13 +9718,23 @@ export namespace Property {
 
   export type FillRule = 'evenodd' | 'nonzero';
 
-  export type FloodColor = DataType.Color | 'CurrentColor' | 'hsl(' | 'lab(' | 'rgb(';
+  export type FloodColor =
+    | DataType.Color
+    | 'CurrentColor'
+    | 'hsl('
+    | 'lab('
+    | 'rgb(';
 
   export type FloodOpacity = OnlyNumber;
 
   export type GlyphOrientationVertical = 'auto' | OnlyStringNumeric;
 
-  export type LightingColor = DataType.Color | 'CurrentColor' | 'hsl(' | 'lab(' | 'rgb(';
+  export type LightingColor =
+    | DataType.Color
+    | 'CurrentColor'
+    | 'hsl('
+    | 'lab('
+    | 'rgb(';
 
   export type Marker = 'none' | OnlyString;
 
@@ -9490,9 +9744,18 @@ export namespace Property {
 
   export type MarkerStart = 'none' | OnlyString;
 
-  export type ShapeRendering = 'auto' | 'crispEdges' | 'geometricPrecision' | 'optimizeSpeed';
+  export type ShapeRendering =
+    | 'auto'
+    | 'crispEdges'
+    | 'geometricPrecision'
+    | 'optimizeSpeed';
 
-  export type StopColor = DataType.Color | 'CurrentColor' | 'hsl(' | 'lab(' | 'rgb(';
+  export type StopColor =
+    | DataType.Color
+    | 'CurrentColor'
+    | 'hsl('
+    | 'lab('
+    | 'rgb(';
 
   export type StopOpacity = OnlyNumber;
 
@@ -9549,7 +9812,9 @@ export namespace AtRule {
   };
 
   export type CounterStyleHyphenFallback = {
-    [P in keyof CounterStyleHyphen]: CounterStyleHyphen[P] | CounterStyleHyphen[P][];
+    [P in keyof CounterStyleHyphen]:
+      | CounterStyleHyphen[P]
+      | CounterStyleHyphen[P][];
   };
 
   export interface FontFace {
@@ -9663,16 +9928,22 @@ export namespace AtRule {
 
   type Range = 'auto' | 'infinite' | OnlyStringNumeric;
 
-  type SpeakAs = 'auto' | 'bullets' | 'numbers' | 'spell-out' | 'words' | OnlyString;
+  type SpeakAs =
+    | 'auto'
+    | 'bullets'
+    | 'numbers'
+    | 'spell-out'
+    | 'words'
+    | OnlyString;
 
   type System =
-      | 'additive'
-      | 'alphabetic'
-      | 'cyclic'
-      | 'fixed'
-      | 'numeric'
-      | 'symbolic'
-      | OnlyString;
+    | 'additive'
+    | 'alphabetic'
+    | 'cyclic'
+    | 'fixed'
+    | 'numeric'
+    | 'symbolic'
+    | OnlyString;
 
   type FontFeatureSettings = 'normal' | OnlyString;
 
@@ -9683,42 +9954,47 @@ export namespace AtRule {
   type FontStyle = 'italic' | 'normal' | 'oblique' | OnlyString;
 
   type FontVariant =
-      | DataType.EastAsianVariantValues
-      | 'all-petite-caps'
-      | 'all-small-caps'
-      | 'common-ligatures'
-      | 'contextual'
-      | 'diagonal-fractions'
-      | 'discretionary-ligatures'
-      | 'full-width'
-      | 'historical-forms'
-      | 'historical-ligatures'
-      | 'lining-nums'
-      | 'no-common-ligatures'
-      | 'no-contextual'
-      | 'no-discretionary-ligatures'
-      | 'no-historical-ligatures'
-      | 'none'
-      | 'normal'
-      | 'oldstyle-nums'
-      | 'ordinal'
-      | 'petite-caps'
-      | 'proportional-nums'
-      | 'proportional-width'
-      | 'ruby'
-      | 'slashed-zero'
-      | 'small-caps'
-      | 'stacked-fractions'
-      | 'tabular-nums'
-      | 'titling-caps'
-      | 'unicase'
-      | OnlyString;
+    | DataType.EastAsianVariantValues
+    | 'all-petite-caps'
+    | 'all-small-caps'
+    | 'common-ligatures'
+    | 'contextual'
+    | 'diagonal-fractions'
+    | 'discretionary-ligatures'
+    | 'full-width'
+    | 'historical-forms'
+    | 'historical-ligatures'
+    | 'lining-nums'
+    | 'no-common-ligatures'
+    | 'no-contextual'
+    | 'no-discretionary-ligatures'
+    | 'no-historical-ligatures'
+    | 'none'
+    | 'normal'
+    | 'oldstyle-nums'
+    | 'ordinal'
+    | 'petite-caps'
+    | 'proportional-nums'
+    | 'proportional-width'
+    | 'ruby'
+    | 'slashed-zero'
+    | 'small-caps'
+    | 'stacked-fractions'
+    | 'tabular-nums'
+    | 'titling-caps'
+    | 'unicase'
+    | OnlyString;
 
   type FontVariationSettings = 'normal' | OnlyString;
 
   type FontWeight = DataType.FontWeightAbsolute;
 
-  type Size = DataType.PageSize | 'auto' | 'landscape' | 'portrait' | OnlyStringNumeric;
+  type Size =
+    | DataType.PageSize
+    | 'auto'
+    | 'landscape'
+    | 'portrait'
+    | OnlyStringNumeric;
 
   type Inherits = 'false' | 'true' | boolean;
 
@@ -9749,396 +10025,459 @@ export namespace AtRule {
 
 declare namespace DataType {
   type AbsoluteSize =
-      | 'large'
-      | 'medium'
-      | 'small'
-      | 'x-large'
-      | 'x-small'
-      | 'xx-large'
-      | 'xx-small'
-      | 'xxx-large';
+    | 'large'
+    | 'medium'
+    | 'small'
+    | 'x-large'
+    | 'x-small'
+    | 'xx-large'
+    | 'xx-small'
+    | 'xxx-large';
 
   type AnimateableFeature = 'contents' | 'scroll-position' | OnlyString;
 
   type Attachment = 'fixed' | 'local' | 'scroll';
 
-  type BgPosition = 'bottom' | 'center' | 'left' | 'right' | 'top' | OnlyStringNumeric;
+  type BgPosition =
+    | 'bottom'
+    | 'center'
+    | 'left'
+    | 'right'
+    | 'top'
+    | OnlyStringNumeric;
 
   type BgSize = 'auto' | 'contain' | 'cover' | OnlyStringNumeric;
 
   type BlendMode =
-      | 'color'
-      | 'color-burn'
-      | 'color-dodge'
-      | 'darken'
-      | 'difference'
-      | 'exclusion'
-      | 'hard-light'
-      | 'hue'
-      | 'lighten'
-      | 'luminosity'
-      | 'multiply'
-      | 'normal'
-      | 'overlay'
-      | 'saturation'
-      | 'screen'
-      | 'soft-light';
+    | 'color'
+    | 'color-burn'
+    | 'color-dodge'
+    | 'darken'
+    | 'difference'
+    | 'exclusion'
+    | 'hard-light'
+    | 'hue'
+    | 'lighten'
+    | 'luminosity'
+    | 'multiply'
+    | 'normal'
+    | 'overlay'
+    | 'saturation'
+    | 'screen'
+    | 'soft-light';
 
   type Box = 'border-box' | 'content-box' | 'padding-box';
 
-  type Color = NamedColor | SystemColor | 'CurrentColor' | 'hsl(' | 'lab(' | 'rgb(' | OnlyString;
+  type Color =
+    | NamedColor
+    | SystemColor
+    | 'CurrentColor'
+    | 'hsl('
+    | 'lab('
+    | 'rgb('
+    | OnlyString;
 
   type CompatAuto =
-      | 'button'
-      | 'checkbox'
-      | 'listbox'
-      | 'menulist'
-      | 'meter'
-      | 'progress-bar'
-      | 'push-button'
-      | 'radio'
-      | 'searchfield'
-      | 'slider-horizontal'
-      | 'square-button'
-      | 'textarea';
+    | 'button'
+    | 'checkbox'
+    | 'listbox'
+    | 'menulist'
+    | 'meter'
+    | 'progress-bar'
+    | 'push-button'
+    | 'radio'
+    | 'searchfield'
+    | 'slider-horizontal'
+    | 'square-button'
+    | 'textarea';
 
   type CompositeStyle =
-      | 'clear'
-      | 'copy'
-      | 'destination-atop'
-      | 'destination-in'
-      | 'destination-out'
-      | 'destination-over'
-      | 'source-atop'
-      | 'source-in'
-      | 'source-out'
-      | 'source-over'
-      | 'xor';
+    | 'clear'
+    | 'copy'
+    | 'destination-atop'
+    | 'destination-in'
+    | 'destination-out'
+    | 'destination-over'
+    | 'source-atop'
+    | 'source-in'
+    | 'source-out'
+    | 'source-over'
+    | 'xor';
 
   type CompositingOperator = 'add' | 'exclude' | 'intersect' | 'subtract';
 
-  type ContentDistribution = 'space-around' | 'space-between' | 'space-evenly' | 'stretch';
+  type ContentDistribution =
+    | 'space-around'
+    | 'space-between'
+    | 'space-evenly'
+    | 'stretch';
 
   type ContentList = Quote | 'contents' | OnlyString;
 
   type ContentPosition = 'center' | 'end' | 'flex-end' | 'flex-start' | 'start';
 
-  type CubicBezierTimingFunction = 'ease' | 'ease-in' | 'ease-in-out' | 'ease-out' | OnlyString;
+  type CubicBezierTimingFunction =
+    | 'ease'
+    | 'ease-in'
+    | 'ease-in-out'
+    | 'ease-out'
+    | OnlyString;
 
   type Dasharray = OnlyStringNumeric;
 
   type SystemColor =
-      | 'ActiveText'
-      | 'ButtonFace'
-      | 'ButtonText'
-      | 'ButtonBorder'
-      | 'Canvas'
-      | 'CanvasText'
-      | 'Field'
-      | 'FieldText'
-      | 'GrayText'
-      | 'Highlight'
-      | 'HighlightText'
-      | 'LinkText'
-      | 'Mark'
-      | 'MarkText'
-      | 'VisitedText';
+    | 'ActiveText'
+    | 'ButtonFace'
+    | 'ButtonText'
+    | 'ButtonBorder'
+    | 'Canvas'
+    | 'CanvasText'
+    | 'Field'
+    | 'FieldText'
+    | 'GrayText'
+    | 'Highlight'
+    | 'HighlightText'
+    | 'LinkText'
+    | 'Mark'
+    | 'MarkText'
+    | 'VisitedText';
 
-  type DisplayInside = 'flex' | 'flow' | 'flow-root' | 'grid' | 'ruby' | 'table';
+  type DisplayInside =
+    | 'flex'
+    | 'flow'
+    | 'flow-root'
+    | 'grid'
+    | 'ruby'
+    | 'table';
 
   type DisplayInternal =
-      | 'ruby-base'
-      | 'ruby-base-container'
-      | 'ruby-text'
-      | 'ruby-text-container'
-      | 'table-caption'
-      | 'table-cell'
-      | 'table-column'
-      | 'table-column-group'
-      | 'table-footer-group'
-      | 'table-header-group'
-      | 'table-row'
-      | 'table-row-group';
+    | 'ruby-base'
+    | 'ruby-base-container'
+    | 'ruby-text'
+    | 'ruby-text-container'
+    | 'table-caption'
+    | 'table-cell'
+    | 'table-column'
+    | 'table-column-group'
+    | 'table-footer-group'
+    | 'table-header-group'
+    | 'table-row'
+    | 'table-row-group';
 
   type DisplayLegacy =
-      | 'inline-block'
-      | 'inline-flex'
-      | 'inline-grid'
-      | 'inline-list-item'
-      | 'inline-table';
+    | 'inline-block'
+    | 'inline-flex'
+    | 'inline-grid'
+    | 'inline-list-item'
+    | 'inline-table';
 
   type DisplayOutside = 'block' | 'inline' | 'run-in';
 
-  type EasingFunction = CubicBezierTimingFunction | StepTimingFunction | 'linear';
+  type EasingFunction =
+    | CubicBezierTimingFunction
+    | StepTimingFunction
+    | 'linear';
 
   type EastAsianVariantValues =
-      | 'jis04'
-      | 'jis78'
-      | 'jis83'
-      | 'jis90'
-      | 'simplified'
-      | 'traditional';
+    | 'jis04'
+    | 'jis78'
+    | 'jis83'
+    | 'jis90'
+    | 'simplified'
+    | 'traditional';
 
-  type FinalBgLayer = Color | BgPosition | RepeatStyle | Attachment | Box | 'none' | OnlyString;
+  type FinalBgLayer =
+    | Color
+    | BgPosition
+    | RepeatStyle
+    | Attachment
+    | Box
+    | 'none'
+    | OnlyString;
 
   type FontStretchAbsolute =
-      | 'condensed'
-      | 'expanded'
-      | 'extra-condensed'
-      | 'extra-expanded'
-      | 'normal'
-      | 'semi-condensed'
-      | 'semi-expanded'
-      | 'ultra-condensed'
-      | 'ultra-expanded'
-      | OnlyString;
+    | 'condensed'
+    | 'expanded'
+    | 'extra-condensed'
+    | 'extra-expanded'
+    | 'normal'
+    | 'semi-condensed'
+    | 'semi-expanded'
+    | 'ultra-condensed'
+    | 'ultra-expanded'
+    | OnlyString;
 
   type FontWeightAbsolute = 'bold' | 'normal' | OnlyStringNumeric;
 
   type GenericFamily =
-      | 'cursive'
-      | 'emoji'
-      | 'fangsong'
-      | 'fantasy'
-      | 'math'
-      | 'monospace'
-      | 'sans-serif'
-      | 'serif'
-      | 'system-ui'
-      | 'ui-monospace'
-      | 'ui-rounded'
-      | 'ui-sans-serif'
-      | 'ui-serif';
+    | 'cursive'
+    | 'emoji'
+    | 'fangsong'
+    | 'fantasy'
+    | 'math'
+    | 'monospace'
+    | 'sans-serif'
+    | 'serif'
+    | 'system-ui'
+    | 'ui-monospace'
+    | 'ui-rounded'
+    | 'ui-sans-serif'
+    | 'ui-serif';
 
-  type GeometryBox = Box | 'fill-box' | 'margin-box' | 'stroke-box' | 'view-box';
+  type GeometryBox =
+    | Box
+    | 'fill-box'
+    | 'margin-box'
+    | 'stroke-box'
+    | 'view-box';
 
   type GridLine = 'auto' | OnlyStringNumeric;
 
   type LineStyle =
-      | 'dashed'
-      | 'dotted'
-      | 'double'
-      | 'groove'
-      | 'hidden'
-      | 'inset'
-      | 'none'
-      | 'outset'
-      | 'ridge'
-      | 'solid';
+    | 'dashed'
+    | 'dotted'
+    | 'double'
+    | 'groove'
+    | 'hidden'
+    | 'inset'
+    | 'none'
+    | 'outset'
+    | 'ridge'
+    | 'solid';
 
   type LineWidth = number | 'medium' | 'thick' | 'thin';
 
   type MaskLayer =
-      | Position
-      | RepeatStyle
-      | GeometryBox
-      | CompositingOperator
-      | MaskingMode
-      | 'no-clip'
-      | 'none'
-      | OnlyString;
+    | Position
+    | RepeatStyle
+    | GeometryBox
+    | CompositingOperator
+    | MaskingMode
+    | 'no-clip'
+    | 'none'
+    | OnlyString;
 
   type MaskingMode = 'alpha' | 'luminance' | 'match-source';
 
   type NamedColor =
-      | 'AliceBlue'
-      | 'AntiqueWhite'
-      | 'Aqua'
-      | 'Aquamarine'
-      | 'Azure'
-      | 'Beige'
-      | 'Bisque'
-      | 'Black'
-      | 'BlanchedAlmond'
-      | 'Blue'
-      | 'BlueViolet'
-      | 'Brown'
-      | 'BurlyWood'
-      | 'CadetBlue'
-      | 'Chartreuse'
-      | 'Chocolate'
-      | 'Coral'
-      | 'CornflowerBlue'
-      | 'Cornsilk'
-      | 'Crimson'
-      | 'Cyan'
-      | 'DarkBlue'
-      | 'DarkCyan'
-      | 'DarkGoldenRod'
-      | 'DarkGray'
-      | 'DarkGreen'
-      | 'DarkGrey'
-      | 'DarkKhaki'
-      | 'DarkMagenta'
-      | 'DarkOliveGreen'
-      | 'DarkOrange'
-      | 'DarkOrchid'
-      | 'DarkRed'
-      | 'DarkSalmon'
-      | 'DarkSeaGreen'
-      | 'DarkSlateBlue'
-      | 'DarkSlateGray'
-      | 'DarkSlateGrey'
-      | 'DarkTurquoise'
-      | 'DarkViolet'
-      | 'DeepPink'
-      | 'DeepSkyBlue'
-      | 'DimGray'
-      | 'DimGrey'
-      | 'DodgerBlue'
-      | 'FireBrick'
-      | 'FloralWhite'
-      | 'ForestGreen'
-      | 'Fuchsia'
-      | 'Gainsboro'
-      | 'GhostWhite'
-      | 'Gold'
-      | 'GoldenRod'
-      | 'Gray'
-      | 'Green'
-      | 'GreenYellow'
-      | 'Grey'
-      | 'HoneyDew'
-      | 'HotPink'
-      | 'IndianRed'
-      | 'Indigo'
-      | 'Ivory'
-      | 'Khaki'
-      | 'Lavender'
-      | 'LavenderBlush'
-      | 'LawnGreen'
-      | 'LemonChiffon'
-      | 'LightBlue'
-      | 'LightCoral'
-      | 'LightCyan'
-      | 'LightGoldenRodYellow'
-      | 'LightGray'
-      | 'LightGreen'
-      | 'LightGrey'
-      | 'LightPink'
-      | 'LightSalmon'
-      | 'LightSeaGreen'
-      | 'LightSkyBlue'
-      | 'LightSlateGray'
-      | 'LightSlateGrey'
-      | 'LightSteelBlue'
-      | 'LightYellow'
-      | 'Lime'
-      | 'LimeGreen'
-      | 'Linen'
-      | 'Magenta'
-      | 'Maroon'
-      | 'MediumAquaMarine'
-      | 'MediumBlue'
-      | 'MediumOrchid'
-      | 'MediumPurple'
-      | 'MediumSeaGreen'
-      | 'MediumSlateBlue'
-      | 'MediumSpringGreen'
-      | 'MediumTurquoise'
-      | 'MediumVioletRed'
-      | 'MidnightBlue'
-      | 'MintCream'
-      | 'MistyRose'
-      | 'Moccasin'
-      | 'NavajoWhite'
-      | 'Navy'
-      | 'OldLace'
-      | 'Olive'
-      | 'OliveDrab'
-      | 'Orange'
-      | 'OrangeRed'
-      | 'Orchid'
-      | 'PaleGoldenRod'
-      | 'PaleGreen'
-      | 'PaleTurquoise'
-      | 'PaleVioletRed'
-      | 'PapayaWhip'
-      | 'PeachPuff'
-      | 'Peru'
-      | 'Pink'
-      | 'Plum'
-      | 'PowderBlue'
-      | 'Purple'
-      | 'RebeccaPurple'
-      | 'Red'
-      | 'RosyBrown'
-      | 'RoyalBlue'
-      | 'SaddleBrown'
-      | 'Salmon'
-      | 'SandyBrown'
-      | 'SeaGreen'
-      | 'SeaShell'
-      | 'Sienna'
-      | 'Silver'
-      | 'SkyBlue'
-      | 'SlateBlue'
-      | 'SlateGray'
-      | 'SlateGrey'
-      | 'Snow'
-      | 'SpringGreen'
-      | 'SteelBlue'
-      | 'Tan'
-      | 'Teal'
-      | 'Thistle'
-      | 'Tomato'
-      | 'transparent'
-      | 'Turquoise'
-      | 'Violet'
-      | 'Wheat'
-      | 'White'
-      | 'WhiteSmoke'
-      | 'Yellow'
-      | 'YellowGreen';
+    | 'AliceBlue'
+    | 'AntiqueWhite'
+    | 'Aqua'
+    | 'Aquamarine'
+    | 'Azure'
+    | 'Beige'
+    | 'Bisque'
+    | 'Black'
+    | 'BlanchedAlmond'
+    | 'Blue'
+    | 'BlueViolet'
+    | 'Brown'
+    | 'BurlyWood'
+    | 'CadetBlue'
+    | 'Chartreuse'
+    | 'Chocolate'
+    | 'Coral'
+    | 'CornflowerBlue'
+    | 'Cornsilk'
+    | 'Crimson'
+    | 'Cyan'
+    | 'DarkBlue'
+    | 'DarkCyan'
+    | 'DarkGoldenRod'
+    | 'DarkGray'
+    | 'DarkGreen'
+    | 'DarkGrey'
+    | 'DarkKhaki'
+    | 'DarkMagenta'
+    | 'DarkOliveGreen'
+    | 'DarkOrange'
+    | 'DarkOrchid'
+    | 'DarkRed'
+    | 'DarkSalmon'
+    | 'DarkSeaGreen'
+    | 'DarkSlateBlue'
+    | 'DarkSlateGray'
+    | 'DarkSlateGrey'
+    | 'DarkTurquoise'
+    | 'DarkViolet'
+    | 'DeepPink'
+    | 'DeepSkyBlue'
+    | 'DimGray'
+    | 'DimGrey'
+    | 'DodgerBlue'
+    | 'FireBrick'
+    | 'FloralWhite'
+    | 'ForestGreen'
+    | 'Fuchsia'
+    | 'Gainsboro'
+    | 'GhostWhite'
+    | 'Gold'
+    | 'GoldenRod'
+    | 'Gray'
+    | 'Green'
+    | 'GreenYellow'
+    | 'Grey'
+    | 'HoneyDew'
+    | 'HotPink'
+    | 'IndianRed'
+    | 'Indigo'
+    | 'Ivory'
+    | 'Khaki'
+    | 'Lavender'
+    | 'LavenderBlush'
+    | 'LawnGreen'
+    | 'LemonChiffon'
+    | 'LightBlue'
+    | 'LightCoral'
+    | 'LightCyan'
+    | 'LightGoldenRodYellow'
+    | 'LightGray'
+    | 'LightGreen'
+    | 'LightGrey'
+    | 'LightPink'
+    | 'LightSalmon'
+    | 'LightSeaGreen'
+    | 'LightSkyBlue'
+    | 'LightSlateGray'
+    | 'LightSlateGrey'
+    | 'LightSteelBlue'
+    | 'LightYellow'
+    | 'Lime'
+    | 'LimeGreen'
+    | 'Linen'
+    | 'Magenta'
+    | 'Maroon'
+    | 'MediumAquaMarine'
+    | 'MediumBlue'
+    | 'MediumOrchid'
+    | 'MediumPurple'
+    | 'MediumSeaGreen'
+    | 'MediumSlateBlue'
+    | 'MediumSpringGreen'
+    | 'MediumTurquoise'
+    | 'MediumVioletRed'
+    | 'MidnightBlue'
+    | 'MintCream'
+    | 'MistyRose'
+    | 'Moccasin'
+    | 'NavajoWhite'
+    | 'Navy'
+    | 'OldLace'
+    | 'Olive'
+    | 'OliveDrab'
+    | 'Orange'
+    | 'OrangeRed'
+    | 'Orchid'
+    | 'PaleGoldenRod'
+    | 'PaleGreen'
+    | 'PaleTurquoise'
+    | 'PaleVioletRed'
+    | 'PapayaWhip'
+    | 'PeachPuff'
+    | 'Peru'
+    | 'Pink'
+    | 'Plum'
+    | 'PowderBlue'
+    | 'Purple'
+    | 'RebeccaPurple'
+    | 'Red'
+    | 'RosyBrown'
+    | 'RoyalBlue'
+    | 'SaddleBrown'
+    | 'Salmon'
+    | 'SandyBrown'
+    | 'SeaGreen'
+    | 'SeaShell'
+    | 'Sienna'
+    | 'Silver'
+    | 'SkyBlue'
+    | 'SlateBlue'
+    | 'SlateGray'
+    | 'SlateGrey'
+    | 'Snow'
+    | 'SpringGreen'
+    | 'SteelBlue'
+    | 'Tan'
+    | 'Teal'
+    | 'Thistle'
+    | 'Tomato'
+    | 'transparent'
+    | 'Turquoise'
+    | 'Violet'
+    | 'Wheat'
+    | 'White'
+    | 'WhiteSmoke'
+    | 'Yellow'
+    | 'YellowGreen';
 
   type PageSize =
-      | 'A3'
-      | 'A4'
-      | 'A5'
-      | 'B4'
-      | 'B5'
-      | 'JIS-B4'
-      | 'JIS-B5'
-      | 'ledger'
-      | 'legal'
-      | 'letter';
+    | 'A3'
+    | 'A4'
+    | 'A5'
+    | 'B4'
+    | 'B5'
+    | 'JIS-B4'
+    | 'JIS-B5'
+    | 'ledger'
+    | 'legal'
+    | 'letter';
 
-  type Paint = Color | 'child' | 'context-fill' | 'context-stroke' | 'none' | OnlyString;
+  type Paint =
+    | Color
+    | 'child'
+    | 'context-fill'
+    | 'context-stroke'
+    | 'none'
+    | OnlyString;
 
-  type Position = 'bottom' | 'center' | 'left' | 'right' | 'top' | OnlyStringNumeric;
+  type Position =
+    | 'bottom'
+    | 'center'
+    | 'left'
+    | 'right'
+    | 'top'
+    | OnlyStringNumeric;
 
-  type Quote = 'close-quote' | 'no-close-quote' | 'no-open-quote' | 'open-quote';
+  type Quote =
+    | 'close-quote'
+    | 'no-close-quote'
+    | 'no-open-quote'
+    | 'open-quote';
 
   type RepeatStyle =
-      | 'no-repeat'
-      | 'repeat'
-      | 'repeat-x'
-      | 'repeat-y'
-      | 'round'
-      | 'space'
-      | OnlyString;
+    | 'no-repeat'
+    | 'repeat'
+    | 'repeat-x'
+    | 'repeat-y'
+    | 'round'
+    | 'space'
+    | OnlyString;
 
   type SelfPosition =
-      | 'center'
-      | 'end'
-      | 'flex-end'
-      | 'flex-start'
-      | 'self-end'
-      | 'self-start'
-      | 'start';
+    | 'center'
+    | 'end'
+    | 'flex-end'
+    | 'flex-start'
+    | 'self-end'
+    | 'self-start'
+    | 'start';
 
   type SingleAnimation =
-      | EasingFunction
-      | SingleAnimationDirection
-      | SingleAnimationFillMode
-      | 'infinite'
-      | 'none'
-      | 'paused'
-      | 'running'
-      | OnlyString
-      | OnlyNumber;
+    | EasingFunction
+    | SingleAnimationDirection
+    | SingleAnimationFillMode
+    | 'infinite'
+    | 'none'
+    | 'paused'
+    | 'running'
+    | OnlyString
+    | OnlyNumber;
 
-  type SingleAnimationDirection = 'alternate' | 'alternate-reverse' | 'normal' | 'reverse';
+  type SingleAnimationDirection =
+    | 'alternate'
+    | 'alternate-reverse'
+    | 'normal'
+    | 'reverse';
 
   type SingleAnimationFillMode = 'backwards' | 'both' | 'forwards' | 'none';
 
@@ -10146,7 +10485,11 @@ declare namespace DataType {
 
   type StepTimingFunction = 'step-end' | 'step-start' | OnlyString;
 
-  type TrackBreadth = 'auto' | 'max-content' | 'min-content' | OnlyStringNumeric;
+  type TrackBreadth =
+    | 'auto'
+    | 'max-content'
+    | 'min-content'
+    | OnlyStringNumeric;
 
   type ViewportLength = 'auto' | OnlyStringNumeric;
 

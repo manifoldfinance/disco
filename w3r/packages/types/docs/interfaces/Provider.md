@@ -41,10 +41,10 @@ Alias for `emitter.on(eventName, listener)`.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `eventName` | `string` \| `symbol` |
-| `listener` | (...`args`: `any`[]) => `void` |
+| Name        | Type                           |
+| :---------- | :----------------------------- |
+| `eventName` | `string` \| `symbol`           |
+| `listener`  | (...`args`: `any`[]) => `void` |
 
 #### Returns
 
@@ -58,14 +58,15 @@ EventEmitter.addListener
 
 node_modules/@types/node/events.d.ts:299
 
-___
+---
 
 ### emit
 
 ▸ **emit**(`eventName`, ...`args`): `boolean`
 
-Synchronously calls each of the listeners registered for the event named`eventName`, in the order they were registered, passing the supplied arguments
-to each.
+Synchronously calls each of the listeners registered for the event
+named`eventName`, in the order they were registered, passing the supplied
+arguments to each.
 
 Returns `true` if the event had listeners, `false` otherwise.
 
@@ -106,10 +107,10 @@ myEmitter.emit('event', 1, 2, 3, 4, 5);
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name        | Type                 |
+| :---------- | :------------------- |
 | `eventName` | `string` \| `symbol` |
-| `...args` | `any`[] |
+| `...args`   | `any`[]              |
 
 #### Returns
 
@@ -123,7 +124,7 @@ EventEmitter.emit
 
 node_modules/@types/node/events.d.ts:555
 
-___
+---
 
 ### eventNames
 
@@ -159,7 +160,7 @@ EventEmitter.eventNames
 
 node_modules/@types/node/events.d.ts:614
 
-___
+---
 
 ### getMaxListeners
 
@@ -182,7 +183,7 @@ EventEmitter.getMaxListeners
 
 node_modules/@types/node/events.d.ts:471
 
-___
+---
 
 ### listenerCount
 
@@ -194,8 +195,8 @@ Returns the number of listeners listening to the event named `eventName`.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name        | Type                 | Description                              |
+| :---------- | :------------------- | :--------------------------------------- |
 | `eventName` | `string` \| `symbol` | The name of the event being listened for |
 
 #### Returns
@@ -210,7 +211,7 @@ EventEmitter.listenerCount
 
 node_modules/@types/node/events.d.ts:561
 
-___
+---
 
 ### listeners
 
@@ -230,8 +231,8 @@ console.log(util.inspect(server.listeners('connection')));
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name        | Type                 |
+| :---------- | :------------------- |
 | `eventName` | `string` \| `symbol` |
 
 #### Returns
@@ -246,7 +247,7 @@ EventEmitter.listeners
 
 node_modules/@types/node/events.d.ts:484
 
-___
+---
 
 ### off
 
@@ -258,10 +259,10 @@ Alias for `emitter.removeListener()`.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `eventName` | `string` \| `symbol` |
-| `listener` | (...`args`: `any`[]) => `void` |
+| Name        | Type                           |
+| :---------- | :----------------------------- |
+| `eventName` | `string` \| `symbol`           |
+| `listener`  | (...`args`: `any`[]) => `void` |
 
 #### Returns
 
@@ -275,16 +276,16 @@ EventEmitter.off
 
 node_modules/@types/node/events.d.ts:444
 
-___
+---
 
 ### on
 
 ▸ **on**(`eventName`, `listener`): [`Provider`](Provider.md)
 
-Adds the `listener` function to the end of the listeners array for the
-event named `eventName`. No checks are made to see if the `listener` has
-already been added. Multiple calls passing the same combination of `eventName`and `listener` will result in the `listener` being added, and called, multiple
-times.
+Adds the `listener` function to the end of the listeners array for the event
+named `eventName`. No checks are made to see if the `listener` has already been
+added. Multiple calls passing the same combination of `eventName`and `listener`
+will result in the `listener` being added, and called, multiple times.
 
 ```js
 server.on('connection', (stream) => {
@@ -294,7 +295,8 @@ server.on('connection', (stream) => {
 
 Returns a reference to the `EventEmitter`, so that calls can be chained.
 
-By default, event listeners are invoked in the order they are added. The`emitter.prependListener()` method can be used as an alternative to add the
+By default, event listeners are invoked in the order they are added.
+The`emitter.prependListener()` method can be used as an alternative to add the
 event listener to the beginning of the listeners array.
 
 ```js
@@ -311,10 +313,10 @@ myEE.emit('foo');
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `eventName` | `string` \| `symbol` | The name of the event. |
-| `listener` | (...`args`: `any`[]) => `void` | The callback function |
+| Name        | Type                           | Description            |
+| :---------- | :----------------------------- | :--------------------- |
+| `eventName` | `string` \| `symbol`           | The name of the event. |
+| `listener`  | (...`args`: `any`[]) => `void` | The callback function  |
 
 #### Returns
 
@@ -328,14 +330,14 @@ EventEmitter.on
 
 node_modules/@types/node/events.d.ts:330
 
-___
+---
 
 ### once
 
 ▸ **once**(`eventName`, `listener`): [`Provider`](Provider.md)
 
-Adds a **one-time**`listener` function for the event named `eventName`. The
-next time `eventName` is triggered, this listener is removed and then invoked.
+Adds a **one-time**`listener` function for the event named `eventName`. The next
+time `eventName` is triggered, this listener is removed and then invoked.
 
 ```js
 server.once('connection', (stream) => {
@@ -345,8 +347,9 @@ server.once('connection', (stream) => {
 
 Returns a reference to the `EventEmitter`, so that calls can be chained.
 
-By default, event listeners are invoked in the order they are added. The`emitter.prependOnceListener()` method can be used as an alternative to add the
-event listener to the beginning of the listeners array.
+By default, event listeners are invoked in the order they are added.
+The`emitter.prependOnceListener()` method can be used as an alternative to add
+the event listener to the beginning of the listeners array.
 
 ```js
 const myEE = new EventEmitter();
@@ -362,10 +365,10 @@ myEE.emit('foo');
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `eventName` | `string` \| `symbol` | The name of the event. |
-| `listener` | (...`args`: `any`[]) => `void` | The callback function |
+| Name        | Type                           | Description            |
+| :---------- | :----------------------------- | :--------------------- |
+| `eventName` | `string` \| `symbol`           | The name of the event. |
+| `listener`  | (...`args`: `any`[]) => `void` | The callback function  |
 
 #### Returns
 
@@ -379,15 +382,16 @@ EventEmitter.once
 
 node_modules/@types/node/events.d.ts:359
 
-___
+---
 
 ### prependListener
 
 ▸ **prependListener**(`eventName`, `listener`): [`Provider`](Provider.md)
 
 Adds the `listener` function to the _beginning_ of the listeners array for the
-event named `eventName`. No checks are made to see if the `listener` has
-already been added. Multiple calls passing the same combination of `eventName`and `listener` will result in the `listener` being added, and called, multiple
+event named `eventName`. No checks are made to see if the `listener` has already
+been added. Multiple calls passing the same combination of `eventName`and
+`listener` will result in the `listener` being added, and called, multiple
 times.
 
 ```js
@@ -402,10 +406,10 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `eventName` | `string` \| `symbol` | The name of the event. |
-| `listener` | (...`args`: `any`[]) => `void` | The callback function |
+| Name        | Type                           | Description            |
+| :---------- | :----------------------------- | :--------------------- |
+| `eventName` | `string` \| `symbol`           | The name of the event. |
+| `listener`  | (...`args`: `any`[]) => `void` | The callback function  |
 
 #### Returns
 
@@ -419,14 +423,15 @@ EventEmitter.prependListener
 
 node_modules/@types/node/events.d.ts:579
 
-___
+---
 
 ### prependOnceListener
 
 ▸ **prependOnceListener**(`eventName`, `listener`): [`Provider`](Provider.md)
 
-Adds a **one-time**`listener` function for the event named `eventName` to the_beginning_ of the listeners array. The next time `eventName` is triggered, this
-listener is removed, and then invoked.
+Adds a **one-time**`listener` function for the event named `eventName` to
+the*beginning* of the listeners array. The next time `eventName` is triggered,
+this listener is removed, and then invoked.
 
 ```js
 server.prependOnceListener('connection', (stream) => {
@@ -440,10 +445,10 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `eventName` | `string` \| `symbol` | The name of the event. |
-| `listener` | (...`args`: `any`[]) => `void` | The callback function |
+| Name        | Type                           | Description            |
+| :---------- | :----------------------------- | :--------------------- |
+| `eventName` | `string` \| `symbol`           | The name of the event. |
+| `listener`  | (...`args`: `any`[]) => `void` | The callback function  |
 
 #### Returns
 
@@ -457,7 +462,7 @@ EventEmitter.prependOnceListener
 
 node_modules/@types/node/events.d.ts:595
 
-___
+---
 
 ### rawListeners
 
@@ -494,8 +499,8 @@ emitter.emit('log');
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name        | Type                 |
+| :---------- | :------------------- |
 | `eventName` | `string` \| `symbol` |
 
 #### Returns
@@ -510,7 +515,7 @@ EventEmitter.rawListeners
 
 node_modules/@types/node/events.d.ts:514
 
-___
+---
 
 ### removeAllListeners
 
@@ -518,9 +523,9 @@ ___
 
 Removes all listeners, or those of the specified `eventName`.
 
-It is bad practice to remove listeners added elsewhere in the code,
-particularly when the `EventEmitter` instance was created by some other
-component or module (e.g. sockets or file streams).
+It is bad practice to remove listeners added elsewhere in the code, particularly
+when the `EventEmitter` instance was created by some other component or module
+(e.g. sockets or file streams).
 
 Returns a reference to the `EventEmitter`, so that calls can be chained.
 
@@ -528,8 +533,8 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name     | Type                 |
+| :------- | :------------------- |
 | `event?` | `string` \| `symbol` |
 
 #### Returns
@@ -544,13 +549,14 @@ EventEmitter.removeAllListeners
 
 node_modules/@types/node/events.d.ts:455
 
-___
+---
 
 ### removeListener
 
 ▸ **removeListener**(`eventName`, `listener`): [`Provider`](Provider.md)
 
-Removes the specified `listener` from the listener array for the event named`eventName`.
+Removes the specified `listener` from the listener array for the event
+named`eventName`.
 
 ```js
 const callback = (stream) => {
@@ -566,9 +572,11 @@ listener array. If any single listener has been added multiple times to the
 listener array for the specified `eventName`, then `removeListener()` must be
 called multiple times to remove each instance.
 
-Once an event is emitted, all listeners attached to it at the
-time of emitting are called in order. This implies that any`removeListener()` or `removeAllListeners()` calls _after_ emitting and_before_ the last listener finishes execution will
-not remove them from`emit()` in progress. Subsequent events behave as expected.
+Once an event is emitted, all listeners attached to it at the time of emitting
+are called in order. This implies that any`removeListener()` or
+`removeAllListeners()` calls _after_ emitting and*before* the last listener
+finishes execution will not remove them from`emit()` in progress. Subsequent
+events behave as expected.
 
 ```js
 const myEmitter = new MyEmitter();
@@ -600,11 +608,11 @@ myEmitter.emit('event');
 //   A
 ```
 
-Because listeners are managed using an internal array, calling this will
-change the position indices of any listener registered _after_ the listener
-being removed. This will not impact the order in which listeners are called,
-but it means that any copies of the listener array as returned by
-the `emitter.listeners()` method will need to be recreated.
+Because listeners are managed using an internal array, calling this will change
+the position indices of any listener registered _after_ the listener being
+removed. This will not impact the order in which listeners are called, but it
+means that any copies of the listener array as returned by the
+`emitter.listeners()` method will need to be recreated.
 
 When a single function has been added as a handler multiple times for a single
 event (as in the example below), `removeListener()` will remove the most
@@ -631,10 +639,10 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `eventName` | `string` \| `symbol` |
-| `listener` | (...`args`: `any`[]) => `void` |
+| Name        | Type                           |
+| :---------- | :----------------------------- |
+| `eventName` | `string` \| `symbol`           |
+| `listener`  | (...`args`: `any`[]) => `void` |
 
 #### Returns
 
@@ -648,7 +656,7 @@ EventEmitter.removeListener
 
 node_modules/@types/node/events.d.ts:439
 
-___
+---
 
 ### request
 
@@ -656,8 +664,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name   | Type                                      |
+| :----- | :---------------------------------------- |
 | `args` | [`RequestArguments`](RequestArguments.md) |
 
 #### Returns
@@ -668,16 +676,17 @@ ___
 
 [src/index.ts:33](https://github.com/sambacha/w3r/blob/ec0b730/packages/types/src/index.ts#L33)
 
-___
+---
 
 ### setMaxListeners
 
 ▸ **setMaxListeners**(`n`): [`Provider`](Provider.md)
 
 By default `EventEmitter`s will print a warning if more than `10` listeners are
-added for a particular event. This is a useful default that helps finding
-memory leaks. The `emitter.setMaxListeners()` method allows the limit to be
-modified for this specific `EventEmitter` instance. The value can be set to`Infinity` (or `0`) to indicate an unlimited number of listeners.
+added for a particular event. This is a useful default that helps finding memory
+leaks. The `emitter.setMaxListeners()` method allows the limit to be modified
+for this specific `EventEmitter` instance. The value can be set to`Infinity` (or
+`0`) to indicate an unlimited number of listeners.
 
 Returns a reference to the `EventEmitter`, so that calls can be chained.
 
@@ -685,9 +694,9 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `n` | `number` |
+| Name | Type     |
+| :--- | :------- |
+| `n`  | `number` |
 
 #### Returns
 

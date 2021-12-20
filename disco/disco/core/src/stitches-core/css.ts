@@ -7095,7 +7095,9 @@ export interface SvgPropertiesHyphen {
   'writing-mode'?: Property.WritingMode;
 }
 
-export interface PropertiesHyphen extends StandardPropertiesHyphen, SvgPropertiesHyphen {}
+export interface PropertiesHyphen
+  extends StandardPropertiesHyphen,
+    SvgPropertiesHyphen {}
 
 export type StandardLonghandPropertiesFallback = {
   [P in keyof StandardLonghandProperties]:
@@ -7117,7 +7119,9 @@ export type SvgPropertiesFallback = {
   [P in keyof SvgProperties]: SvgProperties[P] | SvgProperties[P][];
 };
 
-export interface PropertiesFallback extends StandardPropertiesFallback, SvgPropertiesFallback {}
+export interface PropertiesFallback
+  extends StandardPropertiesFallback,
+    SvgPropertiesFallback {}
 
 export type StandardLonghandPropertiesHyphenFallback = {
   [P in keyof StandardLonghandPropertiesHyphen]:
@@ -7136,7 +7140,9 @@ export interface StandardPropertiesHyphenFallback
     StandardShorthandPropertiesHyphenFallback {}
 
 export type SvgPropertiesHyphenFallback = {
-  [P in keyof SvgPropertiesHyphen]: SvgPropertiesHyphen[P] | SvgPropertiesHyphen[P][];
+  [P in keyof SvgPropertiesHyphen]:
+    | SvgPropertiesHyphen[P]
+    | SvgPropertiesHyphen[P][];
 };
 
 export interface PropertiesHyphenFallback
@@ -7736,7 +7742,12 @@ export namespace Property {
     | 'normal'
     | OnlyString;
 
-  export type AlignItems = DataType.SelfPosition | 'baseline' | 'normal' | 'stretch' | OnlyString;
+  export type AlignItems =
+    | DataType.SelfPosition
+    | 'baseline'
+    | 'normal'
+    | 'stretch'
+    | OnlyString;
 
   export type AlignSelf =
     | DataType.SelfPosition
@@ -7759,7 +7770,9 @@ export namespace Property {
 
   export type AnimationDelay = never | OnlyString;
 
-  export type AnimationDirection = DataType.SingleAnimationDirection | OnlyString;
+  export type AnimationDirection =
+    | DataType.SingleAnimationDirection
+    | OnlyString;
 
   export type AnimationDuration = never | OnlyString;
 
@@ -7773,7 +7786,12 @@ export namespace Property {
 
   export type AnimationTimingFunction = DataType.EasingFunction | OnlyString;
 
-  export type Appearance = DataType.CompatAuto | 'auto' | 'menulist-button' | 'none' | 'textfield';
+  export type Appearance =
+    | DataType.CompatAuto
+    | 'auto'
+    | 'menulist-button'
+    | 'none'
+    | 'textfield';
 
   export type AspectRatio = 'auto' | OnlyString;
 
@@ -7843,9 +7861,17 @@ export namespace Property {
     | 'min-content'
     | OnlyString;
 
-  export type Border = DataType.LineWidth | DataType.LineStyle | DataType.Color | OnlyString;
+  export type Border =
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
-  export type BorderBlock = DataType.LineWidth | DataType.LineStyle | DataType.Color | OnlyString;
+  export type BorderBlock =
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
   export type BorderBlockColor = DataType.Color | OnlyString;
 
@@ -7877,7 +7903,11 @@ export namespace Property {
 
   export type BorderBlockWidth = DataType.LineWidth;
 
-  export type BorderBottom = DataType.LineWidth | DataType.LineStyle | DataType.Color | OnlyString;
+  export type BorderBottom =
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
   export type BorderBottomColor = DataType.Color;
 
@@ -7897,11 +7927,22 @@ export namespace Property {
 
   export type BorderEndStartRadius = OnlyStringNumeric;
 
-  export type BorderImage = 'none' | 'repeat' | 'round' | 'space' | 'stretch' | OnlyStringNumeric;
+  export type BorderImage =
+    | 'none'
+    | 'repeat'
+    | 'round'
+    | 'space'
+    | 'stretch'
+    | OnlyStringNumeric;
 
   export type BorderImageOutset = OnlyStringNumeric;
 
-  export type BorderImageRepeat = 'repeat' | 'round' | 'space' | 'stretch' | OnlyString;
+  export type BorderImageRepeat =
+    | 'repeat'
+    | 'round'
+    | 'space'
+    | 'stretch'
+    | OnlyString;
 
   export type BorderImageSlice = OnlyStringNumeric;
 
@@ -7909,7 +7950,11 @@ export namespace Property {
 
   export type BorderImageWidth = 'auto' | OnlyStringNumeric;
 
-  export type BorderInline = DataType.LineWidth | DataType.LineStyle | DataType.Color | OnlyString;
+  export type BorderInline =
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
   export type BorderInlineColor = DataType.Color | OnlyString;
 
@@ -7941,7 +7986,11 @@ export namespace Property {
 
   export type BorderInlineWidth = DataType.LineWidth;
 
-  export type BorderLeft = DataType.LineWidth | DataType.LineStyle | DataType.Color | OnlyString;
+  export type BorderLeft =
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
   export type BorderLeftColor = DataType.Color;
 
@@ -7951,7 +8000,11 @@ export namespace Property {
 
   export type BorderRadius = OnlyStringNumeric;
 
-  export type BorderRight = DataType.LineWidth | DataType.LineStyle | DataType.Color | OnlyString;
+  export type BorderRight =
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
   export type BorderRightColor = DataType.Color;
 
@@ -7967,7 +8020,11 @@ export namespace Property {
 
   export type BorderStyle = DataType.LineStyle | OnlyString;
 
-  export type BorderTop = DataType.LineWidth | DataType.LineStyle | DataType.Color | OnlyString;
+  export type BorderTop =
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
   export type BorderTopColor = DataType.Color;
 
@@ -7997,7 +8054,12 @@ export namespace Property {
 
   export type BoxOrdinalGroup = OnlyNumber;
 
-  export type BoxOrient = 'block-axis' | 'horizontal' | 'inherit' | 'inline-axis' | 'vertical';
+  export type BoxOrient =
+    | 'block-axis'
+    | 'horizontal'
+    | 'inherit'
+    | 'inline-axis'
+    | 'vertical';
 
   export type BoxPack = 'center' | 'end' | 'justify' | 'start';
 
@@ -8037,7 +8099,12 @@ export namespace Property {
     | 'right'
     | 'verso';
 
-  export type BreakInside = 'auto' | 'avoid' | 'avoid-column' | 'avoid-page' | 'avoid-region';
+  export type BreakInside =
+    | 'auto'
+    | 'avoid'
+    | 'avoid-column'
+    | 'avoid-page'
+    | 'avoid-region';
 
   export type CaptionSide =
     | 'block-end'
@@ -8049,7 +8116,13 @@ export namespace Property {
 
   export type CaretColor = DataType.Color | 'auto';
 
-  export type Clear = 'both' | 'inline-end' | 'inline-start' | 'left' | 'none' | 'right';
+  export type Clear =
+    | 'both'
+    | 'inline-end'
+    | 'inline-start'
+    | 'left'
+    | 'none'
+    | 'right';
 
   export type Clip = 'auto' | OnlyString;
 
@@ -8059,7 +8132,12 @@ export namespace Property {
 
   export type ColorAdjust = 'economy' | 'exact';
 
-  export type ColorScheme = 'dark' | 'light' | 'light dark' | 'normal' | OnlyString;
+  export type ColorScheme =
+    | 'dark'
+    | 'light'
+    | 'light dark'
+    | 'normal'
+    | OnlyString;
 
   export type ColumnCount = 'auto' | OnlyNumber;
 
@@ -8067,7 +8145,11 @@ export namespace Property {
 
   export type ColumnGap = 'normal' | OnlyStringNumeric;
 
-  export type ColumnRule = DataType.LineWidth | DataType.LineStyle | DataType.Color | OnlyString;
+  export type ColumnRule =
+    | DataType.LineWidth
+    | DataType.LineStyle
+    | DataType.Color
+    | OnlyString;
 
   export type ColumnRuleColor = DataType.Color;
 
@@ -8176,7 +8258,11 @@ export namespace Property {
     | 'min-content'
     | OnlyString;
 
-  export type FlexDirection = 'column' | 'column-reverse' | 'row' | 'row-reverse';
+  export type FlexDirection =
+    | 'column'
+    | 'column-reverse'
+    | 'row'
+    | 'row-reverse';
 
   export type FlexFlow =
     | 'column'
@@ -8215,11 +8301,20 @@ export namespace Property {
 
   export type FontOpticalSizing = 'auto' | 'none';
 
-  export type FontSize = DataType.AbsoluteSize | 'larger' | 'smaller' | OnlyStringNumeric;
+  export type FontSize =
+    | DataType.AbsoluteSize
+    | 'larger'
+    | 'smaller'
+    | OnlyStringNumeric;
 
   export type FontSizeAdjust = 'none' | OnlyNumber;
 
-  export type FontSmooth = DataType.AbsoluteSize | number | 'always' | 'auto' | 'never';
+  export type FontSmooth =
+    | DataType.AbsoluteSize
+    | number
+    | 'always'
+    | 'auto'
+    | 'never';
 
   export type FontStretch = DataType.FontStretchAbsolute;
 
@@ -8259,7 +8354,10 @@ export namespace Property {
     | 'unicase'
     | OnlyString;
 
-  export type FontVariantAlternates = 'historical-forms' | 'normal' | OnlyString;
+  export type FontVariantAlternates =
+    | 'historical-forms'
+    | 'normal'
+    | OnlyString;
 
   export type FontVariantCaps =
     | 'all-petite-caps'
@@ -8345,9 +8443,17 @@ export namespace Property {
 
   export type GridTemplateAreas = 'none' | OnlyString;
 
-  export type GridTemplateColumns = DataType.TrackBreadth | 'none' | 'subgrid' | OnlyString;
+  export type GridTemplateColumns =
+    | DataType.TrackBreadth
+    | 'none'
+    | 'subgrid'
+    | OnlyString;
 
-  export type GridTemplateRows = DataType.TrackBreadth | 'none' | 'subgrid' | OnlyString;
+  export type GridTemplateRows =
+    | DataType.TrackBreadth
+    | 'none'
+    | 'subgrid'
+    | OnlyString;
 
   export type HangingPunctuation =
     | 'allow-end'
@@ -8497,7 +8603,12 @@ export namespace Property {
 
   export type MaskBorderOutset = OnlyStringNumeric;
 
-  export type MaskBorderRepeat = 'repeat' | 'round' | 'space' | 'stretch' | OnlyString;
+  export type MaskBorderRepeat =
+    | 'repeat'
+    | 'round'
+    | 'space'
+    | 'stretch'
+    | OnlyString;
 
   export type MaskBorderSlice = OnlyStringNumeric;
 
@@ -8606,7 +8717,12 @@ export namespace Property {
 
   export type MixBlendMode = DataType.BlendMode;
 
-  export type Offset = DataType.Position | DataType.GeometryBox | 'auto' | 'none' | OnlyString;
+  export type Offset =
+    | DataType.Position
+    | DataType.GeometryBox
+    | 'auto'
+    | 'none'
+    | OnlyString;
 
   export type OffsetDistance = OnlyStringNumeric;
 
@@ -8642,7 +8758,13 @@ export namespace Property {
 
   export type OutlineWidth = DataType.LineWidth;
 
-  export type Overflow = 'auto' | 'clip' | 'hidden' | 'scroll' | 'visible' | OnlyString;
+  export type Overflow =
+    | 'auto'
+    | 'clip'
+    | 'hidden'
+    | 'scroll'
+    | 'visible'
+    | OnlyString;
 
   export type OverflowAnchor = 'auto' | 'none';
 
@@ -8652,7 +8774,12 @@ export namespace Property {
 
   export type OverflowClipMargin = DataType.VisualBox | OnlyStringNumeric;
 
-  export type OverflowInline = 'auto' | 'clip' | 'hidden' | 'scroll' | 'visible';
+  export type OverflowInline =
+    | 'auto'
+    | 'clip'
+    | 'hidden'
+    | 'scroll'
+    | 'visible';
 
   export type OverflowWrap = 'anywhere' | 'break-word' | 'normal';
 
@@ -8692,13 +8819,32 @@ export namespace Property {
 
   export type PaddingTop = OnlyStringNumeric;
 
-  export type PageBreakAfter = 'always' | 'auto' | 'avoid' | 'left' | 'recto' | 'right' | 'verso';
+  export type PageBreakAfter =
+    | 'always'
+    | 'auto'
+    | 'avoid'
+    | 'left'
+    | 'recto'
+    | 'right'
+    | 'verso';
 
-  export type PageBreakBefore = 'always' | 'auto' | 'avoid' | 'left' | 'recto' | 'right' | 'verso';
+  export type PageBreakBefore =
+    | 'always'
+    | 'auto'
+    | 'avoid'
+    | 'left'
+    | 'recto'
+    | 'right'
+    | 'verso';
 
   export type PageBreakInside = 'auto' | 'avoid';
 
-  export type PaintOrder = 'fill' | 'markers' | 'normal' | 'stroke' | OnlyString;
+  export type PaintOrder =
+    | 'fill'
+    | 'markers'
+    | 'normal'
+    | 'stroke'
+    | OnlyString;
 
   export type Perspective = number | 'none';
 
@@ -8711,7 +8857,12 @@ export namespace Property {
     | 'normal'
     | OnlyString;
 
-  export type PlaceItems = DataType.SelfPosition | 'baseline' | 'normal' | 'stretch' | OnlyString;
+  export type PlaceItems =
+    | DataType.SelfPosition
+    | 'baseline'
+    | 'normal'
+    | 'stretch'
+    | OnlyString;
 
   export type PlaceSelf =
     | DataType.SelfPosition
@@ -8734,11 +8885,22 @@ export namespace Property {
     | 'visiblePainted'
     | 'visibleStroke';
 
-  export type Position = 'absolute' | 'fixed' | 'relative' | 'static' | 'sticky';
+  export type Position =
+    | 'absolute'
+    | 'fixed'
+    | 'relative'
+    | 'static'
+    | 'sticky';
 
   export type Quotes = 'auto' | 'none' | OnlyString;
 
-  export type Resize = 'block' | 'both' | 'horizontal' | 'inline' | 'none' | 'vertical';
+  export type Resize =
+    | 'block'
+    | 'both'
+    | 'horizontal'
+    | 'inline'
+    | 'none'
+    | 'vertical';
 
   export type Right = 'auto' | OnlyStringNumeric;
 
@@ -8800,7 +8962,12 @@ export namespace Property {
 
   export type ScrollPaddingTop = 'auto' | OnlyStringNumeric;
 
-  export type ScrollSnapAlign = 'center' | 'end' | 'none' | 'start' | OnlyString;
+  export type ScrollSnapAlign =
+    | 'center'
+    | 'end'
+    | 'none'
+    | 'start'
+    | OnlyString;
 
   export type ScrollSnapCoordinate = DataType.Position | 'none' | OnlyString;
 
@@ -8812,7 +8979,14 @@ export namespace Property {
 
   export type ScrollSnapStop = 'always' | 'normal';
 
-  export type ScrollSnapType = 'block' | 'both' | 'inline' | 'none' | 'x' | 'y' | OnlyString;
+  export type ScrollSnapType =
+    | 'block'
+    | 'both'
+    | 'inline'
+    | 'none'
+    | 'x'
+    | 'y'
+    | OnlyString;
 
   export type ScrollSnapTypeX = 'mandatory' | 'none' | 'proximity';
 
@@ -8845,7 +9019,14 @@ export namespace Property {
     | 'right'
     | 'start';
 
-  export type TextAlignLast = 'auto' | 'center' | 'end' | 'justify' | 'left' | 'right' | 'start';
+  export type TextAlignLast =
+    | 'auto'
+    | 'center'
+    | 'end'
+    | 'justify'
+    | 'left'
+    | 'right'
+    | 'start';
 
   export type TextCombineUpright = 'all' | 'digits' | 'none' | OnlyString;
 
@@ -8892,9 +9073,17 @@ export namespace Property {
 
   export type TextDecorationSkipInk = 'all' | 'auto' | 'none';
 
-  export type TextDecorationStyle = 'dashed' | 'dotted' | 'double' | 'solid' | 'wavy';
+  export type TextDecorationStyle =
+    | 'dashed'
+    | 'dotted'
+    | 'double'
+    | 'solid'
+    | 'wavy';
 
-  export type TextDecorationThickness = 'auto' | 'from-font' | OnlyStringNumeric;
+  export type TextDecorationThickness =
+    | 'auto'
+    | 'from-font'
+    | OnlyStringNumeric;
 
   export type TextEmphasis =
     | DataType.Color
@@ -8976,9 +9165,20 @@ export namespace Property {
 
   export type Transform = 'none' | OnlyString;
 
-  export type TransformBox = 'border-box' | 'content-box' | 'fill-box' | 'stroke-box' | 'view-box';
+  export type TransformBox =
+    | 'border-box'
+    | 'content-box'
+    | 'fill-box'
+    | 'stroke-box'
+    | 'view-box';
 
-  export type TransformOrigin = 'bottom' | 'center' | 'left' | 'right' | 'top' | OnlyStringNumeric;
+  export type TransformOrigin =
+    | 'bottom'
+    | 'center'
+    | 'left'
+    | 'right'
+    | 'top'
+    | OnlyStringNumeric;
 
   export type TransformStyle = 'flat' | 'preserve-3d';
 
@@ -9002,7 +9202,13 @@ export namespace Property {
     | 'normal'
     | 'plaintext';
 
-  export type UserSelect = 'all' | 'auto' | 'contain' | 'element' | 'none' | 'text';
+  export type UserSelect =
+    | 'all'
+    | 'auto'
+    | 'contain'
+    | 'element'
+    | 'none'
+    | 'text';
 
   export type VerticalAlign =
     | number
@@ -9018,7 +9224,13 @@ export namespace Property {
 
   export type Visibility = 'collapse' | 'hidden' | 'visible';
 
-  export type WhiteSpace = 'break-spaces' | 'normal' | 'nowrap' | 'pre' | 'pre-line' | 'pre-wrap';
+  export type WhiteSpace =
+    | 'break-spaces'
+    | 'normal'
+    | 'nowrap'
+    | 'pre'
+    | 'pre-line'
+    | 'pre-wrap';
 
   export type Widows = OnlyNumber;
 
@@ -9162,7 +9374,11 @@ export namespace Property {
     | 'stroke-opacity'
     | OnlyString;
 
-  export type MozFloatEdge = 'border-box' | 'content-box' | 'margin-box' | 'padding-box';
+  export type MozFloatEdge =
+    | 'border-box'
+    | 'content-box'
+    | 'margin-box'
+    | 'padding-box';
 
   export type MozForceBrokenImageIcon = OnlyNumber;
 
@@ -9200,7 +9416,12 @@ export namespace Property {
 
   export type MozWindowDragging = 'drag' | 'no-drag';
 
-  export type MozWindowShadow = 'default' | 'menu' | 'none' | 'sheet' | 'tooltip';
+  export type MozWindowShadow =
+    | 'default'
+    | 'menu'
+    | 'none'
+    | 'sheet'
+    | 'tooltip';
 
   export type MsAccelerator = 'false' | 'true';
 
@@ -9214,7 +9435,11 @@ export namespace Property {
 
   export type MsContentZoomLimitMin = OnlyString;
 
-  export type MsContentZoomSnap = 'mandatory' | 'none' | 'proximity' | OnlyString;
+  export type MsContentZoomSnap =
+    | 'mandatory'
+    | 'none'
+    | 'proximity'
+    | OnlyString;
 
   export type MsContentZoomSnapPoints = OnlyString;
 
@@ -9295,7 +9520,13 @@ export namespace Property {
 
   export type MsUserSelect = 'element' | 'none' | 'text';
 
-  export type MsWrapFlow = 'auto' | 'both' | 'clear' | 'end' | 'maximum' | 'start';
+  export type MsWrapFlow =
+    | 'auto'
+    | 'both'
+    | 'clear'
+    | 'end'
+    | 'maximum'
+    | 'start';
 
   export type MsWrapMargin = number;
 
@@ -9363,7 +9594,12 @@ export namespace Property {
 
   export type WebkitBorderBeforeWidth = DataType.LineWidth | OnlyString;
 
-  export type WebkitBoxReflect = 'above' | 'below' | 'left' | 'right' | OnlyStringNumeric;
+  export type WebkitBoxReflect =
+    | 'above'
+    | 'below'
+    | 'left'
+    | 'right'
+    | OnlyStringNumeric;
 
   export type WebkitLineClamp = 'none' | OnlyNumber;
 
@@ -9392,13 +9628,26 @@ export namespace Property {
 
   export type WebkitMaskImage = 'none' | OnlyString;
 
-  export type WebkitMaskOrigin = DataType.Box | 'border' | 'content' | 'padding' | OnlyString;
+  export type WebkitMaskOrigin =
+    | DataType.Box
+    | 'border'
+    | 'content'
+    | 'padding'
+    | OnlyString;
 
   export type WebkitMaskPosition = DataType.Position | OnlyString;
 
-  export type WebkitMaskPositionX = 'center' | 'left' | 'right' | OnlyStringNumeric;
+  export type WebkitMaskPositionX =
+    | 'center'
+    | 'left'
+    | 'right'
+    | OnlyStringNumeric;
 
-  export type WebkitMaskPositionY = 'bottom' | 'center' | 'top' | OnlyStringNumeric;
+  export type WebkitMaskPositionY =
+    | 'bottom'
+    | 'center'
+    | 'top'
+    | OnlyStringNumeric;
 
   export type WebkitMaskRepeat = DataType.RepeatStyle | OnlyString;
 
@@ -9422,7 +9671,10 @@ export namespace Property {
 
   export type WebkitTouchCallout = 'default' | 'none';
 
-  export type WebkitUserModify = 'read-only' | 'read-write' | 'read-write-plaintext-only';
+  export type WebkitUserModify =
+    | 'read-only'
+    | 'read-write'
+    | 'read-write-plaintext-only';
 
   export type AlignmentBaseline =
     | 'after-edge'
@@ -9466,13 +9718,23 @@ export namespace Property {
 
   export type FillRule = 'evenodd' | 'nonzero';
 
-  export type FloodColor = DataType.Color | 'CurrentColor' | 'hsl(' | 'lab(' | 'rgb(';
+  export type FloodColor =
+    | DataType.Color
+    | 'CurrentColor'
+    | 'hsl('
+    | 'lab('
+    | 'rgb(';
 
   export type FloodOpacity = OnlyNumber;
 
   export type GlyphOrientationVertical = 'auto' | OnlyStringNumeric;
 
-  export type LightingColor = DataType.Color | 'CurrentColor' | 'hsl(' | 'lab(' | 'rgb(';
+  export type LightingColor =
+    | DataType.Color
+    | 'CurrentColor'
+    | 'hsl('
+    | 'lab('
+    | 'rgb(';
 
   export type Marker = 'none' | OnlyString;
 
@@ -9482,9 +9744,18 @@ export namespace Property {
 
   export type MarkerStart = 'none' | OnlyString;
 
-  export type ShapeRendering = 'auto' | 'crispEdges' | 'geometricPrecision' | 'optimizeSpeed';
+  export type ShapeRendering =
+    | 'auto'
+    | 'crispEdges'
+    | 'geometricPrecision'
+    | 'optimizeSpeed';
 
-  export type StopColor = DataType.Color | 'CurrentColor' | 'hsl(' | 'lab(' | 'rgb(';
+  export type StopColor =
+    | DataType.Color
+    | 'CurrentColor'
+    | 'hsl('
+    | 'lab('
+    | 'rgb(';
 
   export type StopOpacity = OnlyNumber;
 
@@ -9541,7 +9812,9 @@ export namespace AtRule {
   };
 
   export type CounterStyleHyphenFallback = {
-    [P in keyof CounterStyleHyphen]: CounterStyleHyphen[P] | CounterStyleHyphen[P][];
+    [P in keyof CounterStyleHyphen]:
+      | CounterStyleHyphen[P]
+      | CounterStyleHyphen[P][];
   };
 
   export interface FontFace {
@@ -9655,7 +9928,13 @@ export namespace AtRule {
 
   type Range = 'auto' | 'infinite' | OnlyStringNumeric;
 
-  type SpeakAs = 'auto' | 'bullets' | 'numbers' | 'spell-out' | 'words' | OnlyString;
+  type SpeakAs =
+    | 'auto'
+    | 'bullets'
+    | 'numbers'
+    | 'spell-out'
+    | 'words'
+    | OnlyString;
 
   type System =
     | 'additive'
@@ -9710,7 +9989,12 @@ export namespace AtRule {
 
   type FontWeight = DataType.FontWeightAbsolute;
 
-  type Size = DataType.PageSize | 'auto' | 'landscape' | 'portrait' | OnlyStringNumeric;
+  type Size =
+    | DataType.PageSize
+    | 'auto'
+    | 'landscape'
+    | 'portrait'
+    | OnlyStringNumeric;
 
   type Inherits = 'false' | 'true' | boolean;
 
@@ -9754,7 +10038,13 @@ declare namespace DataType {
 
   type Attachment = 'fixed' | 'local' | 'scroll';
 
-  type BgPosition = 'bottom' | 'center' | 'left' | 'right' | 'top' | OnlyStringNumeric;
+  type BgPosition =
+    | 'bottom'
+    | 'center'
+    | 'left'
+    | 'right'
+    | 'top'
+    | OnlyStringNumeric;
 
   type BgSize = 'auto' | 'contain' | 'cover' | OnlyStringNumeric;
 
@@ -9778,7 +10068,14 @@ declare namespace DataType {
 
   type Box = 'border-box' | 'content-box' | 'padding-box';
 
-  type Color = NamedColor | SystemColor | 'CurrentColor' | 'hsl(' | 'lab(' | 'rgb(' | OnlyString;
+  type Color =
+    | NamedColor
+    | SystemColor
+    | 'CurrentColor'
+    | 'hsl('
+    | 'lab('
+    | 'rgb('
+    | OnlyString;
 
   type CompatAuto =
     | 'button'
@@ -9809,13 +10106,22 @@ declare namespace DataType {
 
   type CompositingOperator = 'add' | 'exclude' | 'intersect' | 'subtract';
 
-  type ContentDistribution = 'space-around' | 'space-between' | 'space-evenly' | 'stretch';
+  type ContentDistribution =
+    | 'space-around'
+    | 'space-between'
+    | 'space-evenly'
+    | 'stretch';
 
   type ContentList = Quote | 'contents' | OnlyString;
 
   type ContentPosition = 'center' | 'end' | 'flex-end' | 'flex-start' | 'start';
 
-  type CubicBezierTimingFunction = 'ease' | 'ease-in' | 'ease-in-out' | 'ease-out' | OnlyString;
+  type CubicBezierTimingFunction =
+    | 'ease'
+    | 'ease-in'
+    | 'ease-in-out'
+    | 'ease-out'
+    | OnlyString;
 
   type Dasharray = OnlyStringNumeric;
 
@@ -9836,7 +10142,13 @@ declare namespace DataType {
     | 'MarkText'
     | 'VisitedText';
 
-  type DisplayInside = 'flex' | 'flow' | 'flow-root' | 'grid' | 'ruby' | 'table';
+  type DisplayInside =
+    | 'flex'
+    | 'flow'
+    | 'flow-root'
+    | 'grid'
+    | 'ruby'
+    | 'table';
 
   type DisplayInternal =
     | 'ruby-base'
@@ -9861,7 +10173,10 @@ declare namespace DataType {
 
   type DisplayOutside = 'block' | 'inline' | 'run-in';
 
-  type EasingFunction = CubicBezierTimingFunction | StepTimingFunction | 'linear';
+  type EasingFunction =
+    | CubicBezierTimingFunction
+    | StepTimingFunction
+    | 'linear';
 
   type EastAsianVariantValues =
     | 'jis04'
@@ -9871,7 +10186,14 @@ declare namespace DataType {
     | 'simplified'
     | 'traditional';
 
-  type FinalBgLayer = Color | BgPosition | RepeatStyle | Attachment | Box | 'none' | OnlyString;
+  type FinalBgLayer =
+    | Color
+    | BgPosition
+    | RepeatStyle
+    | Attachment
+    | Box
+    | 'none'
+    | OnlyString;
 
   type FontStretchAbsolute =
     | 'condensed'
@@ -9902,7 +10224,12 @@ declare namespace DataType {
     | 'ui-sans-serif'
     | 'ui-serif';
 
-  type GeometryBox = Box | 'fill-box' | 'margin-box' | 'stroke-box' | 'view-box';
+  type GeometryBox =
+    | Box
+    | 'fill-box'
+    | 'margin-box'
+    | 'stroke-box'
+    | 'view-box';
 
   type GridLine = 'auto' | OnlyStringNumeric;
 
@@ -10095,11 +10422,27 @@ declare namespace DataType {
     | 'legal'
     | 'letter';
 
-  type Paint = Color | 'child' | 'context-fill' | 'context-stroke' | 'none' | OnlyString;
+  type Paint =
+    | Color
+    | 'child'
+    | 'context-fill'
+    | 'context-stroke'
+    | 'none'
+    | OnlyString;
 
-  type Position = 'bottom' | 'center' | 'left' | 'right' | 'top' | OnlyStringNumeric;
+  type Position =
+    | 'bottom'
+    | 'center'
+    | 'left'
+    | 'right'
+    | 'top'
+    | OnlyStringNumeric;
 
-  type Quote = 'close-quote' | 'no-close-quote' | 'no-open-quote' | 'open-quote';
+  type Quote =
+    | 'close-quote'
+    | 'no-close-quote'
+    | 'no-open-quote'
+    | 'open-quote';
 
   type RepeatStyle =
     | 'no-repeat'
@@ -10130,7 +10473,11 @@ declare namespace DataType {
     | OnlyString
     | OnlyNumber;
 
-  type SingleAnimationDirection = 'alternate' | 'alternate-reverse' | 'normal' | 'reverse';
+  type SingleAnimationDirection =
+    | 'alternate'
+    | 'alternate-reverse'
+    | 'normal'
+    | 'reverse';
 
   type SingleAnimationFillMode = 'backwards' | 'both' | 'forwards' | 'none';
 
@@ -10138,7 +10485,11 @@ declare namespace DataType {
 
   type StepTimingFunction = 'step-end' | 'step-start' | OnlyString;
 
-  type TrackBreadth = 'auto' | 'max-content' | 'min-content' | OnlyStringNumeric;
+  type TrackBreadth =
+    | 'auto'
+    | 'max-content'
+    | 'min-content'
+    | OnlyStringNumeric;
 
   type ViewportLength = 'auto' | OnlyStringNumeric;
 

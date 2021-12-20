@@ -3,18 +3,25 @@
   "private": true,
   "version": "0.0.0",
   "description": "web3 disco",
-  "files": ["**/dist/**/*"],
+  "files": [
+    "**/dist/**/*"
+  ],
   "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/manifoldfinance/web3disco.git"
   },
-  "license": "GPL-3.0",
+  "license": "SEE LICENSE IN LICENSE",
   "bugs": {
     "url": "https://github.com/manifoldfinance/web3disco/issues"
   },
   "keywords": [],
   "author": "SEE CONTRIBUTORS",
-  "license": "SEE LICENSE IN LICENSE",
-  "homepage": "https://github.com/manifoldfinance/web3disco#readme"
+  "homepage": "https://github.com/manifoldfinance/web3disco#readme",
+  "devDependencies": {
+    "@types/node": "^14",
+    "lerna": "^4.0.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.4"
+  }
 }

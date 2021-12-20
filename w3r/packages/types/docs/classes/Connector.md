@@ -26,8 +26,8 @@
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type                                  |
+| :-------- | :------------------------------------ |
 | `actions` | [`Actions`](../interfaces/Actions.md) |
 
 #### Defined in
@@ -44,7 +44,7 @@
 
 [src/index.ts:39](https://github.com/sambacha/w3r/blob/ec0b730/packages/types/src/index.ts#L39)
 
-___
+---
 
 ### provider
 
@@ -62,8 +62,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type    |
+| :-------- | :------ |
 | `...args` | `any`[] |
 
 #### Returns
@@ -74,7 +74,7 @@ ___
 
 [src/index.ts:45](https://github.com/sambacha/w3r/blob/ec0b730/packages/types/src/index.ts#L45)
 
-___
+---
 
 ### deactivate
 
@@ -82,8 +82,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type    |
+| :-------- | :------ |
 | `...args` | `any`[] |
 
 #### Returns

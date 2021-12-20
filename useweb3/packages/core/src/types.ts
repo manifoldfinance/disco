@@ -1,4 +1,4 @@
-import type {CSSTypes} from './stitches.config';
+import type { CSSTypes } from './stitches.config';
 
 export interface PseudoProps {
   _after?: CSSTypes;
