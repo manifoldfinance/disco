@@ -7,7 +7,7 @@ import {
   lineHeights,
   sizes,
 } from '@disco3/theme';
-import {makeColors} from './utils';
+import { makeColors } from './utils';
 
 const baseTheme = {
   colors: colors.foundation,

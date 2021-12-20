@@ -19,7 +19,8 @@ export function makeColors(theme: keyof typeof colors) {
 export const makeStitchesWithTheme = (key: keyof typeof themes = 'light') => {
   const match = cacheMap.get(key);
   if (match) return cacheMap.get(key);
-  if (!themes[key]) throw new TypeError('Incorrect theme passed to "makeStitchesWithTheme".');
+  if (!themes[key])
+    throw new TypeError('Incorrect theme passed to "makeStitchesWithTheme".');
   const stitches = createStitches({
     theme: themes[key],
   });
@@ -32,7 +33,7 @@ export const cleanProps = ({ css = {}, ...props }: any) => {
   const cssProps: any = {};
   const restProps: any = {};
 
-  keys.forEach(key => {
+  keys.forEach((key) => {
     if (PSEUDO_TAGS[key]) {
       cssProps[(PSEUDO_TAGS as any)[key as any] as any] = props[key];
     } else {
