@@ -1,8 +1,0 @@
-{
-  "name": "www3react",
-  "out": "doc",
-  "theme": "default",
-  "exclude": "*.spec.ts",
-  "external-modulemap": ".*packages\/(@wwwr\/[^\/]+)\/.*",
-  "excludeExternals": false
-}
