@@ -1,49 +1,53 @@
 import type {
-    Web3ReactState,
-    Web3ReactStore,
-    Web3ReactStateUpdate,
-    Actions,
-  } from '@wwwr/types';
-  import create from 'zustand/vanilla';
-  import { getAddress } from '@ethersproject/address';
+  Web3ReactState,
+  Web3ReactStore,
+  Web3ReactStateUpdate,
+  Actions,
+} from '@wwwr/types';
+import create from 'zustand/vanilla';
+import { getAddress } from '@ethersproject/address';
 
 //import { useEffect } from 'react'
 //import { useEthers } from '../../hooks'
 //import { notifyDevtools } from '../devtools'
 // import { ChainCall } from './callsReducer'
 
-
 export function useDevtoolsReporting(
   uniqueCallsJSON: string,
   uniqueCalls: ChainCall[],
   blockNumber: number | undefined,
-  multicallAddresses: { [network: string]: string }
+  multicallAddresses: { [network: string]: string },
 ) {
-  const { chainId, account, error } = useEthers()
+  const { chainId, account, error } = useEthers();
 
-  const multicall = chainId !== undefined ? multicallAddresses[chainId] : undefined
-
-  useEffect(() => {
-    notifyDevtools({ type: 'NETWORK_CHANGED', chainId, multicallAddress: multicall })
-  }, [chainId, multicall])
+  const multicall =
+    chainId !== undefined ? multicallAddresses[chainId] : undefined;
 
   useEffect(() => {
-    notifyDevtools({ type: 'ACCOUNT_CHANGED', address: account ?? undefined })
-  }, [account])
+    notifyDevtools({
+      type: 'NETWORK_CHANGED',
+      chainId,
+      multicallAddress: multicall,
+    });
+  }, [chainId, multicall]);
 
   useEffect(() => {
-    notifyDevtools({ type: 'CALLS_CHANGED', chainId, calls: uniqueCalls })
-  }, [uniqueCallsJSON])
+    notifyDevtools({ type: 'ACCOUNT_CHANGED', address: account ?? undefined });
+  }, [account]);
+
+  useEffect(() => {
+    notifyDevtools({ type: 'CALLS_CHANGED', chainId, calls: uniqueCalls });
+  }, [uniqueCallsJSON]);
 
   useEffect(() => {
     if (chainId !== undefined && blockNumber !== undefined) {
-      notifyDevtools({ type: 'BLOCK_NUMBER_CHANGED', chainId, blockNumber })
+      notifyDevtools({ type: 'BLOCK_NUMBER_CHANGED', chainId, blockNumber });
     }
-  }, [blockNumber, chainId])
+  }, [blockNumber, chainId]);
 
   useEffect(() => {
     if (error !== undefined) {
-      notifyDevtools({ type: 'GENERIC_ERROR', error })
+      notifyDevtools({ type: 'GENERIC_ERROR', error });
     }
-  }, [error])
+  }, [error]);
 }

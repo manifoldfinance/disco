@@ -4,11 +4,11 @@ import { figmaTokenToColorToken } from './colors';
 import tinycolor from 'tinycolor2';
 
 export const makeFonts = (
-  fontFamilies: typeof DATA.values.base.fontFamilies
+  fontFamilies: typeof DATA.values.base.fontFamilies,
 ): Record<string, string> => {
   const keys = Object.keys(fontFamilies);
   const final = {};
-  keys.sort().forEach(key => {
+  keys.sort().forEach((key) => {
     const entry = fontFamilies[key];
     final[key] = `'${entry.value}'`;
   });
@@ -17,11 +17,11 @@ export const makeFonts = (
 };
 
 export const makeLineHeights = (
-  lineHeights: typeof DATA.values.base.lineHeights
+  lineHeights: typeof DATA.values.base.lineHeights,
 ): Record<string, string> => {
   const keys = Object.keys(lineHeights);
   const final = {};
-  keys.sort().forEach(key => {
+  keys.sort().forEach((key) => {
     const entry = lineHeights[key];
     if (typeof entry === 'object') {
       final[key] = `${entry.value}px`;
@@ -34,11 +34,11 @@ export const makeLineHeights = (
 };
 
 export const makeFontSizes = (
-  fontSizes: typeof DATA.values.base.fontSizes
+  fontSizes: typeof DATA.values.base.fontSizes,
 ): Record<string, string> => {
   const keys = Object.keys(fontSizes);
   const final = {};
-  keys.sort().forEach(key => {
+  keys.sort().forEach((key) => {
     const entry = fontSizes[key];
     if (typeof entry === 'object') {
       final[key] = `${entry.value}px`;
@@ -51,11 +51,11 @@ export const makeFontSizes = (
 };
 
 export const makeFontWeights = (
-  fontWeights: typeof DATA.values.base.fontWeights
+  fontWeights: typeof DATA.values.base.fontWeights,
 ): Record<string, string> => {
   const keys = Object.keys(fontWeights);
   const final = {};
-  keys.sort().forEach(key => {
+  keys.sort().forEach((key) => {
     const entry = fontWeights[key];
     if (typeof entry === 'object') {
       final[key] = `${entry.value}`;
@@ -68,11 +68,11 @@ export const makeFontWeights = (
 };
 
 export const makeLetterSpacing = (
-  letterSpacing: typeof DATA.values.base.letterSpacing
+  letterSpacing: typeof DATA.values.base.letterSpacing,
 ): Record<string, string> => {
   const keys = Object.keys(letterSpacing);
   const final = {};
-  keys.sort().forEach(key => {
+  keys.sort().forEach((key) => {
     const entry = letterSpacing[key];
     if (typeof entry === 'object') {
       final[key] = entry.value;
@@ -84,11 +84,11 @@ export const makeLetterSpacing = (
   return final;
 };
 export const makeBorderRadius = (
-  borderRadius: typeof DATA.values.base.borderRadius
+  borderRadius: typeof DATA.values.base.borderRadius,
 ): Record<string, string> => {
   const keys = Object.keys(borderRadius);
   const final = {};
-  keys.sort().forEach(key => {
+  keys.sort().forEach((key) => {
     const entry = borderRadius[key];
     const value = typeof entry === 'object' ? entry.value : entry;
     final[key] = value.includes('%') ? value : `${value}px`;
@@ -97,7 +97,10 @@ export const makeBorderRadius = (
   return final;
 };
 
-const rgbaToThemeColor = (rgbaString: string, colors: Record<string, string>) => {
+const rgbaToThemeColor = (
+  rgbaString: string,
+  colors: Record<string, string>,
+) => {
   const [, end] = rgbaString.split('rgba(');
   const [color, closing] = end.split(',');
   const alpha = closing.replace(')', '');
@@ -107,11 +110,11 @@ const rgbaToThemeColor = (rgbaString: string, colors: Record<string, string>) =>
 };
 export const makeBoxShadow = (
   boxShadow: typeof DATA.values.base.boxShadow,
-  colors: Record<string, string>
+  colors: Record<string, string>,
 ): Record<string, string> => {
   const keys = Object.keys(boxShadow);
   const final = {};
-  keys.sort().forEach(key => {
+  keys.sort().forEach((key) => {
     const entry = boxShadow[key];
 
     final[key] = `${entry.value.x}px ${entry.value.y}px ${entry.value.blur}px ${

@@ -19,7 +19,7 @@
 
 [src/index.ts:15](https://github.com/sambacha/w3r/blob/ec0b730/packages/types/src/index.ts#L15)
 
-___
+---
 
 ### chainId
 

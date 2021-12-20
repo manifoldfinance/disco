@@ -9,8 +9,6 @@
 [![tag - @wwwr/^8.0.0](https://img.shields.io/static/v1?label=tag&message=%40wwwr%2F^8.0.0&color=black)](https://)
 [![License](https://img.shields.io/badge/License-GPL--3.0-black)](#license)
 
-      
-
 ### @wwwr/types
 
 > [@wwwr/types](README.md) / Exports

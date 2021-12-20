@@ -1,3 +1,4 @@
+*.css
 *.json
 dist/
 *.d.ts
@@ -18,6 +19,8 @@ node_modules
 ts
 umd
 
+__tests__/
+__snapshots__/
 # Components
 packages/components/demo/*.css
 packages/components/demo/*.map

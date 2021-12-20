@@ -184,8 +184,12 @@ export const colors = {
     'color-slate-050': 'hsl(240, 9%, 98%)',
   },
 } as const;
-export const letterSpacing = {default: '0%', 'extra-tight': '-2%', tight: '-1%'} as const;
-export const fonts = {body: "'Inter'", headlines: "'Open Sauce'"} as const;
+export const letterSpacing = {
+  default: '0%',
+  'extra-tight': '-2%',
+  tight: '-1%',
+} as const;
+export const fonts = { body: "'Inter'", headlines: "'Open Sauce'" } as const;
 export const fontSizes = {
   '0': '12px',
   '1': '14px',
