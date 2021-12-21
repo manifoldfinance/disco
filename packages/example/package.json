@@ -1,0 +1,30 @@
+{
+  "name": "example",
+  "private": true,
+  "scripts": {
+    "build": "npx next build",
+    "start": "npx next dev"
+  },
+  "dependencies": {
+    "@ethersproject/bignumber": "^5.4.2",
+    "@ethersproject/units": "^5.4.0",
+    "@walletconnect/ethereum-provider": "^1.6.5",
+    "@wwwr/core": "^8.1.1",
+    "@wwwr/frame": "^8.1.1",
+    "@wwwr/magic": "^8.1.1",
+    "@wwwr/metamask": "^8.1.1",
+    "@wwwr/network": "^8.1.1",
+    "@wwwr/store": "^8.1.1",
+    "@wwwr/types": "^8.1.1",
+    "@wwwr/walletconnect": "^8.1.1",
+    "@wwwr/walletlink": "^8.1.1",
+    "eth-provider": "^0.9.4",
+    "events": "^3.3.0",
+    "next": "^12.0.2",
+    "process": "^0.11.10",
+    "react-dom": "^17.0.2",
+    "walletlink": "^2.1.11",
+    "zustand": "^3.5.10"
+  },
+  "version": "8.1.1"
+}
