@@ -1,9 +1,9 @@
 {
-  "name": "@wwwr/injectedprovider",
-  "version": "1.0.0",
+  "name": "@disco3/injected-provider",
+  "version": "1.0.1",
   "description": "Injected Web3 Provider",
   "author": "sam bacha <sam@manifoldfinance.com>",
-  "homepage": "https://github.com/manifoldfinance/web3disco#readme",
+  "homepage": "https://github.com/manifoldfinance/disco-turbo#readme",
   "directories": {
     "src": "src",
     "test": "__tests__",
@@ -11,17 +11,17 @@
   },
  "repository": {
     "type": "git",
-    "url": "https://github.com/manifoldfinance/web3disco",
-    "directory": "w3r/packages/injected-provider"
+    "url": "https://github.com/manifoldfinance/disco-turbo",
+    "directory": "packages/injected-provider"
   },
   "bugs": {
-    "url": "https://github.com/manifoldfinance/web3disco/issues"
+    "url": "https://github.com/manifoldfinance/disco-turbo/packages/injected-provider/issues"
   },
   "main": "dist/index.js",
   "module": "dist/injected-connector.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
-    "./dist"
+    "dist"
   ],
   "publishConfig": {
     "access": "public"
@@ -34,8 +34,7 @@
   "dependencies": {
     "@web3-react/abstract-connector": "6.0.7",
     "@web3-react/types": "6.0.7",
-    "tiny-warning": "^1.0.3",
-    "tsdx": "^0.14.1"
+    "tiny-warning": "^1.0.3"
   },
   "license": "GPL-3.0-or-later"
 }
